@@ -26,6 +26,8 @@ def sign_up_page():
 
     return render_template('sign-up.html')
 
+#add your /user-profile.html app route
+
 
 #put your app routes here! :D
 

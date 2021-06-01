@@ -20,6 +20,13 @@ def login_page():
 
     return render_template('login.html')
 
+@app.route('/sign-up')
+def sign_up_page():
+    """Display user sign-up page."""
+
+    return render_template('sign-up.html')
+
+
 #put your app routes here! :D
 
 

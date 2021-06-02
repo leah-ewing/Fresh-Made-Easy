@@ -3,14 +3,14 @@
 {% block title %}Log In{% endblock %}
 
 {% block body %}
-<h2>Please enter your information:</h2>
-<form>
+<h2>Please Enter Log-in Info:</h2>
+<form action = "/user-profile">
+    <div class = "login">
     <label>Email:</label>
-    <input type = "email"></textarea>
+    <input type = "email" required /></textarea>
     <label>Password:</label>
-    <input type = "password"></textarea>
+    <input type = "password" required /></textarea>
     <input type = "submit" id = "submit-info">
+    </div>
 </form>
 {% endblock %}
-
-<!-- need to add form actions and div classes! :) -->

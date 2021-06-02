@@ -15,18 +15,28 @@ def homepage():
     return render_template('homepage.html')
 
 @app.route('/login')
-def login_page():
+def loginPage():
     """Display user login page."""
 
     return render_template('login.html')
 
 @app.route('/sign-up')
-def sign_up_page():
+def signUpPage():
     """Display user sign-up page."""
 
     return render_template('sign-up.html')
 
-#add your /user-profile.html app route
+@app.route('/user-profile')
+def userProfile():
+    """Display user's profile page."""
+
+    return render_template('user-profile.html')
+
+@app.route('/about-us')
+def aboutUsPage():
+    """Dispay Fresh Made Easy's 'About Us' page"""
+
+    return render_template('about-us.html')
 
 
 #put your app routes here! :D

@@ -8,6 +8,10 @@
     <div class = "sign-up">
     <label for = "username">Username:</label><br>
     <input id = "username" type = "text" name = "username" required /><br>
+    <label for = "password">Password:</label><br>
+    <input type = "password" id = "password"></textarea><br>
+    <label for = "confirm-password" id = "confirm-password">Confirm Password:</label><br>
+    <input type = "password" id = "confirm-password"></textarea><br>
     <label for = "first-name">First Name:</label><br>
     <input id  = "first-name" type = "text" name = "fname" required /><br>
     <label for = "last-name">Last Name:</label><br>
@@ -71,12 +75,10 @@
         <option value = "wyoming">WY</option>
         <option value = "district-of-columbia">DC</option>
     </select><br>
-    <label for = "user-phone">Phone Number (10 digits, no spaces):</label><br>
-    <input id = "user-phone" type = "tel" name = "phone-number" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"required /><br>
+    <label for = "user-phone">Phone Number 000-000-0000:</label><br>
+    <input id = "user-phone" type = "tel" name = "phone-number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"required /><br>
     <button type = "submit" id = "sign-up">Sign Up</button>
 </div>
 </form>
 
  {% endblock %}
-
- <!-- need to create user-profile.html, this code is *should* already routed :P -->

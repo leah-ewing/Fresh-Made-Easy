@@ -9,8 +9,8 @@ import crud
 import model
 import server
 
-os.system('dropdb ratings')
-os.system('createdb ratings')
+os.system('dropdb purchase')
+os.system('createdb purchase')
 
 model.connect_to_db(server.app)
 model.db.create_all()
@@ -22,7 +22,7 @@ with open('data/items.json') as i:
     item_data = json.loads(i.read())
 
 with open('data/item-categories.json') as c:
-    category_data = json.loads(c.read())
+    category_data = json.loads(c.reads())
 
 with open('payment-methods') as p:
     payment_data = json.loads(p.read())
@@ -75,8 +75,6 @@ for pickup_location in pickup_location_data:
                                                             location_neighborhood['location_neighborhood'])
 pickup_locations_in_db = crud.create_pickup_location(pickup_location)
 pickup_locations_in_db.append(db.pickup_locations)
-
-
 
 
 

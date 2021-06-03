@@ -77,15 +77,16 @@ class Item(db.Model):
     item_id = db.Column(db.Integer, 
                         autoincrement = True,
                         primary_key = True)
-    farm_id = db.Column(db.Integer, db.ForeignKey = 'farm.farm_id')
     item_name = db.Column(db.String(50))
+    farm_name = db.Column(db.Integer, db.ForeignKey = 'farm.farm_name')
     item_cost = db.Column(db.Integer)
-    category_id = db.Column(db.Integer, db.ForeignKey('category.category_id'))
+    category_name = db.Column(db.String, db.ForeignKey('category.category_name'))
     item_description = db.Column(db.String)
+    item_img = db.Column(db.String)
 
     def __repr__(self):
         return f'<Item item_id = {self.item_id} farm_id = {self.farm_id} 
-        item_cost = {self.item_cost} item_name = {self.item_name} category_id = {self.category_id} 
+        item_cost = {self.item_citecost} item_name = {self.item_name} category_id = {self.category_id} 
         item_description = {self.item_description}>'
 
 class PickupLocation(db.Model):
@@ -98,6 +99,7 @@ class PickupLocation(db.Model):
                             primary_key = True)
     location_name = db.Column(db.String(50))
     location_address = db.Column(db.String(100))
+    location_neighborhood = db.Column(db.String(25))
 
     def __repr__(self):
         return f'<PickupLocation location_id = {self.location_id} 

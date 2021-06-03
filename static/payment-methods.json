@@ -1,0 +1,12 @@
+[{
+    "payment_method_type": "Visa"
+},
+{
+    "payment_method_type": "Mastercard"
+},
+{
+    "payment_method_type": "Discover"
+}, 
+{
+    "payment_method_type": "American Express"
+}]

@@ -9,7 +9,7 @@ def create_user(email, password, fname, lname, username, account_created)
                 password = password, 
                 fname = fname,
                 lname = lname,
-                username = username)
+                username = username
     
     db.session.add(user)
     db.session.commit()
@@ -26,9 +26,8 @@ def create_farm(farm_name, farm_address):
 def create_item(item_name, item_cost, category_name, item_description, item_img):
     
     item = Item(item_name = item_name, 
-            farm_name = farm_name, 
             item_cost = item_cost,
-            category_name = category_name
+            category_id = category_id
             item_description = item_description, 
             item_img = item_img)
 

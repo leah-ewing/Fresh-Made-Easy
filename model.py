@@ -45,14 +45,16 @@ class Purchase(db.Model):
     payment_method_id = db.Column(db.Integer, db.ForeignKey('payment_method.payment_method_id'))
     pickup_date = db.Column(db.DateTime)
     location_id = db.Column(db.Integer, db.ForeignKey('pickup_location.location_id'))
-    order_cost = db.Column(db.Integer, db.ForeignKey('SUM(item.item_cost'))
-    #                                                   ^ I'm not so sure about this
+    order_cost = db.Column(db.Integer, db.ForeignKey('item.item_cost'))
+
+    user = db.relationship('User', backref='purchase')
+    item = db.relationship('Item', backref='purchase')
 
     def __repr__(self):
         return f'<Purchase purchase_id = {self.purchase_id} user_id = {self.user_id} date_time_of_purchase = {self.date_time_of_purchase} payment_method_id = {self.payment_method_id} pickup_date = {self.pickup_date} location_id = {self.location_id} order_cost = {self.order_cost}>'
 
 class Farm(db.Model):
-    """A farm."""
+    """A farm with items for purchase."""
 
     __tablename__ = 'farm'
 
@@ -74,11 +76,14 @@ class Item(db.Model):
                         autoincrement = True,
                         primary_key = True)
     item_name = db.Column(db.String(50))
-    farm_name = db.Column(db.Integer, db.ForeignKey('farm.farm_name'))
+    farm_id = db.Column(db.Integer, db.ForeignKey('farm.farm_id'))
     item_cost = db.Column(db.Integer)
-    category_name = db.Column(db.String, db.ForeignKey('category.category_name'))
+    category_id = db.Column(db.Integer, db.ForeignKey('category.category_id'))
     item_description = db.Column(db.String)
     item_img = db.Column(db.String)
+
+    farm = db.relationship('Farm', backref='item')
+    category = db.relationship('Category', backref='item')
 
     def __repr__(self):
         return f'<Item item_id = {self.item_id} farm_id = {self.farm_id} item_cost = {self.item_cost} item_name = {self.item_name} category_id = {self.category_id} item_description = {self.item_description}>'

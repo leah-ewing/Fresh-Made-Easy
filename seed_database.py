@@ -46,10 +46,10 @@ for item in item_data:
                                                         item_cost['item_cost'],
                                                         item_description['item_description'],
                                                         item_img['item_img'])
-    farm_name = farm['farm_name']
+    farm_id = farm['farm_id']
     category_name = category['category_name']
 
-db_farm = crud.create_item(item_name, farm_name, item_cost, item_description, item_img)
+db_farm = crud.create_item(item_name, farm_id, item_cost, item_description, item_img)
 items_in_db.append(db_item)
 
 

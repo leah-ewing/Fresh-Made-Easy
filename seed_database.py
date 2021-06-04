@@ -9,32 +9,12 @@ import crud
 import model
 import server
 
-os.system('dropdb purchase')
-os.system('createdb purchase')
-
-os.system('dropdb farm')
-os.system('createdb farm')
-
-os.system('dropdb item')
-os.system('createdb item')
-
-os.system('dropdb user')
-os.system('createdb user')
-
-os.system('dropdb pickup_location')
-os.system('createdb pickup_location')
-
-os.system('dropdb payment_method')
-os.system('createdb payment_method')
-
-os.system('dropdb category')
-os.system('createdb category')
-
-os.system('dropdb item')
-os.system('createdb item')
+os.system('dropdb fresh')
+os.system('createdb fresh')
 
 model.connect_to_db(server.app)
 model.db.create_all()
+
 
 with open('data/farms.json') as f:
     farm_data = json.loads(f.read())

@@ -2,7 +2,9 @@
 
 from model import db, User, Purchase, Farm, Item, PickupLocation, Category, PaymentMethod, connect_to_db
 
-def create_user(email, password, fname, lname, username, account_created):
+
+
+def create_user(email, password, fname, lname, username):
     """Create and return a new user."""
 
     user = User(email = email, 
@@ -16,6 +18,7 @@ def create_user(email, password, fname, lname, username, account_created):
 
     return user
 
+
 def create_farm(farm_name, farm_address):
     """Create and return a new farm."""
 
@@ -23,7 +26,9 @@ def create_farm(farm_name, farm_address):
     db.session.add(farm)
     db.session.commit()
 
+
 def create_item(item_name, item_cost, category_name, item_description, item_img):
+    """Create and return a new item."""
     
     item = Item(item_name = item_name, 
             item_cost = item_cost,
@@ -36,6 +41,7 @@ def create_item(item_name, item_cost, category_name, item_description, item_img)
 
     return item
 
+
 def create_category(category_name):
     """Create and return a new item category."""
 
@@ -45,6 +51,7 @@ def create_category(category_name):
     db.commit()
 
     return category
+
 
 def create_pickup_location(location_name, location_address, location_neighborhood):
     """Create and return a new order pickup location."""
@@ -58,6 +65,7 @@ def create_pickup_location(location_name, location_address, location_neighborhoo
 
     return pickup_location
 
+
 def create_payment_method(payment_method_type):
     """Create and return a new payment method."""
 
@@ -66,10 +74,12 @@ def create_payment_method(payment_method_type):
     db.session.add(payment_method)
     db.commit()
 
+
 def get_all_purchases():
     """Returns all purchases made."""
 
     return Purchases.query.all()
+
 
 if __name__ == '__main__':
     from server import app

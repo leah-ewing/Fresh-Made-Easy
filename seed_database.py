@@ -12,6 +12,27 @@ import server
 os.system('dropdb purchase')
 os.system('createdb purchase')
 
+os.system('dropdb farm')
+os.system('createdb farm')
+
+os.system('dropdb item')
+os.system('createdb item')
+
+os.system('dropdb user')
+os.system('createdb user')
+
+os.system('dropdb pickup_location')
+os.system('createdb pickup_location')
+
+os.system('dropdb payment_method')
+os.system('createdb payment_method')
+
+os.system('dropdb category')
+os.system('createdb category')
+
+os.system('dropdb item')
+os.system('createdb item')
+
 model.connect_to_db(server.app)
 model.db.create_all()
 
@@ -31,6 +52,19 @@ with open('data/pickup-locations') as l:
     pickup_location_data = json.loads(l.read())
 
 
+users_in_db = []
+for user in user_data:
+    email, password, fname, lname, username = (user['email'],
+                                                user['password'],
+                                                user['fname'],
+                                                user['lname'],
+                                                user['username'])
+
+db_user = crud.create_user(email, password, fname, lname, username)
+users_in_db.append(db.farm)
+
+
+
 farms_in_db = []
 for farm in farm_data:
     farm_name, farm_address = (farm['farm_name'],
@@ -38,6 +72,7 @@ for farm in farm_data:
 
 db_farm = crud.create_farm(farm_name, farm_address)
 farms_in_db.append(db.farm)
+
 
 
 items_in_db = []
@@ -53,12 +88,14 @@ db_farm = crud.create_item(item_name, farm_id, item_cost, item_description, item
 items_in_db.append(db_item)
 
 
+
 categories_in_db = []
 for category in category_data:
     category_name = category['category_name']
 
 db_category = crud.create_category(category_name)
 categories_in_db.append(db_category)
+
 
 
 payment_methods_in_db = []
@@ -69,13 +106,14 @@ db_payment_method = crud.create_payment_method(payment_method_type)
 payment_methods_in_db.append(db_payment_method)
 
 
+
 pickup_locations_in_db = []
 for pickup_location in pickup_location_data:
     location_name, location_address, location_neighborhood = (pickup_location['location_name'],
                                                             location_address['location_address'],
                                                             location_neighborhood['location_neighborhood'])
 pickup_locations_in_db = crud.create_pickup_location(pickup_location)
-pickup_locations_in_db.append(db.pickup_locations)
+pickup_locations_in_db.append(db.pickup_location)
 
 
 

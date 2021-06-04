@@ -27,10 +27,10 @@ class User(db.Model):
     password = db.Column(db.String)
     fname = db.Column(db.String(25))
     lname = db.Column(db.String(25))
-    username = db.Column(db.String(15))
+    username = db.Column(db.String(15), unique = True)
 
     def __repr__(self):
-        return f'<User user_id = {self.user_id} email = {self.email}>'
+        return f'<User user_id = {self.user_id} email = {self.email} fullname = {self.fname} {self.lname} username = {self.username}>'
 
 class Purchase(db.Model):
     """A user's purchase."""
@@ -46,8 +46,6 @@ class Purchase(db.Model):
     payment_method_id = db.Column(db.Integer, db.ForeignKey('payment_method.payment_method_id'))
     pickup_date = db.Column(db.DateTime)
     location_id = db.Column(db.Integer, db.ForeignKey('pickup_location.location_id'))
-
-    user = db.relationship('User', backref='purchase')
 
     def __repr__(self):
         return f'<Purchase purchase_id = {self.purchase_id} user_id = {self.user_id} date_time_of_purchase = {self.date_time_of_purchase} payment_method_id = {self.payment_method_id} pickup_date = {self.pickup_date} location_id = {self.location_id} order_cost = {self.order_cost}>'
@@ -80,10 +78,6 @@ class Item(db.Model):
     category_id = db.Column(db.Integer, db.ForeignKey('category.category_id'))
     item_description = db.Column(db.String)
     item_img = db.Column(db.String)
-
-    # farm = db.relationship('Farm', backref='item')
-    # category = db.relationship('Category', backref='item')
-    # purchase = db.relationship('Purchase', backref='item')
 
     def __repr__(self):
         return f'<Item item_id = {self.item_id} farm_id = {self.farm_id} item_cost = {self.item_cost} item_name = {self.item_name} category_id = {self.category_id} item_description = {self.item_description}>'

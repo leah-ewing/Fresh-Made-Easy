@@ -2,14 +2,14 @@
 
 from model import db, User, Purchase, Farm, Item, PickupLocation, Category, PaymentMethod, connect_to_db
 
-def create_user(email, password, fname, lname, username, account_created)
+def create_user(email, password, fname, lname, username, account_created):
     """Create and return a new user."""
 
     user = User(email = email, 
                 password = password, 
                 fname = fname,
                 lname = lname,
-                username = username
+                username = username)
     
     db.session.add(user)
     db.session.commit()
@@ -27,7 +27,7 @@ def create_item(item_name, item_cost, category_name, item_description, item_img)
     
     item = Item(item_name = item_name, 
             item_cost = item_cost,
-            category_id = category_id
+            category_id = category_id,
             item_description = item_description, 
             item_img = item_img)
 
@@ -39,7 +39,7 @@ def create_item(item_name, item_cost, category_name, item_description, item_img)
 def create_category(category_name):
     """Create and return a new item category."""
 
-    category = Category(category_name = category_name):
+    category = Category(category_name = category_name)
     
     db.session.add(category)
     db.commit()
@@ -71,6 +71,6 @@ def get_all_purchases():
 
     return Purchases.query.all()
 
-if __name == '__main__':
-    from server import
+if __name__ == '__main__':
+    from server import app
     connect_to_db(app)

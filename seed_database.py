@@ -68,6 +68,7 @@ for payment_method in payment_data:
 db_payment_method = crud.create_payment_method(payment_method_type)
 payment_methods_in_db.append(db_payment_method)
 
+
 pickup_locations_in_db = []
 for pickup_location in pickup_location_data:
     location_name, location_address, location_neighborhood = (pickup_location['location_name'],

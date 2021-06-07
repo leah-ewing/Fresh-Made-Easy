@@ -95,10 +95,10 @@ def get_user_by_username(username):
 
 
 # ******************************************
-# def login_user(email, password):
-#     """Returns a user by email and password."""
+def login_user(email, password):
+    """Returns a user by email and password."""
 
-#     return User.query.filter(User.email == email, User.password == password).first()
+    return User.query.filter(User.email == email, User.password == password).first()
 # *******  ^ Not working correctly. *********
 
 

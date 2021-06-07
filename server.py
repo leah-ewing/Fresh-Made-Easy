@@ -28,6 +28,24 @@ def signUpPage():
 
     return render_template('sign-up.html')
 
+@app.route('/', methods = ["POST"])
+def loginUser():
+    """Login user and redirect to homepage."""
+
+    email = request.form.get("email")
+    password = request.form.get("password")
+
+    valid_user = crud.login_user(email, password)
+
+    if valid_user:
+        flash("Welcome back!")
+    else:
+        flash("Invalid login. Please try again.")
+        return redirect("/login") 
+    
+    return render_template("homepage.html")
+
+
 
 @app.route('/user-profile', methods = ["POST"])
 def createUser():

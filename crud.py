@@ -18,16 +18,6 @@ def create_user(email, password, fname, lname, username):
 
     return user
 
-# def create_neighborhood(neighborhood_name):
-#     """Create and return a new neighborhood in Nashville."""
-
-#     neighborhood = Neighborhood(neighborhood_name = neighborhood_name)
-
-#     db.session.add(neighborhood)
-#     db.session.commit()
-
-#     return neighborhood
-
 
 def create_farm(farm_name, farm_address):
     """Create and return a new farm."""

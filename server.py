@@ -18,6 +18,11 @@ def homepage():
 def loginPage():
     """Display user login page."""
 
+    email = request.form.get("email")
+    password = request.form.get("password")
+    # come back here first, this is where you began
+    # placing user login sessions
+
     return render_template('login.html')
 
 @app.route('/sign-up')
@@ -26,12 +31,15 @@ def signUpPage():
 
     return render_template('sign-up.html')
 
-@app.route('/user-profile')
+@app.route('/user-profile', methods = ['POST'])
 def userProfile():
     """Display user's profile page."""
 
+
     return render_template('user-profile.html')
 
+    
+    
 @app.route('/about-us')
 def aboutUsPage():
     """Dispay Fresh Made Easy's 'About Us' page"""
@@ -43,5 +51,5 @@ def aboutUsPage():
 
 
 if __name__ == '__main__':
-    #connect_to_db(app)
+    connect_to_db(app)
     app.run(host='0.0.0.0', debug=True)

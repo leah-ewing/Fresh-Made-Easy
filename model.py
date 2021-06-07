@@ -14,6 +14,7 @@ def connect_to_db(flask_app, db_uri='postgresql:///fresh', echo=True):
     db.init_app(flask_app)
 
     print('Connected to the db!')
+    
 
 class User(db.Model):
     """A user."""
@@ -28,23 +29,10 @@ class User(db.Model):
     fname = db.Column(db.String(25))
     lname = db.Column(db.String(25))
     username = db.Column(db.String(15), unique = True)
-    # neighborhood_id = db.Column(db.Integer, db.ForeignKey('neighborhood.neighborhood_id'))
 
     def __repr__(self):
         return f'<User user_id = {self.user_id} email = {self.email} fullname = {self.fname} {self.lname} username = {self.username}>'
 
-# class Neighborhood(db.Model):
-#     """A neighborhood in Nashville."""
-
-#     __tablename__ = 'neighborhood'
-
-#     neighborhood_id = db.Column(db.Integer,
-#                                 autoincrement = True,
-#                                 primary_key = True)
-#     neighborhood_name = db.Column(db.String(25))
-
-#     def __repr__(self):
-#         return f'<Neighborhood neighborhood_id = {self.neighborhood_id} neighborhood_name = {self.neighborhood_name}>'
 
 class Purchase(db.Model):
     """A user's purchase."""
@@ -64,6 +52,7 @@ class Purchase(db.Model):
     def __repr__(self):
         return f'<Purchase purchase_id = {self.purchase_id} user_id = {self.user_id} date_time_of_purchase = {self.date_time_of_purchase} payment_method_id = {self.payment_method_id} pickup_date = {self.pickup_date} location_id = {self.location_id} order_cost = {self.order_cost}>'
 
+
 class Farm(db.Model):
     """A farm with items for purchase."""
 
@@ -77,6 +66,7 @@ class Farm(db.Model):
 
     def __repr__(self):
         return f'<Farm farm_id = {self.farm_id} farm_name = {self.farm_name} farm_address = {self.farm_address}>'
+
 
 class Item(db.Model):
     """An item available for purchase."""
@@ -96,6 +86,7 @@ class Item(db.Model):
     def __repr__(self):
         return f'<Item item_id = {self.item_id} farm_id = {self.farm_id} item_cost = {self.item_cost} item_name = {self.item_name} category_id = {self.category_id} item_description = {self.item_description}>'
 
+
 class PickupLocation(db.Model):
     """Order's pickup location."""
 
@@ -111,6 +102,7 @@ class PickupLocation(db.Model):
     def __repr__(self):
         return f'<PickupLocation location_id = {self.location_id} location_name = {self.location_name} location_address = {self.location_address} neighborhood_id = {self.neighborhood_id}>'
 
+
 class Category(db.Model):
     """Item's category"""
 
@@ -123,6 +115,7 @@ class Category(db.Model):
 
     def __repr__(self):
         return f'<Category category_id = {self.category_id} category_name = {self.category_name}>'
+
 
 class PaymentMethod(db.Model):
     """Purchase's payment method used"""

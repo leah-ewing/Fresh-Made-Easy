@@ -4,13 +4,15 @@
 
 {% block body %}
 <h2>Please Enter Log-in Info:</h2>
-<form action = "/user-profile">
+<form method = "POST" action = "/user-profile">
     <div class = "login">
-    <label>Email:</label>
-    <input type = "email" required /></textarea>
-    <label>Password:</label>
-    <input type = "password" required /></textarea>
-    <input type = "submit" id = "submit-info">
+        <label for = "field-email">Email:</label>
+        <input id = "field-email" type = "email" name = "email" required /></textarea>
+    </div>
+    <div class = "login">
+        <label for = "field-password">Password:</label>
+        <input id = "field-password" type = "password" name = "password" required /></textarea><br>
+        <input type = "submit" id = "submit-info">
     </div>
 </form>
 {% endblock %}

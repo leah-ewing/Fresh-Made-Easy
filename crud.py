@@ -54,7 +54,7 @@ def create_category(category_name):
     return category
 
 
-def create_pickup_location(location_name, location_address, neighbordhood_name):
+def create_pickup_location(location_name, location_address, neighborhood_name):
     """Create and return a new order pickup location."""
 
     pickup_location = PickupLocation(location_name = location_name,

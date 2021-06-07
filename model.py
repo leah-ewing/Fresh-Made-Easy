@@ -97,7 +97,7 @@ class PickupLocation(db.Model):
                             primary_key = True)
     location_name = db.Column(db.String(50))
     location_address = db.Column(db.String(100))
-    neighborhood_name = db.Column(db.String(25))
+    neighborhood_name = db.Column(db.String(50))
 
     def __repr__(self):
         return f'<PickupLocation location_id = {self.location_id} location_name = {self.location_name} location_address = {self.location_address} neighborhood_id = {self.neighborhood_id}>'

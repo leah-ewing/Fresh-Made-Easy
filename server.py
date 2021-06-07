@@ -14,16 +14,13 @@ def homepage():
 
     return render_template('homepage.html')
 
+
 @app.route('/login')
 def loginPage():
     """Display user login page."""
 
-    email = request.form.get("email")
-    password = request.form.get("password")
-    # come back here first, this is where you began
-    # placing user login sessions
-
     return render_template('login.html')
+
 
 @app.route('/sign-up')
 def signUpPage():
@@ -31,23 +28,62 @@ def signUpPage():
 
     return render_template('sign-up.html')
 
-@app.route('/user-profile', methods = ['POST'])
-def userProfile():
-    """Display user's profile page."""
 
+@app.route('/user-profile', methods = ["POST"])
+def createUser():
+    """Create a new user and redirect them to their profile."""
 
+    email = request.form.get("email")
+    password = request.form.get("password")
+    fname = request.form.get("fname")
+    lname = request.form.get("lname")
+    username = request.form.get("username")
+
+    user_email = crud.get_user_by_email(email)
+    user_username = crud.get_user_by_username(username)
+
+    if user_email:
+        flash("Profile already exists with that email. Please login.")
+        return redirect("/login")
+    elif user_username:
+        flash("Username not available, please try again.")
+        return redirect("/sign-up")
+    else:
+        crud.create_user(email, password, fname, lname, username)
+        
     return render_template('user-profile.html')
 
-    
-    
+
+# ****************** Bug starts here (see below) ***************
+# @app.route('/user-profile', methods = ["POST"])
+# def userProfile():
+#     """Display user's profile page."""
+
+#     email = request.form.get("email")
+#     password = request.form.get("password")
+
+#     user = crud.login_user(email, password)
+
+#     if user:
+#         flash("Welcome back!")
+#         return redirect("/user-profile")
+#     else:
+#         flash("Invalid email or password. Please try again.")
+#         return redirect("/login")
+
+    #return render_template('user-profile.html')
+
+# ^ Log-in page not working correctly, not getting any
+#   errors but getting redirected back even if the user
+#   is in the db. Need to add them to the session.
+
+
 @app.route('/about-us')
 def aboutUsPage():
-    """Dispay Fresh Made Easy's 'About Us' page"""
+    """Display Fresh Made Easy's 'About Us' page"""
 
     return render_template('about-us.html')
 
-
-#put your app routes here! :D
 
 
 if __name__ == '__main__':

@@ -4,81 +4,30 @@
 
 {% block body %}
 <h2>Please enter your information:</h2>
-<form action = "/user-profile">
+<form method = "POST" action = "/user-profile">
     <div class = "sign-up">
-    <label for = "username">Username:</label><br>
-    <input id = "username" type = "text" name = "username" required /><br>
-    <label for = "password">Password:</label><br>
-    <input type = "password" id = "password"></textarea><br>
-    <label for = "confirm-password" id = "confirm-password">Confirm Password:</label><br>
-    <input type = "password" id = "confirm-password"></textarea><br>
-    <label for = "first-name">First Name:</label><br>
-    <input id  = "first-name" type = "text" name = "fname" required /><br>
-    <label for = "last-name">Last Name:</label><br>
-    <input id = "last-name" type = "text" name = "lname" required /><br>
-    <label for = "user-address">Street Address:</label><br>
-    <input id = "user-address" type = "text" name = "street-address" required /><br>
-    <label for = "user-address">Apt Number (optional):</label><br>
-    <input id = "user-address" type = "text" name = "apt-number"><br>
-    <label for = "user-address">City:</label><br>
-    <input id = "user-address" type = "text" name = "user-city" required />
-    <select id = "user-address" name = "state">
-        <option value = "alabama">AL</option>
-        <option value = "alaska">AK</option>
-        <option value = "arizona">AZ</option>
-        <option value = "arkansas">AR</option>
-        <option value = "california">CA</option>
-        <option value = "colorado">CO</option>
-        <option value = "connecticut">CT</option>
-        <option value = "delaware">DE</option>
-        <option value = "florida">FL</option>
-        <option value = "georgia">GA</option>
-        <option value = "hawaii">HI</option>
-        <option value = "idaho">ID</option>
-        <option value = "illinois">IL</option>
-        <option value = "indiana">IN</option>
-        <option value = "iowa">IA</option>
-        <option value = "kansas">KS</option>
-        <option value = "kentucky">KY</option>
-        <option value = "louisiana">LA</option>
-        <option value = "maine">ME</option>
-        <option value = "maryland">MD</option>
-        <option value = "massachusetts">MA</option>
-        <option value = "michigan">MI</option>
-        <option value = "minnesota">MN</option>
-        <option value = "mississippi">MS</option>
-        <option value = "missouri">MO</option>
-        <option value = "montana">MT</option>
-        <option value = "nebraska">NE</option>
-        <option value = "nevada">NV</option>
-        <option value = "new-hampshire">NH</option>
-        <option value = "new-jersey">NJ</option>
-        <option value = "new-mexico">NM</option>
-        <option value = "new-york">NY</option>
-        <option value = "north-carolina">NC</option>
-        <option value = "north-dakota">ND</option>
-        <option value = "ohio">OH</option>
-        <option value = "oklahoma">OK</option>
-        <option value = "oregon">OR</option>
-        <option value = "pennsylvania">PA</option>
-        <option value = "rhode-island">RI</option>
-        <option value = "south-carolina">SC</option>
-        <option value = "south-dakota">SD</option>
-        <option value = "tennessee">TN</option>
-        <option value = "texas">TX</option>
-        <option value = "utah">UT</option>
-        <option value = "vermont">VT</option>
-        <option value = "virginia">VA</option>
-        <option value = "washington">WA</option>
-        <option value = "west-virginia">WV</option>
-        <option value = "wisconsin">WI</option>
-        <option value = "wyoming">WY</option>
-        <option value = "district-of-columbia">DC</option>
-    </select><br>
-    <label for = "user-phone">Phone Number 000-000-0000:</label><br>
-    <input id = "user-phone" type = "tel" name = "phone-number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"required /><br>
-    <button type = "submit" id = "sign-up">Sign Up</button>
-</div>
-</form>
+        <label for = "username">Username:</label><br>
+        <input id = "username" name = "username" required /><br>
+    </div>
+    <div class = "sign-up">
+        <label for = "email">Email:</label><br>
+        <input id = "email" type = "email" name = "email" required /><br>
+    </div>
+    <div class = "sign-up">
+        <label for = "password">Password:</label><br>
+        <input id = "password" type = "password" name = "password" required /><br>
+    </div>
+    <div class = "sign-up">
+        <label for = "fname">First Name:</label><br>
+        <input id = "fname" name = "fname" required /><br>
+    </div>
+    <div class = "sign-up">
+        <label for = "lname">Last Name:</label><br>
+        <input id = "lname" name = "lname" required />
+    </div>
+    <div class = "sign-up">
+        <button type = "submit">Sign Up</button>
+    </div>
 
  {% endblock %}
+

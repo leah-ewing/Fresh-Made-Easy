@@ -83,6 +83,25 @@ def get_all_purchases():
     return Purchases.query.all()
 
 
+def get_user_by_email(email):
+    """Return a user by email."""
+
+    return User.query.filter(User.email == email).first()
+
+def get_user_by_username(username):
+    """Return a user by username."""
+
+    return User.query.filter(User.username == username).first()
+
+
+# ******************************************
+# def login_user(email, password):
+#     """Returns a user by email and password."""
+
+#     return User.query.filter(User.email == email, User.password == password).first()
+# *******  ^ Not working correctly. *********
+
+
 if __name__ == '__main__':
     from server import app
     connect_to_db(app)

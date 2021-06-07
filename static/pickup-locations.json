@@ -1,15 +1,12 @@
 [{
     "location_name": "Turnip Truck",
-    "location_address": "701 Woodland St, Nashville, TN 37206",
-    "location_neighborhood": "East Nashville"
+    "location_address": "701 Woodland St, Nashville, TN 37206"
 },
 {
     "location_name": "Donelson Farmer's Market",
-    "location_address": "2730 Lebanon Pike, Nashville, TN 37214",
-    "location_neighborhood": "Donelson"
+    "location_address": "2730 Lebanon Pike, Nashville, TN 37214"
 },
 {
     "location_name": "Fat Bottom Brewing",
-    "location_address": "800 44th Ave N, Nashville, TN 37209",
-    "location_neighborhood": "The Nations"
+    "location_address": "800 44th Ave N, Nashville, TN 37209"
 }]

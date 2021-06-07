@@ -28,9 +28,23 @@ class User(db.Model):
     fname = db.Column(db.String(25))
     lname = db.Column(db.String(25))
     username = db.Column(db.String(15), unique = True)
+    # neighborhood_id = db.Column(db.Integer, db.ForeignKey('neighborhood.neighborhood_id'))
 
     def __repr__(self):
         return f'<User user_id = {self.user_id} email = {self.email} fullname = {self.fname} {self.lname} username = {self.username}>'
+
+# class Neighborhood(db.Model):
+#     """A neighborhood in Nashville."""
+
+#     __tablename__ = 'neighborhood'
+
+#     neighborhood_id = db.Column(db.Integer,
+#                                 autoincrement = True,
+#                                 primary_key = True)
+#     neighborhood_name = db.Column(db.String(25))
+
+#     def __repr__(self):
+#         return f'<Neighborhood neighborhood_id = {self.neighborhood_id} neighborhood_name = {self.neighborhood_name}>'
 
 class Purchase(db.Model):
     """A user's purchase."""
@@ -75,9 +89,9 @@ class Item(db.Model):
     item_name = db.Column(db.String(50))
     farm_id = db.Column(db.Integer, db.ForeignKey('farm.farm_id'))
     item_cost = db.Column(db.Integer)
-    category_id = db.Column(db.Integer, db.ForeignKey('category.category_id'))
     item_description = db.Column(db.String)
     item_img = db.Column(db.String)
+    category_id = db.Column(db.Integer, db.ForeignKey('category.category_id'))
 
     def __repr__(self):
         return f'<Item item_id = {self.item_id} farm_id = {self.farm_id} item_cost = {self.item_cost} item_name = {self.item_name} category_id = {self.category_id} item_description = {self.item_description}>'
@@ -90,12 +104,12 @@ class PickupLocation(db.Model):
     location_id = db.Column(db.Integer, 
                             autoincrement = True,
                             primary_key = True)
+    # neighborhood_id = db.Column(db.Integer, db.ForeignKey('neighborhood.neighborhood_id'))
     location_name = db.Column(db.String(50))
     location_address = db.Column(db.String(100))
-    location_neighborhood = db.Column(db.String(25))
 
     def __repr__(self):
-        return f'<PickupLocation location_id = {self.location_id} location_name = {self.location_name} location_address = {self.location_address}>'
+        return f'<PickupLocation location_id = {self.location_id} location_name = {self.location_name} location_address = {self.location_address} neighborhood_id = {self.neighborhood_id}>'
 
 class Category(db.Model):
     """Item's category"""

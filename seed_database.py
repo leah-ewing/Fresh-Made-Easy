@@ -32,19 +32,6 @@ with open('static/pickup-locations.json') as l:
     pickup_location_data = json.loads(l.read())
 
 
-# users_in_db = []
-# for user in user_data:
-#     email, password, fname, lname, username = (user['email'],
-#                                                 user['password'],
-#                                                 user['fname'],
-#                                                 user['lname'],
-#                                                 user['username'])
-
-# db_user = crud.create_user(email, password, fname, lname, username)
-# users_in_db.append(db.user)
-
-
-
 farms_in_db = []
 for farm in farm_data:
     farm_name, farm_address = (farm['farm_name'],
@@ -87,11 +74,22 @@ payment_methods_in_db.append(db_payment_method)
 
 pickup_locations_in_db = []
 for pickup_location in pickup_location_data:
-    location_name, location_address, location_neighborhood = (pickup_location['location_name'],
-                                                            pickup_location['location_address'],
-                                                            pickup_location['location_neighborhood'])
-pickup_locations_in_db = crud.create_pickup_location(pickup_location)
+    location_name, location_address = (pickup_location['location_name'],
+                                        pickup_location['location_address'])
+
+db_pickup_location = crud.create_pickup_location(location_name, location_address)
 pickup_locations_in_db.append(db_pickup_location)
+
+
+for n in range(1, 10):
+        email = f'user{n}@test.com'
+        password = 'test'
+        fname = 'test'
+        lname = 'testerson'
+        username = f'testy{n}'
+
+
+        user = crud.create_user(email, password, fname, lname, username)
 
 
 

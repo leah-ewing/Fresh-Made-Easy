@@ -18,6 +18,16 @@ def create_user(email, password, fname, lname, username):
 
     return user
 
+# def create_neighborhood(neighborhood_name):
+#     """Create and return a new neighborhood in Nashville."""
+
+#     neighborhood = Neighborhood(neighborhood_name = neighborhood_name)
+
+#     db.session.add(neighborhood)
+#     db.session.commit()
+
+#     return neighborhood
+
 
 def create_farm(farm_name, farm_address):
     """Create and return a new farm."""
@@ -26,13 +36,14 @@ def create_farm(farm_name, farm_address):
     db.session.add(farm)
     db.session.commit()
 
+    return farm
 
-def create_item(item_name, item_cost, category_name, item_description, item_img):
+
+def create_item(item_name, item_cost, item_description, item_img):
     """Create and return a new item."""
     
     item = Item(item_name = item_name, 
             item_cost = item_cost,
-            category_id = category_id,
             item_description = item_description, 
             item_img = item_img)
 
@@ -48,17 +59,16 @@ def create_category(category_name):
     category = Category(category_name = category_name)
     
     db.session.add(category)
-    db.commit()
+    db.session.commit()
 
     return category
 
 
-def create_pickup_location(location_name, location_address, location_neighborhood):
+def create_pickup_location(location_name, location_address):
     """Create and return a new order pickup location."""
 
     pickup_location = PickupLocation(location_name = location_name,
-                                    location_address = location_address,
-                                    location_neighborhood = location_neighborhood)
+                                    location_address = location_address)
 
     db.session.add(pickup_location)
     db.session.commit()
@@ -72,7 +82,9 @@ def create_payment_method(payment_method_type):
     payment_method = PaymentMethod(payment_method_type = payment_method_type)
 
     db.session.add(payment_method)
-    db.commit()
+    db.session.commit()
+
+    return payment_method
 
 
 def get_all_purchases():

@@ -54,11 +54,12 @@ def create_category(category_name):
     return category
 
 
-def create_pickup_location(location_name, location_address):
+def create_pickup_location(location_name, location_address, neighbordhood_name):
     """Create and return a new order pickup location."""
 
     pickup_location = PickupLocation(location_name = location_name,
-                                    location_address = location_address)
+                                    location_address = location_address,
+                                    neighborhood_name = neighborhood_name)
 
     db.session.add(pickup_location)
     db.session.commit()
@@ -88,18 +89,17 @@ def get_user_by_email(email):
 
     return User.query.filter(User.email == email).first()
 
+
 def get_user_by_username(username):
     """Return a user by username."""
 
     return User.query.filter(User.username == username).first()
 
 
-# ******************************************
 def login_user(email, password):
     """Returns a user by email and password."""
 
     return User.query.filter(User.email == email, User.password == password).first()
-# *******  ^ Not working correctly. *********
 
 
 if __name__ == '__main__':

@@ -8,6 +8,8 @@ app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
+
+
 @app.route('/')
 def homepage():
     """Display the homepage."""
@@ -28,6 +30,7 @@ def signUpPage():
 
     return render_template('sign-up.html')
 
+
 @app.route('/', methods = ["POST"])
 def loginUser():
     """Login user and redirect to homepage."""
@@ -44,7 +47,6 @@ def loginUser():
         return redirect("/login") 
     
     return render_template("homepage.html")
-
 
 
 @app.route('/user-profile', methods = ["POST"])
@@ -70,30 +72,6 @@ def createUser():
         crud.create_user(email, password, fname, lname, username)
         
     return render_template('user-profile.html')
-
-
-# ****************** Bug starts here (see below) ***************
-# @app.route('/user-profile', methods = ["POST"])
-# def userProfile():
-#     """Display user's profile page."""
-
-#     email = request.form.get("email")
-#     password = request.form.get("password")
-
-#     user = crud.login_user(email, password)
-
-#     if user:
-#         flash("Welcome back!")
-#         return redirect("/user-profile")
-#     else:
-#         flash("Invalid email or password. Please try again.")
-#         return redirect("/login")
-
-    #return render_template('user-profile.html')
-
-# ^ Log-in page not working correctly, not getting any
-#   errors but getting redirected back even if the user
-#   is in the db. Need to add them to the session.
 
 
 @app.route('/about-us')

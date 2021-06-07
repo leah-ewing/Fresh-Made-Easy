@@ -74,10 +74,11 @@ payment_methods_in_db.append(db_payment_method)
 
 pickup_locations_in_db = []
 for pickup_location in pickup_location_data:
-    location_name, location_address = (pickup_location['location_name'],
-                                        pickup_location['location_address'])
+    location_name, location_address, neighborhood_name = (pickup_location['location_name'],
+                                        pickup_location['location_address'],
+                                        pickup_location['neighborhood_name'])
 
-db_pickup_location = crud.create_pickup_location(location_name, location_address)
+db_pickup_location = crud.create_pickup_location(location_name, location_address, neighborhood_name)
 pickup_locations_in_db.append(db_pickup_location)
 
 

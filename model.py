@@ -14,7 +14,7 @@ def connect_to_db(flask_app, db_uri='postgresql:///fresh', echo=True):
     db.init_app(flask_app)
 
     print('Connected to the db!')
-    
+
 
 class User(db.Model):
     """A user."""
@@ -95,9 +95,9 @@ class PickupLocation(db.Model):
     location_id = db.Column(db.Integer, 
                             autoincrement = True,
                             primary_key = True)
-    # neighborhood_id = db.Column(db.Integer, db.ForeignKey('neighborhood.neighborhood_id'))
     location_name = db.Column(db.String(50))
     location_address = db.Column(db.String(100))
+    neighborhood_name = db.Column(db.String(25))
 
     def __repr__(self):
         return f'<PickupLocation location_id = {self.location_id} location_name = {self.location_name} location_address = {self.location_address} neighborhood_id = {self.neighborhood_id}>'

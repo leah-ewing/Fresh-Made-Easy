@@ -14,6 +14,14 @@ def homepage():
 
     return render_template('homepage.html')
 
+
+@app.route('/')
+def index():
+    if "email" in session:
+        fname = session['email']
+        return fname + ", you have been logged in."
+
+
 @app.route('/', methods = ["POST"])
 def loginUser():
     """Login user and redirect them to the homepage"""
@@ -25,14 +33,24 @@ def loginUser():
     valid_user = crud.login_user(email, password)
 
     if valid_user:
-        session['current_user'] = email
-        flash(f"Welcome back, {fname}!")
+        session["email"] = True
+        flash(f"Welcome back, {email}!")
     else:
         flash("Invalid login. Please try again.")
         return redirect("/login") 
     
     return render_template("homepage.html")
-# ***   ^ f string is returning None when in session ***
+# ***   ^ I want this to eventually say the user's first name, not their email ***
+
+@app.route('/logout')
+def logout():
+    """Logout user."""
+
+    session.pop('email', None)
+    flash("You have been signed out!")
+    return redirect('/')
+
+    return render_template("homepage.html")
 
 
 @app.route('/login')
@@ -77,9 +95,16 @@ def createUser():
 
 @app.route('/about-us')
 def aboutUsPage():
-    """Display Fresh Made Easy's 'About Us' page"""
+    """Display Fresh Made Easy's 'About Us' page."""
 
     return render_template('about-us.html')
+
+
+@app.route('/shopping-cart')
+def shoppingCart():
+    """Display a user's shopping cart."""
+
+    return render_template('shopping-cart.html')
 
 
 

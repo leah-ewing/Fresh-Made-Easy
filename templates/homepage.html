@@ -1,21 +1,14 @@
 {% extends 'base.html' %}
-{% block title %}Fresh Made Easy Homepage{% endblock %}
+{% block title %}Fresh Made Easy Home{% endblock %}
 
 {% block body %}
   <h1>Fresh Made Easy</h1>
 
   <h2>Make Fresh Easy... With Fresh Made Easy!</h2><br><br>
-  <form action = "/login">
-    <div class = "login">
-    <button type = "submit" id = "login">Log In</button>
-  </div></form>
-    <form action = "/sign-up">
-      <div class = "sign-up">
-    <button type = "submit" id = "sign-up">Sign Up</button>
-  </div></form>
+
   <form action = "/about-us">
-  <div class = "about-us">
-    <button type = "submit" id = "about-us">About Us</button>
-  </div></form>
+    <div class = "about-us">
+      <button type = "submit" id = "about-us">About Us</button>
+    </div></form>
 
 {% endblock %}

@@ -20,10 +20,9 @@ def loginUser():
 
     email = request.form.get("email")
     password = request.form.get("password")
-    fname = request.form.get("fname")
+    #fname = request.form.get("fname")
 
     valid_user = crud.login_user(email, password)
-    #user_name = crud.get_user_name(fname) 
 
     if valid_user:
         session['current_user'] = email

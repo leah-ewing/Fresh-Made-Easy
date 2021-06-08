@@ -101,12 +101,13 @@ def login_user(email, password):
 
     return User.query.filter(User.email == email, User.password == password).first()
 
-# def get_user_name(fname):
+
+# def get_user_fname(fname):
 #     """Return a user's first name."""
     
-#     fname = User.query.filter(User.fname)
+#     first_name = User.query.filter(User.fname)
 
-#     return fname
+#     return first_name
 # ^ not sure if this function is ever going to be necessary
 
 

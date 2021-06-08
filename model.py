@@ -28,7 +28,7 @@ class User(db.Model):
     password = db.Column(db.String)
     fname = db.Column(db.String(25))
     lname = db.Column(db.String(25))
-    username = db.Column(db.String(15), unique = True)
+    username = db.Column(db.String(25), unique = True)
 
     def __repr__(self):
         return f'<User user_id = {self.user_id} email = {self.email} fullname = {self.fname} {self.lname} username = {self.username}>'

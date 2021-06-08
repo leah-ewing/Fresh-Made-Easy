@@ -8,6 +8,7 @@ app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
+
 @app.route('/')
 def homepage():
     """Display the homepage."""
@@ -15,40 +16,37 @@ def homepage():
     return render_template('homepage.html')
 
 
-@app.route('/')
-def index():
-    if "email" in session:
-        fname = session['email']
-        return fname + ", you have been logged in."
-
-
 @app.route('/', methods = ["POST"])
 def loginUser():
-    """Login user and redirect them to the homepage"""
+    """Login user and redirect them to the homepage."""
 
     email = request.form.get("email")
     password = request.form.get("password")
-    #fname = request.form.get("fname")
 
+    fname = crud.get_user_fname(email)
     valid_user = crud.login_user(email, password)
 
     if valid_user:
-        session["email"] = True
-        flash(f"Welcome back, {email}!")
+        session["current_user"] = email
+        flash(f"Welcome back, {fname}!")
     else:
         flash("Invalid login. Please try again.")
         return redirect("/login") 
     
     return render_template("homepage.html")
-# ***   ^ I want this to eventually say the user's first name, not their email ***
+
 
 @app.route('/logout')
 def logout():
     """Logout user."""
 
-    session.pop('email', None)
-    flash("You have been signed out!")
-    return redirect('/')
+    if session["current_user"]:
+        session["current_user"] = False
+        flash("You have been signed out!")
+        return redirect('/')
+    else:
+        flash("Please login.")
+        return redirect('/')
 
     return render_template("homepage.html")
 
@@ -57,14 +55,20 @@ def logout():
 def loginPage():
     """Display user login page."""
 
-    return render_template('login.html')
+    if session["current_user"]:
+        return redirect('/')
+    else:
+        return render_template('login.html')
 
 
 @app.route('/sign-up')
 def signUpPage():
     """Display user sign-up page."""
 
-    return render_template('sign-up.html')
+    if session["current_user"]:
+        return redirect('/')
+    else:
+        return render_template('sign-up.html')
 
 
 @app.route('/user-profile', methods = ["POST"])
@@ -104,8 +108,22 @@ def aboutUsPage():
 def shoppingCart():
     """Display a user's shopping cart."""
 
-    return render_template('shopping-cart.html')
+    if session["current_user"]:
+        return render_template('shopping-cart.html')
+    else:
+        flash("Please login.")
+        return redirect('/')
 
+
+@app.route('/user-profile')
+def userProfile():
+    """Display a user's profile page."""
+    
+    if session["current_user"]:
+        return render_template('user-profile.html')
+    else:
+        flash("Please login.")
+        return redirect('/')
 
 
 if __name__ == '__main__':

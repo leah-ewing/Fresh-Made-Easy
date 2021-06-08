@@ -110,6 +110,15 @@ def login_user(email, password):
 #     return first_name
 # ^ not sure if this function is ever going to be necessary
 
+def get_user_fname(email):
+    """Return a user's first name."""
+
+    users = User.query.all()
+
+    for user in users:
+        if user.email == email:
+            return user.fname
+            
 
 if __name__ == '__main__':
     from server import app

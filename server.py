@@ -1,6 +1,6 @@
 from flask import (Flask,render_template, request, flash, session,
                    redirect)
-from model import connect_to_db
+from model import User, connect_to_db
 import crud
 from jinja2 import StrictUndefined
 
@@ -8,13 +8,32 @@ app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
-
-
 @app.route('/')
 def homepage():
     """Display the homepage."""
 
     return render_template('homepage.html')
+
+@app.route('/', methods = ["POST"])
+def loginUser():
+    """Login user and redirect them to the homepage"""
+
+    email = request.form.get("email")
+    password = request.form.get("password")
+    fname = request.form.get("fname")
+
+    valid_user = crud.login_user(email, password)
+    #user_name = crud.get_user_name(fname) 
+
+    if valid_user:
+        session['current_user'] = email
+        flash(f"Welcome back, {fname}!")
+    else:
+        flash("Invalid login. Please try again.")
+        return redirect("/login") 
+    
+    return render_template("homepage.html")
+# ***   ^ f string is returning None when in session ***
 
 
 @app.route('/login')
@@ -29,24 +48,6 @@ def signUpPage():
     """Display user sign-up page."""
 
     return render_template('sign-up.html')
-
-
-@app.route('/', methods = ["POST"])
-def loginUser():
-    """Login user and redirect to homepage."""
-
-    email = request.form.get("email")
-    password = request.form.get("password")
-
-    valid_user = crud.login_user(email, password)
-
-    if valid_user:
-        flash("Welcome back!")
-    else:
-        flash("Invalid login. Please try again.")
-        return redirect("/login") 
-    
-    return render_template("homepage.html")
 
 
 @app.route('/user-profile', methods = ["POST"])
@@ -70,8 +71,9 @@ def createUser():
         return redirect("/sign-up")
     else:
         crud.create_user(email, password, fname, lname, username)
+        flash("Account created! Please login.")
         
-    return render_template('user-profile.html')
+    return render_template('login.html')
 
 
 @app.route('/about-us')

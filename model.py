@@ -64,8 +64,11 @@ class Farm(db.Model):
     farm_name = db.Column(db.String(50))
     farm_address = db.Column(db.String(100))
 
+    item = db.relationship('Item', backref = 'farm')
+
     def __repr__(self):
         return f'<Farm farm_id = {self.farm_id} farm_name = {self.farm_name} farm_address = {self.farm_address}>'
+
 
 
 class Item(db.Model):
@@ -112,6 +115,8 @@ class Category(db.Model):
                             autoincrement = True, 
                             primary_key = True)
     category_name = db.Column(db.String(50))
+
+    item = db.relationship('Item', backref='category')
 
     def __repr__(self):
         return f'<Category category_id = {self.category_id} category_name = {self.category_name}>'

@@ -101,6 +101,14 @@ def login_user(email, password):
 
     return User.query.filter(User.email == email, User.password == password).first()
 
+# def get_user_name(fname):
+#     """Return a user's first name."""
+    
+#     fname = User.query.filter(User.fname)
+
+#     return fname
+# ^ not sure if this function is ever going to be necessary
+
 
 if __name__ == '__main__':
     from server import app

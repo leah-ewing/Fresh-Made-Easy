@@ -125,6 +125,12 @@ def userProfile():
         flash("Please login.")
         return redirect('/')
 
+@app.route('/all-pickup-locations')
+def allPickupLocations():
+    """Displays all pickup locations."""
+
+    return render_template('all-pickup-locations.html')
+
 
 if __name__ == '__main__':
     connect_to_db(app)

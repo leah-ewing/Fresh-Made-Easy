@@ -125,6 +125,7 @@ def userProfile():
         flash("Please login.")
         return redirect('/')
 
+
 @app.route('/all-pickup-locations')
 def allPickupLocations():
     """Displays all pickup locations."""

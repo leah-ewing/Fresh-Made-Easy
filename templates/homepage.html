@@ -13,7 +13,18 @@
     </div></form>
   <form action = "/all-pickup-locations">
     <div class = "all-pickup-locations">
-      <button type = "submit" id = "all-pickup-locations">View Pickup Locations!</button>
+      <button type = "submit" id = "all-pickup-locations">View Pickup Locations</button>
     </div></form>
+    <form action = "/all-farms">
+    <div class = "all-farms">
+      <button type = "submit" id = "all-farms">Get to Know Our Farms</button>
+    </div></form>
+
+    {% if session["current_user"] %}
+    <form action = "/shop">
+    <div class = "shop">
+      <button type = "submit" id = "shop">Create Your Box</button>
+    </div></form>
+    {% endif %}
 
 {% endblock %}

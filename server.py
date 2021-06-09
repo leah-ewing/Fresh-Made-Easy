@@ -142,6 +142,27 @@ def allPickupLocations():
     return render_template('all-pickup-locations.html')
 
 
+@app.route('/all-farms')
+def allFarms():
+    """Displays all farms."""
+
+    return render_template('all-farms.html')
+
+
+@app.route('/shop')
+def shop():
+    """Takes user to the shop page."""
+
+    return render_template('shop.html')
+
+
+@app.route('/how-it-works')
+def howItWorks():
+    """Displays 'How It Works' page."""
+
+    return render_template('how-it-works.html')
+
+
 if __name__ == '__main__':
     connect_to_db(app)
     app.run(host='0.0.0.0', debug=True)

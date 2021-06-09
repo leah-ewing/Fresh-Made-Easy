@@ -35,7 +35,7 @@ def loginUser():
     valid_user = crud.login_user(email, password)
 
     if valid_user:
-        session["current_user"] = True
+        session["current_user"] = email
         flash(f"Welcome back, {fname}!")
     else:
         flash("Invalid login. Please try again.")
@@ -82,7 +82,7 @@ def signUpPage():
 
 @app.route('/user-profile', methods = ["POST"])
 def createUser():
-    """Create a new user and redirect them to their profile."""
+    """Create a new user and redirect them to login page."""
 
     email = request.form.get("email")
     password = request.form.get("password")

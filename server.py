@@ -118,9 +118,18 @@ def shoppingCart():
 @app.route('/user-profile')
 def userProfile():
     """Display a user's profile page."""
-    
+
+    email = session["current_user"]
+
+    fname = crud.get_user_fname(email)
+    lname = crud.get_user_lname(email)
+    username = crud.get_user_by_username(email)
+
     if session["current_user"]:
-        return render_template('user-profile.html')
+        return render_template('user-profile.html',
+                                fname = fname,
+                                lname = lname,
+                                username = username)
     else:
         flash("Please login.")
         return redirect('/')

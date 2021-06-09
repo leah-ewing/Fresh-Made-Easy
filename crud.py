@@ -90,10 +90,14 @@ def get_user_by_email(email):
     return User.query.filter(User.email == email).first()
 
 
-def get_user_by_username(username):
+def get_user_by_username(email):
     """Return a user by username."""
 
-    return User.query.filter(User.username == username).first()
+    users = User.query.all()
+
+    for user in users:
+        if user.email == email:
+            return user.username
 
 
 def login_user(email, password):
@@ -110,6 +114,16 @@ def get_user_fname(email):
     for user in users:
         if user.email == email:
             return user.fname
+
+
+def get_user_lname(email):
+    """Return a user's last name."""
+
+    users = User.query.all()
+
+    for user in users:
+        if user.email == email:
+            return user.lname
 
 
 if __name__ == '__main__':

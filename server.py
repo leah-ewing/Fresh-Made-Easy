@@ -15,6 +15,14 @@ def homepage():
 
     return render_template('homepage.html')
 
+app.route('/')
+def index():
+    if "email" in session:
+       current_user = session["current_user"]
+       return current_user
+    else:
+       return render_template('homepage.html')
+
 
 @app.route('/', methods = ["POST"])
 def loginUser():
@@ -27,7 +35,7 @@ def loginUser():
     valid_user = crud.login_user(email, password)
 
     if valid_user:
-        session["current_user"] = email
+        session["current_user"] = True
         flash(f"Welcome back, {fname}!")
     else:
         flash("Invalid login. Please try again.")

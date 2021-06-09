@@ -42,6 +42,7 @@ def logout():
 
     if session["current_user"]:
         session["current_user"] = False
+        session.pop('email', None)
         flash("You have been signed out!")
         return redirect('/')
     else:

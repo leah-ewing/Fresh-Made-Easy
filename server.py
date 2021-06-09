@@ -148,6 +148,7 @@ def userProfile():
 def allPickupLocations():
     """Displays all pickup locations."""
 
+
     return render_template('all-pickup-locations.html')
 
 

@@ -90,6 +90,12 @@ def get_user_by_email(email):
     return User.query.filter(User.email == email).first()
 
 
+def user_username(email):
+    """Returns all usernames."""
+
+    return User.query.filter(User.username == email).first()
+
+
 def get_user_by_username(email):
     """Return a user by username."""
 

@@ -81,14 +81,14 @@ def createUser():
     lname = request.form.get("lname")
     username = request.form.get("username")
 
+    user_username = crud.user_username(username)
     user_email = crud.get_user_by_email(email)
-    user_username = crud.get_user_by_username(username)
-
-    if user_email:
-        flash("Profile already exists with that email. Please login.")
-        return redirect("/login")
-    elif user_username:
+    
+    if user_username:
         flash("Username not available, please try again.")
+        return redirect("/sign-up")
+    elif user_email:
+        flash("Profile already exists with that email. Please login.")
         return redirect("/sign-up")
     else:
         crud.create_user(email, password, fname, lname, username)
@@ -120,7 +120,6 @@ def userProfile():
     """Display a user's profile page."""
 
     email = session["current_user"]
-
     fname = crud.get_user_fname(email)
     lname = crud.get_user_lname(email)
     username = crud.get_user_by_username(email)
@@ -129,7 +128,8 @@ def userProfile():
         return render_template('user-profile.html',
                                 fname = fname,
                                 lname = lname,
-                                username = username)
+                                username = username,
+                                email = email)
     else:
         flash("Please login.")
         return redirect('/')

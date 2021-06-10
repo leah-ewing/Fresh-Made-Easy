@@ -142,9 +142,17 @@ def get_item_name():
 def get_item_description():
     """Return an item's description."""
 
-    item_prices = Item.query.filter(Item.item_cost).all()
+    item_description = Item.query.filter(Item.item_description).all()
 
-    return item_prices
+    return item_description
+    
+
+def get_item_cost():
+    """Return an item's cost."""
+
+    item_cost = Item.query.filter(Item.item_cost).all()
+
+    return item_cost
 
 
 

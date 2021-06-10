@@ -20,7 +20,7 @@
       <button type = "submit" id = "all-farms">Get to Know Our Farms</button>
     </div></form>
 
-    {% if session["current_user"] %}
+    {% if current_user != None %}
     <form action = "/shop">
     <div class = "shop">
       <button type = "submit" id = "shop">Create Your Box</button>

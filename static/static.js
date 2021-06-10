@@ -23,7 +23,8 @@ $.get('/static/items.json', (res) => {
                                     width = 200
                                     alt = "${item.item_name} image"</img><br>
                                     ${item.item_name}</a><br><br></ol>`);
-        //below isn't right                           
+
+               
         $('#name-item').append(`${item.item_name}`)
         $('#description-item').append(`${item.item_description}`)
         $('#price-item').append(`${item.item_cost}`)

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Profile Page{% endblock %}
+{% block title %}{{fname}}'s Profile Page{% endblock %}
 
 {% block body %}
 
@@ -8,7 +8,8 @@
 <h3>
     Name: {{fname}} {{lname}}<br>
     AKA: {{username}} <br>
-    Email: {{email}}
+    Email: {{email}} <br>
+    <a href = '/user-purchases'>Purchase History</a>
 </h3>
 
 {% endblock %}

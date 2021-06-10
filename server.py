@@ -19,7 +19,7 @@ app.route('/')
 def index():
     if "email" in session:
        current_user = session["current_user"]
-       return current_user
+       return render_template('homepage.html')
     else:
        return render_template('homepage.html')
 
@@ -99,6 +99,15 @@ def createUser():
     elif user_email:
         flash("Profile already exists with that email. Please login.")
         return redirect("/sign-up")
+    elif len(fname) > 25:
+        flash("Please limit first name to 25 characters.")
+        return redirect("/sign-up")
+    elif len(lname) > 25:
+        flash("Please limit last name to 25 characters.")
+        return redirect("/sign-up")
+    elif len(username) > 25:
+        flash("Please limit username to 25 characters.")
+        return redirect("/sign-up")
     else:
         crud.create_user(email, password, fname, lname, username)
         flash("Account created! Please login.")
@@ -171,6 +180,26 @@ def howItWorks():
     """Displays 'How It Works' page."""
 
     return render_template('how-it-works.html')
+
+@app.route('/pickup-location-info')
+def pickupLocationInfo():
+    """Displays information for a pickup location."""
+
+    return render_template('pickup-location-info.html')
+
+@app.route('/farm-info')
+def farmInfo():
+    """Displays information for a farm."""
+
+    return render_template('farm-info.html')
+
+@app.route('/user-purchases')
+def userPurchases():
+    """Displays user's purchase history."""
+
+    fname = crud.get_user_fname(session['current_user'])
+
+    return render_template('user-purchases.html', fname = fname)
 
 
 if __name__ == '__main__':

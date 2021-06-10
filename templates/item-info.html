@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}*Item* Info{% endblock %}
+
+{% block body %}
+
+<h1>*Item* Info</h1>
+<h3>Coming soon...</h3>
+
+<h4>
+    *item image here* <br><br>
+    Name: <br>
+    Farm: <br>
+    Description: <br>
+    Price: <br>
+    <form action = "/add-item-to-cart">
+    <div class = "add-to-cart">
+        <input id = "add-to-cart" type = "number" name = "add-to-cart" required /><br>
+    </div>
+    <div class = "add-to-cart">
+        <button type = "submit">Add To Cart</button>
+    </div></form><br><br>
+
+
+
+    
+    *google maps api here*</h4>
+
+{% endblock %}

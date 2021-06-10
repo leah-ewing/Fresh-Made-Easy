@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block body %}
+
+<h2>Checkout</h2>
+<form action = "/confirmed">
+    <div class = "checkout">
+        <label for = "fname">First Name:</label><br>
+        <input id = "fname" required /><br><br>
+    </div>
+    <div class = "checkout">
+        <label for = "lname">Last Name:</label><br>
+        <input id = "lname" required /><br><br>
+    </div>
+    <div class = "checkout">
+        <label for = "pickup-location"><h3>Pickup Location:</h3></label>
+        <b>East Nashville:</b><br>
+        <input id = "turnip-truck" type = "radio" name = "location" value = "Turnip Truck">
+        Turnip Truck<br><br>
+        <b>Donelson:</b><br>
+        <input id = "donelson-farmers-market" type = "radio" name = "location" value = "Donelson Farmer's Market">
+        Donelson Farmer's Market<br><br>
+        <b>West Nashville - The Nations:</b><br>
+        <input id = "fat-bottom-brewing" type = "radio" name = "location" value = "Fat Bottom Brewing">
+        Fat Bottom Brewing<br><br><br>
+    </div> 
+    <div class = "checkout">
+        <label for = "phone-number">Phone Number:</label><br>
+        <input id = "phone-number" required /><br><br>
+    </div>
+    <div class = "checkout">
+        <label for = "cc-number">Credit Card Number:</label><br>
+        <input id = "cc-number" required /><br><br>
+    </div>
+    <div class = "checkout">
+        <label for = "payment-method"><h3>Payment Method:</h3></label>
+        <input id = "visa" type = "radio" name = "payment-method">
+        Visa<br>
+        <input id = "mastercard" type = "radio" name = "payment-method">
+        Mastercard<br>
+        <input id = "discover" type = "radio" name = "payment-method">
+        Discover<br>
+        <input id = "american-express" type = "radio" name = "payment-method">
+        American Express<br><br>
+    </div>
+    <div class = "checkout">
+        <button type = "submit">Confirm Checkout</button>
+    </div>
+    <form>
+
+
+{% endblock %}
+
+<!-- add a secion where the user can set their pickup time -->

@@ -210,6 +210,52 @@ def userPurchases():
 
     return render_template('user-purchases.html', fname = fname)
 
+@app.route('/item-info')
+def itemInfo():
+    """Displays information for an item."""
+
+    return render_template('item-info.html')
+
+
+@app.route('/checkout')
+def checkout():
+    """Displays checkout page."""
+
+    if session["current_user"]:
+        return render_template('checkout.html')
+    else:
+        flash("Please login.")
+        return redirect('/')
+
+
+@app.route('/confirmed')
+def confirmed():
+    """Displays a confirmation of a purchase."""
+
+    if session["current_user"]:
+        return render_template('confirmed.html')
+    else:
+        flash("Please login.")
+        return redirect('/')    
+
+
+@app.route('/purchase-info')
+def purchaseInfo():
+    """Displays information for a user's purchase."""
+
+    if session["current_user"]:
+        return render_template('purchase-info.html')
+    else:
+        flash("Please login.")
+        return redirect('/')  
+
+
+@app.route('/add-item-to-cart')
+def addItemToCart():
+    """Adds an item to the user's shopping cart."""
+
+    return render_template('shopping-cart.html')
+    #temporary route
 
 
 

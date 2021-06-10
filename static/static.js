@@ -14,3 +14,10 @@ $.get('/static/farms.json', (res) => {
         $('#farm-api').append(`<ol><a href = '/farm-info'>${farm.farm_name}</a></ol>`);
     }
 });
+
+// list of all items in 'shop.html'
+$.get('/static/items.json', (res) => {
+    for (const item of res) {
+        $('#item-api').append(`<ol><a href = '/item-info'>${item.item_name}</a></ol>`);
+    }
+});

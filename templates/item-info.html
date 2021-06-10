@@ -4,15 +4,21 @@
 
 {% block body %}
 
+<script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous">
+</script>
+
 <h1>*Item* Info</h1>
 <h3>Coming soon...</h3>
 
 <h4>
     *item image here* <br><br>
-    Name: <br>
-    Farm: <br>
-    Description: <br>
-    Price: <br>
+    <u>Name:</u> <text id = "name-item"></text><br><br>
+    <u>Farm:</u> <i>2.0</i><br><br>
+    <u>Description:</u> <text id = "description-item"></text><br><br>
+    <u>Price:</u> <text id = "price-item"></text><br><br>
     <form action = "/add-item-to-cart">
     <div class = "add-to-cart">
         <input id = "add-to-cart" type = "number" name = "add-to-cart" required /><br>
@@ -23,7 +29,11 @@
 
 
 
-    
+    See where this comes from!<br>
     *google maps api here*</h4>
+
+
+    <!-- Javascript file -->
+<script src="/static/static.js"></script>
 
 {% endblock %}

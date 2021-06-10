@@ -131,6 +131,22 @@ def get_user_lname(email):
         if user.email == email:
             return user.lname
 
+def get_item_name():
+    """Return an item's name."""
+
+    items = Item.query.filter(Item.item_name).all()
+
+    return items
+
+
+def get_item_description():
+    """Return an item's description."""
+
+    item_prices = Item.query.filter(Item.item_cost).all()
+
+    return item_prices
+
+
 
 if __name__ == '__main__':
     from server import app

@@ -15,13 +15,17 @@ $.get('/static/farms.json', (res) => {
     }
 });
 
-// list of all items in 'shop.html'
+// list of all items in 'shop.html' with names and images
 $.get('/static/items.json', (res) => {
     for (const item of res) {
-        $('#item-api').append(`<ol><a href = '/item-info'><img class = "item-image"
+        $('#item-api').append(`<ol><a id = "item-info" href = '/item-info'><img class = "item-image"
                                     src = ${item.item_img}
                                     width = 200
-                                    alt = "item image"</img><br>
+                                    alt = "${item.item_name} image"</img><br>
                                     ${item.item_name}</a><br><br></ol>`);
+        //below isn't right                           
+        $('#name-item').append(`${item.item_name}`)
+        $('#description-item').append(`${item.item_description}`)
+        $('#price-item').append(`${item.item_cost}`)
     }
 });

@@ -214,7 +214,7 @@ def userPurchases():
 def itemInfo():
     """Displays information for an item."""
 
-    return render_template('item-info.html')
+    return render_template('item-info.html/')
 
 
 @app.route('/checkout')

@@ -9,14 +9,20 @@ app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
 
+
+
+
 @app.route('/')
 def homepage():
     """Display the homepage."""
 
     return render_template('homepage.html')
 
-app.route('/')
+
+@app.route('/')
 def index():
+    """Create user session"""
+
     if "email" in session:
        current_user = session["current_user"]
        return render_template('homepage.html')
@@ -181,17 +187,20 @@ def howItWorks():
 
     return render_template('how-it-works.html')
 
+
 @app.route('/pickup-location-info')
 def pickupLocationInfo():
     """Displays information for a pickup location."""
 
     return render_template('pickup-location-info.html')
 
+
 @app.route('/farm-info')
 def farmInfo():
     """Displays information for a farm."""
 
     return render_template('farm-info.html')
+
 
 @app.route('/user-purchases')
 def userPurchases():
@@ -200,6 +209,9 @@ def userPurchases():
     fname = crud.get_user_fname(session['current_user'])
 
     return render_template('user-purchases.html', fname = fname)
+
+
+
 
 
 if __name__ == '__main__':

@@ -18,6 +18,10 @@ $.get('/static/farms.json', (res) => {
 // list of all items in 'shop.html'
 $.get('/static/items.json', (res) => {
     for (const item of res) {
-        $('#item-api').append(`<ol><a href = '/item-info'>${item.item_name}</a></ol>`);
+        $('#item-api').append(`<ol><a href = '/item-info'><img class = "item-image"
+                                    src = ${item.item_img}
+                                    width = 200
+                                    alt = "item image"</img><br>
+                                    ${item.item_name}</a><br><br></ol>`);
     }
 });

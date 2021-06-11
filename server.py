@@ -1,7 +1,7 @@
 from flask import (Flask,render_template, request, flash, session,
                    redirect)
 from model import User, connect_to_db
-import crud
+import crud, requests, json
 from jinja2 import StrictUndefined
 
 app = Flask(__name__)
@@ -20,8 +20,8 @@ app.jinja_env.undefined = StrictUndefined
 
 
 @app.route('/')
-def index():
-    """Create user session"""
+def homepage():
+    """Display the homepage"""
 
     if session["current_user"]:
         current_user = session["current_user"]
@@ -62,8 +62,6 @@ def logout():
     else:
         flash("Please login.")
         return redirect('/')
-
-    #return render_template("homepage.html", current_user = None)
 
 
 @app.route('/login')
@@ -192,9 +190,7 @@ def shop():
     else:
         flash("Please login to view items!")
         return render_template('homepage.html', current_user = None)
-
     
-
 
 @app.route('/how-it-works')
 def howItWorks():
@@ -239,27 +235,42 @@ def userPurchases():
         return render_template('homepage.html', current_user = None)
 
 
-@app.route('/item-info')
+#*****
+@app.route('/item-info', methods = ["GET"])
+                                #    ^ because I'm GETting information?
 def itemInfo():
-    # ^ 'item' argument here?
+    # ^ 'item' argument here? item id?
     """Displays information for an item."""
 
-    # item = session['current_item']
-
-    # item_name = crud.get_item_name(item)
-    # item_description = crud.get_item_description(item)
-    # item_cost = crud.get_item_cost(item)
+    current_item = request.form.get("items")
+    # taking the link to 'item-info' and setting it as a variable 'current_item'
 
     if session['current_user']:
-        return render_template('item-info.html/', current_user = session['current_user']
-                            # ,item_name = item_name,
-                            # item_description = item_descriptiom,
-                            # item_cost = item_cost
-                            )
-    else:
-        flash("Please login.")
-        return render_template('homepage.html', current_user = None)
-    #session for current item isn't working
+        session['current_item'] = True
+        # creates a session attached to the current_item link that was clicked...maybe...?
+        items = json.loads(open("static/items.json", "r").read())
+        # opens items.json and converts it to a dictionary
+        for item in items:
+        # iterates through each item in items.json
+            item_name = item.item_name
+            # sets the variable item_name to an individual item's name
+            item_description = item.item_description
+            # sets the variable item_description to an individual item's description
+            item_cost = item.item_cost
+            # sets the variable item_cost to an individual item's description
+            return render_template('item-info.html', 
+                                    current_user = session["current_user"],
+                                    item_name = item_name,
+                                    item_description = item_description,
+                                    item_cost = item_cost)
+        else:
+            flash("Please login.")
+            return render_template('homepage.html', current_user = None)
+# page not currently loading: AttributeError: 'dict' object has no attribute 'item_name'
+# line 247 - item_name = item.item_name
+# when I test 'items' in interactive mode, everything looks good with the dictionary
+# tried reformatting json file (items-2.json), get the same error but with 'str':
+# ^ AttributeError: 'str' object has no attribute 'item_name'
 
 
 @app.route('/checkout')

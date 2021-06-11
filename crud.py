@@ -78,10 +78,11 @@ def create_payment_method(payment_method_type):
     return payment_method
 
 
-def get_all_purchases():
-    """Returns all purchases made."""
+def get_all_purchases(user):
+    """Returns all purchases made by a user."""
 
     return Purchases.query.all()
+    #started!
 
 
 def get_user_by_email(email):
@@ -91,7 +92,7 @@ def get_user_by_email(email):
 
 
 def user_username(email):
-    """Returns all usernames."""
+    """Return a username by email."""
 
     return User.query.filter(User.username == email).first()
 
@@ -113,7 +114,7 @@ def login_user(email, password):
 
 
 def get_user_fname(email):
-    """Return a user's first name."""
+    """Return a user's first name by email."""
 
     users = User.query.all()
 
@@ -123,7 +124,7 @@ def get_user_fname(email):
 
 
 def get_user_lname(email):
-    """Return a user's last name."""
+    """Return a user's last name by email."""
 
     users = User.query.all()
 
@@ -131,28 +132,35 @@ def get_user_lname(email):
         if user.email == email:
             return user.lname
 
-def get_item_name():
+
+def get_item_name(item):
     """Return an item's name."""
 
-    items = Item.query.filter(Item.item_name).all()
+    items = Item.query.all()
 
-    return items
+    for item in items:
+        if item.item_name == item:
+            return item.item_name
 
 
-def get_item_description():
+def get_item_description(item):
     """Return an item's description."""
 
-    item_description = Item.query.filter(Item.item_description).all()
+    items = Item.query.all()
 
-    return item_description
+    for item in items:
+        if item.item_description == item:
+            return item.item_description
     
 
-def get_item_cost():
+def get_item_cost(item):
     """Return an item's cost."""
 
-    item_cost = Item.query.filter(Item.item_cost).all()
+    items = Item.query.all()
 
-    return item_cost
+    for item in items:
+        if item.item_cost == item:
+            return item.item_cost
 
 
 

@@ -23,7 +23,7 @@ app.jinja_env.undefined = StrictUndefined
 def index():
     """Create user session"""
 
-    if "current_user" in session:
+    if session["current_user"]:
         current_user = session["current_user"]
   
         return render_template('homepage.html', current_user = current_user)
@@ -47,21 +47,21 @@ def loginUser():
         return render_template("homepage.html", current_user = session["current_user"])
     else:
         flash("Invalid login. Please try again.")
-        return redirect("/login", current_user = None) 
+        return redirect("/login") 
     
 
 @app.route('/logout')
 def logout():
     """Logout user."""
 
-    if "current user" in session:
+    if session["current_user"]:
         session["current_user"] = False
-        session.pop('email', None)
+        session.pop("email", None)
         flash("You have been signed out!")
         return redirect('/')
     else:
         flash("Please login.")
-        return redirect('/', current_user = None)
+        return redirect('/')
 
     #return render_template("homepage.html", current_user = None)
 
@@ -70,7 +70,7 @@ def logout():
 def loginPage():
     """Display user login page."""
 
-    if "current_user" in session:
+    if session["current_user"]:
         return redirect('/')
     else:
         return render_template('login.html', current_user = None)
@@ -80,7 +80,7 @@ def loginPage():
 def signUpPage():
     """Display user sign-up page."""
 
-    if "current_user" in session:
+    if session["current_user"]:
         return redirect('/')
     else:
         return render_template('sign-up.html', current_user = None)
@@ -125,18 +125,21 @@ def createUser():
 def aboutUsPage():
     """Display Fresh Made Easy's 'About Us' page."""
 
-    return render_template('about-us.html', current_user = session['current_user'])
+    if session["current_user"]:
+        return render_template('about-us.html', current_user = session['current_user'])
+    else:
+        return render_template('about-us.html', current_user = None)
 
 
 @app.route('/shopping-cart')
 def shoppingCart():
     """Display a user's shopping cart."""
 
-    if "current_user" in session:
+    if session["current_user"]:
         return render_template('shopping-cart.html', current_user = session['current_user'])
     else:
         flash("Please login.")
-        return redirect('/', current_user = None)
+        return redirect('/')
 
 
 @app.route('/user-profile')
@@ -148,7 +151,7 @@ def userProfile():
     lname = crud.get_user_lname(email)
     username = crud.get_user_by_username(email)
 
-    if "current_user" in session:
+    if session["current_user"]:
         return render_template('user-profile.html',
                                 fname = fname,
                                 lname = lname,
@@ -157,50 +160,70 @@ def userProfile():
                                 current_user = session['current_user'])
     else:
         flash("Please login.")
-        return redirect('/', current_user = None)
+        return redirect('/')
 
 
 @app.route('/all-pickup-locations')
 def allPickupLocations():
     """Displays all pickup locations."""
 
-
-    return render_template('all-pickup-locations.html', current_user = session['current_user'])
+    if session["current_user"]:
+        return render_template('all-pickup-locations.html', current_user = session['current_user'])
+    else:
+        return render_template('all-pickup-locations.html', current_user = None)
 
 
 @app.route('/all-farms')
 def allFarms():
     """Displays all farms."""
 
-    return render_template('all-farms.html', current_user = session['current_user'])
+    if session["current_user"]:
+        return render_template('all-farms.html', current_user = session['current_user'])
+    else:
+        return render_template('all-farms.html', current_user = None)
 
 
 @app.route('/shop')
 def shop():
     """Takes user to the shop page."""
 
-    return render_template('shop.html', current_user = session['current_user'])
+    if session["current_user"]:
+        return render_template('shop.html', current_user = session['current_user'])
+    else:
+        flash("Please login to view items!")
+        return render_template('homepage.html', current_user = None)
+
+    
 
 
 @app.route('/how-it-works')
 def howItWorks():
     """Displays 'How It Works' page."""
 
-    return render_template('how-it-works.html', current_user = session['current_user'])
+    if session['current_user']:
+        return render_template('how-it-works.html', current_user = session['current_user'])
+    else:
+        return render_template('how-it-works.html', current_user = None)
 
 
 @app.route('/pickup-location-info')
 def pickupLocationInfo():
     """Displays information for a pickup location."""
 
-    return render_template('pickup-location-info.html', current_user = session['current_user'])
-
+    if session["current_user"]:
+        return render_template('pickup-location-info.html', current_user = session['current_user'])
+    else:
+        return render_template('pickup-location-info.html', current_user = None)
+    
 
 @app.route('/farm-info')
 def farmInfo():
     """Displays information for a farm."""
-
-    return render_template('farm-info.html', current_user = session['current_user'])
+    
+    if session["current_user"]:
+        return render_template('farm-info.html', current_user = session['current_user'])
+    else: 
+        return render_template('farm-info.html', current_user = None)
 
 
 @app.route('/user-purchases')
@@ -209,7 +232,11 @@ def userPurchases():
 
     fname = crud.get_user_fname(session['current_user'])
 
-    return render_template('user-purchases.html', fname = fname, current_user = session['current_user'])
+    if session["current_user"]:
+        return render_template('user-purchases.html', fname = fname, current_user = session['current_user'])
+    else:
+        flash("Please login.")
+        return render_template('homepage.html', current_user = None)
 
 
 @app.route('/item-info')
@@ -223,11 +250,15 @@ def itemInfo():
     # item_description = crud.get_item_description(item)
     # item_cost = crud.get_item_cost(item)
 
-    return render_template('item-info.html/', current_user = session['current_user']
+    if session['current_user']:
+        return render_template('item-info.html/', current_user = session['current_user']
                             # ,item_name = item_name,
                             # item_description = item_descriptiom,
                             # item_cost = item_cost
                             )
+    else:
+        flash("Please login.")
+        return render_template('homepage.html', current_user = None)
     #session for current item isn't working
 
 
@@ -235,40 +266,44 @@ def itemInfo():
 def checkout():
     """Displays checkout page."""
 
-    if "current_user" in session:
+    if session["current_user"]:
         return render_template('checkout.html', current_user = session['current_user'])
     else:
         flash("Please login.")
-        return redirect('/', current_user = None)
+        return render_template('homepage.html', current_user = None)
 
 
 @app.route('/confirmed')
 def confirmed():
     """Displays a confirmation of a purchase."""
 
-    if "current_user" in session:
+    if session["current_user"]:
         return render_template('confirmed.html', current_user = session['current_user'])
     else:
         flash("Please login.")
-        return redirect('/', current_user = None)    
+        return render_template('homepage.html', current_user = None)    
 
 
 @app.route('/purchase-info')
 def purchaseInfo():
     """Displays information for a user's purchase."""
 
-    if "current_user" in session:
+    if session["current_user"]:
         return render_template('purchase-info.html', current_user = session['current_user'])
     else:
         flash("Please login.")
-        return redirect('/', current_user = None)  
+        return render_template('homepage.html', current_user = None)  
 
 
 @app.route('/add-item-to-cart')
 def addItemToCart():
     """Adds an item to the user's shopping cart."""
 
-    return render_template('shopping-cart.html', current_user = session['current_user'])
+    if session["current_user"]:
+        return render_template('shopping-cart.html', current_user = session['current_user'])
+    else:
+        flash("Please login.")
+        return render_template('homepage.html', current_user = None)
     #temporary route
 
 

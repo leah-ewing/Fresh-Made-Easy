@@ -18,7 +18,7 @@
         <button type = "submit" id = "how-it-works">How It Works</button>
       </div></form>
 
-    {% if current_user != None %}
+    {% if current_user in session %}
     <form action = "/user-profile">
     <div class = "user-profile">
       <button type = "submit" id = "user-profile">Your Profile</button>

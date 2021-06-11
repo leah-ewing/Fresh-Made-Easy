@@ -133,17 +133,19 @@ def get_user_lname(email):
             return user.lname
 
 
-def get_item_name(item):
+def get_item_by_name(item_name):
     """Return an item's name."""
-
     items = Item.query.all()
 
+    print("???????????????????????????????????????")
+    print(item_name)
     for item in items:
-        if item.item_name == item:
-            return item.item_name
+        print(item )
+        if item.item_name == item_name:
+            return item
 
 
-def get_item_description(item):
+def get_item_by_description(item):
     """Return an item's description."""
 
     items = Item.query.all()
@@ -153,7 +155,7 @@ def get_item_description(item):
             return item.item_description
     
 
-def get_item_cost(item):
+def get_item_by_cost(item):
     """Return an item's cost."""
 
     items = Item.query.all()

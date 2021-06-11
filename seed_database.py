@@ -22,6 +22,7 @@ with open('static/farms.json') as f:
 
 with open('static/items.json') as i:
     item_data = json.loads(i.read())
+    print(item_data)
     # items
 
 with open('static/item-categories.json') as c:
@@ -42,9 +43,9 @@ farms_in_db = []
 for farm in farm_data:
     farm_name, farm_address = (farm['farm_name'],
                                                 farm['farm_address'])
-
-db_farm = crud.create_farm(farm_name, farm_address)
-farms_in_db.append(db_farm)
+                                                
+    db_farm = crud.create_farm(farm_name, farm_address)
+    farms_in_db.append(db_farm)
 
 
 """Items"""
@@ -55,8 +56,8 @@ for item in item_data:
                                                         item['item_description'],
                                                         item['item_img'])
 
-db_item = crud.create_item(item_name, item_cost, item_description, item_img)
-items_in_db.append(db_item)
+    db_item = crud.create_item(item_name, item_cost, item_description, item_img)
+    items_in_db.append(db_item)
 
 
 """Categories"""
@@ -64,8 +65,8 @@ categories_in_db = []
 for category in category_data:
     category_name = category['category_name']
 
-db_category = crud.create_category(category_name)
-categories_in_db.append(db_category)
+    db_category = crud.create_category(category_name)
+    categories_in_db.append(db_category)
 
 
 """Payment Methods"""
@@ -73,8 +74,8 @@ payment_methods_in_db = []
 for payment_method in payment_data:
     payment_method_type = payment_method['payment_method_type']
 
-db_payment_method = crud.create_payment_method(payment_method_type)
-payment_methods_in_db.append(db_payment_method)
+    db_payment_method = crud.create_payment_method(payment_method_type)
+    payment_methods_in_db.append(db_payment_method)
 
 
 """Pickup Locations"""
@@ -84,8 +85,8 @@ for pickup_location in pickup_location_data:
                                         pickup_location['location_address'],
                                         pickup_location['neighborhood_name'])
 
-db_pickup_location = crud.create_pickup_location(location_name, location_address, neighborhood_name)
-pickup_locations_in_db.append(db_pickup_location)
+    db_pickup_location = crud.create_pickup_location(location_name, location_address, neighborhood_name)
+    pickup_locations_in_db.append(db_pickup_location)
 
 
 """Create 10 test users"""

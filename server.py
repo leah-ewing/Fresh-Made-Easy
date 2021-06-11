@@ -43,7 +43,7 @@ def loginUser():
     if valid_user:
         session["current_user"] = email
         flash(f"Welcome back, {fname}!")
-        return render_template("homepage.html", current_user = session["current_user"])
+        return render_template("homepage.html", current_user = "current_user")
     else:
         flash("Invalid login. Please try again.")
         return redirect("/login") 
@@ -53,14 +53,14 @@ def loginUser():
 def logout():
     """Logout user."""
 
-    if session["current_user"]:
-        session["current_user"] = False
+    if "current_user" in session:
+        session["current_user"] = None
         session.pop("email", None)
         flash("You have been signed out!")
-        return redirect('/')
+        return redirect("/")
     else:
         flash("Please login.")
-        return redirect('/')
+        return render_template("homepage.html", current_user = None)
 
 
 @app.route('/login')
@@ -68,7 +68,7 @@ def loginPage():
     """Display user login page."""
 
     if "current_user" in session:
-        return redirect('/')
+        return render_template("homepage.html", current_user = "current_user")
     else:
         return render_template('login.html', current_user = None)
 
@@ -78,7 +78,7 @@ def signUpPage():
     """Display user sign-up page."""
 
     if "current_user" in session:
-        return redirect('/')
+        return redirect("/")
     else:
         return render_template('sign-up.html', current_user = None)
 
@@ -115,7 +115,7 @@ def createUser():
         crud.create_user(email, password, fname, lname, username)
         flash("Account created! Please login.")
         
-    return render_template('login.html', current_user = session['current_user'])
+    return render_template('login.html', current_user = "current_user")
 
 
 @app.route('/about-us')
@@ -132,8 +132,8 @@ def aboutUsPage():
 def shoppingCart():
     """Display a user's shopping cart."""
 
-    if "current_user" in session:
-        return render_template('shopping-cart.html', current_user = session['current_user'])
+    if session["current_user"]:
+        return render_template('shopping-cart.html', current_user = "current_user")
     else:
         flash("Please login.")
         return redirect('/')
@@ -148,13 +148,13 @@ def userProfile():
     lname = crud.get_user_lname(email)
     username = crud.get_user_by_username(email)
 
-    if "current_user" in session:
+    if session["current_user"]:
         return render_template('user-profile.html',
                                 fname = fname,
                                 lname = lname,
                                 username = username,
                                 email = email,
-                                current_user = session['current_user'])
+                                current_user = "current_user")
     else:
         flash("Please login.")
         return redirect('/')
@@ -211,14 +211,39 @@ def pickupLocationInfo():
         return render_template('pickup-location-info.html', current_user = None)
     
 
-@app.route('/farm-info')
-def farmInfo():
+@app.route('/farm-info/<current_farm>', methods = ["GET"])
+def farmInfo(current_farm):
     """Displays information for a farm."""
+
+    farm = crud.get_farm_by_name(current_farm)
+
+    if 'current_user' in session and farm != None:
+        return render_template('farm-info.html', 
+                                    current_user = session["current_user"],
+                                    farm_name = farm.farm_name,
+                                    farm_address = farm.farm_address)
+    else:
+        return render_template('farm-info.html', 
+                                    current_user = None,
+                                    farm_name = farm.farm_name,
+                                    farm_address = farm.farm_address)
+
+
+@app.route('/item-info/<current_item>', methods = ["GET"])
+def itemInfo(current_item):
+    """Displays information for an item."""
     
-    if "current_user" in session:
-        return render_template('farm-info.html', current_user = session['current_user'])
-    else: 
-        return render_template('farm-info.html', current_user = None)
+    item = crud.get_item_by_name(current_item)
+
+    if 'current_user' in session and item != None:
+        return render_template('item-info.html', 
+                                    current_user = session["current_user"],
+                                    item_name = item.item_name,
+                                    item_description = item.item_description,
+                                    item_cost = item.item_cost)
+    else:
+        flash("Please login.")
+        return render_template('homepage.html', current_user = None)
 
 
 @app.route('/user-purchases')
@@ -233,65 +258,6 @@ def userPurchases():
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)
-
-
-#*****
-@app.route('/item-info/<current_item>', methods = ["GET"])
-                                #    ^ because I'm GETting information...?
-def itemInfo(current_item):
-    # ^ 'item' argument here? item id?
-    """Displays information for an item."""
-    # = request.form.get("items")
-    # print(current_item)
-    # print(request)
-    # taking the link to 'item-info'  from static.js and setting it as a variable 'current_item'
-    item = crud.get_item_by_name(current_item)
-
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    print(type(item))
-
-    if 'current_user' in session and item != None:
-        # session['current_item'] = True
-        # creates a session attached to the current_item link that was clicked...maybe...?
-        # items = json.loads(open("static/items.json", "r").read())
-        # opens items.json and converts it to a python dictionary
-
-
-        # print(item)
-
-        # for item in items:
-
-        # iterates through each item in items.json
-        # item_name = item.item_name
-        #     # sets the variable item_name to an individual item's name
-        # item_description = item.item_description
-        #     # sets the variable item_description to an individual item's description
-        # item_cost = item.item_cost
-        #     # sets the variable item_cost to an individual item's description
-        return render_template('item-info.html', 
-                                    current_user = session["current_user"],
-                                    item_name = item.item_name,
-                                    item_description = item.item_description,
-                                    item_cost = item.item_cost)
-    else:
-        flash("Please login.")
-        return render_template('homepage.html', current_user = None)
-# page not currently loading: AttributeError: 'dict' object has no attribute 'item_name'
-# line 247 - item_name = item.item_name
-
-# when I test 'items' in interactive mode, everything looks good with the dictionary
-# tried reformatting json file (items-2.json), get the same error but with 'str':
-# ^ AttributeError: 'str' object has no attribute 'item_name'
-
-# maybe an if statement?:
-#   if item_name == current_item?
-#       return render_template('item-info.html', 
-#                               current_user = session['current_user'],
-#                               item_name = item_name,
-#                               item_description = item_description,
-#                               item_cost = item_cost,
-#                               current_item = current_item)
-# *****
 
 
 @app.route('/checkout')

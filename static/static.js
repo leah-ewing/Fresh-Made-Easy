@@ -11,7 +11,7 @@ $.get('/static/pickup-locations.json', (res) => {
 // list of all farms in 'all-farms.html' //
 $.get('/static/farms.json', (res) => {
     for (const farm of res) {
-        $('#farm-file').append(`<ol><a id = "farm-info" href = "/farm-info">${farm.farm_name}</a></ol>`);
+        $('#farm-file').append(`<ol><form action = "/farm-info/${farm.farm_name}" id = "farms"><a id = "farm-info" href = "/farm-info/${farm.farm_name}">${farm.farm_name}</a></form></ol>`);
     }
 });
 

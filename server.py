@@ -216,17 +216,17 @@ def farmInfo(current_farm):
     """Displays information for a farm."""
 
     farm = crud.get_farm_by_name(current_farm)
+    
 
-    if 'current_user' in session and farm != None:
+    if 'current_user' in session:
         return render_template('farm-info.html', 
                                     current_user = session["current_user"],
                                     farm_name = farm.farm_name,
                                     farm_address = farm.farm_address)
     else:
-        return render_template('farm-info.html', 
-                                    current_user = None,
-                                    farm_name = farm.farm_name,
-                                    farm_address = farm.farm_address)
+        return render_template('farm-info.html', current_user = None, 
+                                farm_name = farm.farm_name,
+                                farm_address = farm.farm_address)
 
 
 @app.route('/item-info/<current_item>', methods = ["GET"])

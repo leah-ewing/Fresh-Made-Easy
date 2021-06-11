@@ -140,7 +140,7 @@ def get_item_by_name(item_name):
     print("???????????????????????????????????????")
     print(item_name)
     for item in items:
-        print(item )
+        print(item)
         if item.item_name == item_name:
             return item
 
@@ -165,12 +165,12 @@ def get_item_by_cost(item):
             return item.item_cost
 
 
-def get_farm_by_name(farm):
+def get_farm_by_name(farm_name):
 
     farms = Farm.query.all()
 
     for farm in farms:
-        if farm.farm_name == farm:
+        if farm.farm_name == farm_name:
             return farm
 
 

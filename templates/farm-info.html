@@ -1,18 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %}*Farm* Info{% endblock %}
+{% block title %}{{farm_name}}{% endblock %}
 
 {% block body %}
 
-<h1>*Farm* Info</h1>
-<h3>Coming soon...</h3>
+<h1>{{farm_name}}</h1>
 
-<h4>Name: {{farm_name}}<br>
-    Address: {{farm_address}}<br>
-    Description: <i>2.0</i><br>
-    Items: <br><br>
+<h3><u>Name:</u> {{farm_name}}<br><br>
+    <u>Address:</u> {{farm_address}}<br><br>
+    <u>Description:</u> <i>2.0</i><br><br>
+    <u>Items:</u> <i>2.0</i><br><br><br>
 
     
-    *google maps api here*</h4>
+    *google maps api here*</h3>
 
 {% endblock %}

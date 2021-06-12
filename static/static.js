@@ -4,7 +4,7 @@
 // list of all pickup locations in 'all-pickup-locations.html' //
 $.get('/static/pickup-locations.json', (res) => {
     for (const pickup of res) {
-        $('#pickup-location-api').append(`<ol><a id = "location-info" href = '/pickup-location-info'>${pickup.location_name}</ol>`);
+        $('#pickup-location-file').append(`<ol><a id = "location-info" href = '/pickup-location-info/${pickup.location_name}'>${pickup.location_name}</ol>`);
     }
 });
 
@@ -32,9 +32,5 @@ $.get('/static/items.json', (res) => {
                                         <br>
                                     </form>
                                 </ol>`);
-
-        // $('#name-item').append(`${item.item_name}`)
-        // $('#description-item').append(`${item.item_description}`)
-        // $('#price-item').append(`${item.item_cost}`)
     }
 });

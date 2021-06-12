@@ -1,16 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %}Pickup Location Info{% endblock %}
+{% block title %}{{location_name}} Info{% endblock %}
 
 {% block body %}
 
-<h1>Pickup *Location*</h1>
-<h3>Coming soon...</h3>
-<h4>Name: <br>
-    Address: <br>
-    Neighborhood: <br><br>
+<h1>{{location_name}}</h1>
+<h3><u>Name:</u> {{location_name}}<br><br>
+    <u>Address:</u> {{location_address}}<br><br>
+    <u>Neighborhood:</u> {{neighborhood_name}}<br><br><br>
 
     
-    *google maps api here*</h4>
+    *google maps api here*</h3>
 
 {% endblock %}

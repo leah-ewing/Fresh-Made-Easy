@@ -98,9 +98,9 @@ class PickupLocation(db.Model):
     location_id = db.Column(db.Integer, 
                             autoincrement = True,
                             primary_key = True)
-    location_name = db.Column(db.String(50))
-    location_address = db.Column(db.String(100))
-    neighborhood_name = db.Column(db.String(50))
+    location_name = db.Column(db.String)
+    location_address = db.Column(db.String)
+    neighborhood_name = db.Column(db.String)
 
     def __repr__(self):
         return f'<PickupLocation location_id = {self.location_id} location_name = {self.location_name} location_address = {self.location_address} neighborhood_id = {self.neighborhood_id}>'
@@ -114,7 +114,7 @@ class Category(db.Model):
     category_id = db.Column(db.Integer,
                             autoincrement = True, 
                             primary_key = True)
-    category_name = db.Column(db.String(50))
+    category_name = db.Column(db.String)
 
     item = db.relationship('Item', backref='category')
 
@@ -130,7 +130,7 @@ class PaymentMethod(db.Model):
     payment_method_id = db.Column(db.Integer, 
                                 autoincrement = True, 
                                 primary_key = True)
-    payment_method_type = db.Column(db.String(20))
+    payment_method_type = db.Column(db.String)
      
     def __repr__(self):
         return f'<PaymentMethod payment_method_id = {self.payment_method_id} payment_method_type = {self.payment_method_type}>'

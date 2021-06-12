@@ -135,10 +135,9 @@ def get_user_lname(email):
 
 def get_item_by_name(item_name):
     """Return an item's name."""
+    
     items = Item.query.all()
 
-    print("???????????????????????????????????????")
-    print(item_name)
     for item in items:
         print(item)
         if item.item_name == item_name:
@@ -152,7 +151,7 @@ def get_item_by_description(item):
 
     for item in items:
         if item.item_description == item:
-            return item.item_description
+            return item
     
 
 def get_item_by_cost(item):
@@ -162,7 +161,7 @@ def get_item_by_cost(item):
 
     for item in items:
         if item.item_cost == item:
-            return item.item_cost
+            return item
 
 
 def get_farm_by_name(farm_name):
@@ -181,6 +180,33 @@ def get_farm_by_address(farm):
     for farm in farms:
         if farm.farm_address == farm:
             return farm
+
+
+def get_pickup_location_by_name(location_name):
+
+    locations = PickupLocation.query.all()
+
+    for location in locations:
+        if location.location_name == location_name:
+            return location
+
+
+def get_pickup_location_by_address(location):
+
+    locations = PickupLocation.query.all()
+
+    for location in locations:
+        if location.location_address == location:
+            return location
+
+
+def get_pickup_location_by_neighborhood(location):
+
+    locations = PickupLocation.query.all()
+
+    for location in locations:
+        if location.neighborhood_name == location:
+            return location
 
 
 

@@ -201,15 +201,25 @@ def howItWorks():
         return render_template('how-it-works.html', current_user = None)
 
 
-@app.route('/pickup-location-info')
-def pickupLocationInfo():
+@app.route('/pickup-location-info/<current_location>', methods = ["GET"])
+def pickupLocationInfo(current_location):
     """Displays information for a pickup location."""
 
-    if "current_user" in session:
-        return render_template('pickup-location-info.html', current_user = session['current_user'])
+    location = crud.get_pickup_location_by_name(current_location)
+
+    if "current_user" in session and location != None:
+        return render_template('pickup-location-info.html', 
+                                current_user = session['current_user'],
+                                location_name = location.location_name,
+                                location_address = location.location_address,
+                                neighborhood_name = location.neighborhood_name)
     else:
-        return render_template('pickup-location-info.html', current_user = None)
-    
+        return render_template('pickup-location-info.html', 
+                                current_user = None,
+                                location_name = location.location_name,
+                                location_address = location.location_address,
+                                neighborhood_name = location.neighborhood_name)
+
 
 @app.route('/farm-info/<current_farm>', methods = ["GET"])
 def farmInfo(current_farm):
@@ -218,13 +228,14 @@ def farmInfo(current_farm):
     farm = crud.get_farm_by_name(current_farm)
     
 
-    if 'current_user' in session:
+    if 'current_user' in session and farm != None:
         return render_template('farm-info.html', 
                                     current_user = session["current_user"],
                                     farm_name = farm.farm_name,
                                     farm_address = farm.farm_address)
     else:
-        return render_template('farm-info.html', current_user = None, 
+        return render_template('farm-info.html', 
+                                current_user = None, 
                                 farm_name = farm.farm_name,
                                 farm_address = farm.farm_address)
 
@@ -240,7 +251,8 @@ def itemInfo(current_item):
                                     current_user = session["current_user"],
                                     item_name = item.item_name,
                                     item_description = item.item_description,
-                                    item_cost = item.item_cost)
+                                    item_cost = item.item_cost,
+                                    item_img = item.item_img)
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)

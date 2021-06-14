@@ -25,7 +25,7 @@ def homepage():
 
     if "current_user" in session:
         current_user = session["current_user"]
-        return render_template('homepage.html', current_user = current_user)
+        return render_template('homepage.html', current_user = session["current_user"])
     else:
        return render_template('homepage.html', current_user = None)
 
@@ -43,10 +43,10 @@ def loginUser():
     if valid_user:
         session["current_user"] = email
         flash(f"Welcome back, {fname}!")
-        return render_template("homepage.html", current_user = "current_user")
+        return render_template("homepage.html", current_user = session["current_user"])
     else:
         flash("Invalid login. Please try again.")
-        return redirect("/login") 
+        return render_template('login.html', current_user = None)
     
 
 @app.route('/logout')
@@ -68,7 +68,7 @@ def loginPage():
     """Display user login page."""
 
     if "current_user" in session:
-        return render_template("homepage.html", current_user = "current_user")
+        return redirect('/')
     else:
         return render_template('login.html', current_user = None)
 
@@ -115,7 +115,7 @@ def createUser():
         crud.create_user(email, password, fname, lname, username)
         flash("Account created! Please login.")
         
-    return render_template('login.html', current_user = "current_user")
+    return render_template('login.html', current_user = session["current_user"])
 
 
 @app.route('/about-us')
@@ -132,8 +132,8 @@ def aboutUsPage():
 def shoppingCart():
     """Display a user's shopping cart."""
 
-    if session["current_user"]:
-        return render_template('shopping-cart.html', current_user = "current_user")
+    if "current_user" in session:
+        return render_template('shopping-cart.html', current_user = session["current_user"])
     else:
         flash("Please login.")
         return redirect('/')
@@ -148,13 +148,13 @@ def userProfile():
     lname = crud.get_user_lname(email)
     username = crud.get_user_by_username(email)
 
-    if session["current_user"]:
+    if "current_user" in session:
         return render_template('user-profile.html',
                                 fname = fname,
                                 lname = lname,
                                 username = username,
                                 email = email,
-                                current_user = "current_user")
+                                current_user = session["current_user"])
     else:
         flash("Please login.")
         return redirect('/')
@@ -263,7 +263,6 @@ def userPurchases():
     """Displays user's purchase history."""
 
     fname = crud.get_user_fname(session['current_user'])
-    print(session['current_user'])
 
     if "current_user" in session:
         return render_template('user-purchases.html', fname = fname, current_user = session['current_user'])

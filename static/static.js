@@ -34,3 +34,13 @@ $.get('/static/items.json', (res) => {
                                 </ol>`);
     }
 });
+
+// add an item to the user's shopping cart
+// $get('static/items.json', (res) => {
+//     for (const item of res) {
+//         const cartButton = $("#add-to-cart-button")
+//         cartButton.on('click', () => {
+//             $("#cart").append(`<ol>${item.item_name}</ol>`)
+//         })
+//     }
+// });

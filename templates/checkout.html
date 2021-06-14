@@ -7,17 +7,9 @@
 <h2>Checkout</h2>
 <form action = "/confirmed">
     <div class = "checkout">
-        <label for = "fname">First Name:</label><br>
-        <input id = "fname" required /><br><br>
-    </div>
-    <div class = "checkout">
-        <label for = "lname">Last Name:</label><br>
-        <input id = "lname" required /><br><br>
-    </div>
-    <div class = "checkout">
         <label for = "pickup-location"><h3>Pickup Location:</h3></label>
         <b>East Nashville:</b><br>
-        <input id = "turnip-truck" type = "radio" name = "location" value = "Turnip Truck">
+        <input id = "turnip-truck" type = "radio" name = "location" value = "Turnip Truck" required />
         Turnip Truck<br><br>
         <b>Donelson:</b><br>
         <input id = "donelson-farmers-market" type = "radio" name = "location" value = "Donelson Farmer's Market">
@@ -26,25 +18,46 @@
         <input id = "fat-bottom-brewing" type = "radio" name = "location" value = "Fat Bottom Brewing">
         Fat Bottom Brewing<br><br><br>
     </div> 
+    
     <div class = "checkout">
-        <label for = "phone-number">Phone Number:</label><br>
-        <input id = "phone-number" required /><br><br>
+    <label for = "pickup-date"><b>Pickup Date:</b></label><br>
+    <input type = "date" id = "pickup-date"
+       value = "2021-06-11"
+       min = "2021-06-11" max = "22-12-31" required />
+    </div><small>Available for pickup after 2:00 PM</small><br><br>
+
+    <div class = "checkout">
+        <label for = "fname"><b>First Name:</b></label><br>
+        <input id = "fname" required /><br><br>
     </div>
+
     <div class = "checkout">
-        <label for = "cc-number">Credit Card Number:</label><br>
-        <input id = "cc-number" required /><br><br>
+        <label for = "lname"><b>Last Name:</b></label><br>
+        <input id = "lname" required /><br><br>
     </div>
+
     <div class = "checkout">
-        <label for = "payment-method"><h3>Payment Method:</h3></label>
-        <input id = "visa" type = "radio" name = "payment-method">
+        <label for = "phone-number"><b>Phone Number:</b></label><br>
+        <input type = "tel" id = "phone-number" pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder = "000-000-0000" required /><br><br>
+    </div>
+
+    <div class = "checkout">
+        <label for = "cc-number"><b>Credit Card Number:</b></label><br>
+        <input type = "tel" pattern = "[0-9\s]{13,19}" placeholder="xxxxxxxxxxxxx" id = "cc-number" required /><br><br>
+    </div>
+
+    <div class = "checkout">
+        <label for = "payment-method"><h3><b>Payment Method:</b></h3></label>
+        <input id = "visa" type = "radio" name = "payment-method" required />
         Visa<br>
         <input id = "mastercard" type = "radio" name = "payment-method">
         Mastercard<br>
         <input id = "discover" type = "radio" name = "payment-method">
         Discover<br>
         <input id = "american-express" type = "radio" name = "payment-method">
-        American Express<br><br>
+        American Express<br><br><br>
     </div>
+
     <div class = "checkout">
         <button type = "submit">Confirm Checkout</button>
     </div>
@@ -52,5 +65,3 @@
 
 
 {% endblock %}
-
-<!-- add a secion where the user can set their pickup time -->

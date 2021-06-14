@@ -89,6 +89,15 @@ for pickup_location in pickup_location_data:
     pickup_locations_in_db.append(db_pickup_location)
 
 
+# """Shopping Carts"""
+# shopping_carts_in_db = []
+# for shopping_cart in shopping_cart_data:
+#     cart_email = (shopping_cart['cart_email'])
+
+#     db_shopping_cart = crud.create_shopping_cart(cart_email)
+#     shopping_carts_in_db.append(db._shopping_cart)
+
+
 """Create 10 test users"""
 for n in range(1, 10):
         email = f'user{n}@test.com'

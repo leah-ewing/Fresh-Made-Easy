@@ -1,6 +1,6 @@
 """CRUD operations."""
 
-from model import db, User, Purchase, Farm, Item, PickupLocation, Category, PaymentMethod, connect_to_db
+from model import db, User, Purchase, Farm, Item, PickupLocation, Category, PaymentMethod, ShoppingCart, connect_to_db
 
 
 
@@ -82,7 +82,7 @@ def get_all_purchases(user):
     """Returns all purchases made by a user."""
 
     return Purchases.query.all()
-    #started!
+    #started
 
 
 def get_user_by_email(email):
@@ -165,6 +165,7 @@ def get_item_by_cost(item):
 
 
 def get_farm_by_name(farm_name):
+    """Return a farm's name."""
 
     farms = Farm.query.all()
 
@@ -174,6 +175,7 @@ def get_farm_by_name(farm_name):
 
 
 def get_farm_by_address(farm):
+    """Return a farm's address."""
 
     farms = Farm.query.all()
 
@@ -183,6 +185,7 @@ def get_farm_by_address(farm):
 
 
 def get_pickup_location_by_name(location_name):
+    """Return a pickup location's name."""
 
     locations = PickupLocation.query.all()
 
@@ -192,6 +195,7 @@ def get_pickup_location_by_name(location_name):
 
 
 def get_pickup_location_by_address(location):
+    """Return a pickup location's address."""
 
     locations = PickupLocation.query.all()
 
@@ -201,12 +205,36 @@ def get_pickup_location_by_address(location):
 
 
 def get_pickup_location_by_neighborhood(location):
+    """Return a pickup location's neighborhood."""
 
     locations = PickupLocation.query.all()
 
     for location in locations:
         if location.neighborhood_name == location:
             return location
+
+
+def get_user_cart(email):
+    """Returns a user's shopping cart."""
+
+    shopping_carts = ShoppingCart.query.all()
+    users = User.query.filter(User.email).all()
+
+    for shopping_cart in shopping_carts:
+        if shopping_cart.cart_email == user.email:
+            return shopping_cart
+
+
+def create_shopping_cart(email):
+    """Creates a user's shopping cart."""
+
+    shopping_cart = ShoppingCart(cart_email = cart_email)
+
+    db.session.add(user)
+    db.session.commit()
+
+    return shopping_cart
+
 
 
 

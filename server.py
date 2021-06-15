@@ -1,5 +1,4 @@
-from flask import (Flask,render_template, request, flash, session,
-                   redirect)
+from flask import (Flask,render_template, request, flash, session, redirect)
 from model import User, connect_to_db
 import crud, requests, json
 from jinja2 import StrictUndefined
@@ -25,10 +24,10 @@ def homepage():
 
     if "current_user" in session:
         current_user = session["current_user"]
-        return render_template('homepage.html', current_user = session["current_user"])
+        return render_template('homepage.html', current_user = "current_user")
     else:
        return render_template('homepage.html', current_user = None)
-
+# changing all current_user = session["current_user"] to current_user = "current_user" *might* be the answer to all the session problems
 
 @app.route('/', methods = ["POST"])
 def loginUser():
@@ -131,6 +130,8 @@ def aboutUsPage():
 @app.route('/shopping-cart')
 def shoppingCart():
     """Display a user's shopping cart."""
+
+    email = session["current_user"]
 
     if "current_user" in session:
         return render_template('shopping-cart.html', current_user = session["current_user"])
@@ -303,18 +304,31 @@ def purchaseInfo():
         flash("Please login.")
         return render_template('homepage.html', current_user = None)  
 
-
-@app.route('/add-item-to-cart')
-def addItemToCart():
+#*********************************************
+@app.route('/add-item-to-cart/<current_item>', methods = ["GET"])
+def addToCart(current_item):
     """Adds an item to the user's shopping cart."""
+    item = crud.get_item_by_name(current_item)
+    item_amount = request.form.get("add-to-cart")
+    shopping_cart = {"name": [], "price": [], "amount": []}
 
-    if "current_user" in session:
-        return render_template('shopping-cart.html', current_user = session['current_user'])
-    else:
-        flash("Please login.")
-        return render_template('homepage.html', current_user = None)
-    #temporary route
 
+    if "current_user" in session and item != None:
+        session["shopping_cart"]["name"].append(item.item_name)
+        session["shopping_cart"]["price"].append(item.item_cost)
+        session["shopping_cart"]["amount"].append(item_amount)
+        flash("Item added to cart!")
+        # return render_template('shopping-cart.html', 
+        #                         current_user = session['current_user'],
+        #                         item_names = session["shopping_cart"]["name"],
+        #                         item_prices = session["shopping_cart"]["price"],
+        #                         item_amounts = session["shopping_cart"]["amount"])
+        return redirect('/item_info/<current_item>')
+    # else:
+    #     flash("Please login.")
+    #     return render_template('homepage.html', current_user = None) 
+#^^^^ getting error: Not Found - URL is not found on the server.
+#*********************************************
 
 
 

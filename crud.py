@@ -1,7 +1,6 @@
 """CRUD operations."""
 
-from model import db, User, Purchase, Farm, Item, PickupLocation, Category, PaymentMethod, ShoppingCart, connect_to_db
-
+from model import db, User, Purchase, Farm, Item, PickupLocation, Category, PaymentMethod, connect_to_db
 
 
 def create_user(email, password, fname, lname, username):
@@ -212,28 +211,6 @@ def get_pickup_location_by_neighborhood(location):
     for location in locations:
         if location.neighborhood_name == location:
             return location
-
-
-def get_user_cart(email):
-    """Returns a user's shopping cart."""
-
-    shopping_carts = ShoppingCart.query.all()
-    users = User.query.filter(User.email).all()
-
-    for shopping_cart in shopping_carts:
-        if shopping_cart.cart_email == user.email:
-            return shopping_cart
-
-
-def create_shopping_cart(email):
-    """Creates a user's shopping cart."""
-
-    shopping_cart = ShoppingCart(cart_email = cart_email)
-
-    db.session.add(user)
-    db.session.commit()
-
-    return shopping_cart
 
 
 

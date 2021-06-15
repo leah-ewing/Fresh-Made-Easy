@@ -32,15 +32,29 @@ $.get('/static/items.json', (res) => {
                                         <br>
                                     </form>
                                 </ol>`);
-    }
+    } 
+    //*********************************
+    // const addToCartButton = $('button[id = "add-to-cart-button"]');
+    // const shoppingCart = document.getElementById('cart');
+    // const itemCount = document.querySelector('#add-to-cart');
+    
+    // addToCartButton.on('click', (evt) => {
+    //     evt.preventDefault();
+    //     shoppingCart.insertAdjacentHTML('beforeend', `<ol>${itemCount}, ${item.name}, ${item.cost}</ol>`)
+    // })
+    //********************************
 });
 
+//*********************************
 // add an item to the user's shopping cart
 // $get('static/items.json', (res) => {
 //     for (const item of res) {
 //         const cartButton = $("#add-to-cart-button")
 //         cartButton.on('click', () => {
-//             $("#cart").append(`<ol>${item.item_name}</ol>`)
+//             $("#cart").append(`<ol>${item.item_name}, ${item.item_cost}</ol>`)
+//             alert("Item added to cart!")
 //         })
 //     }
 // });
+//*********************************
+

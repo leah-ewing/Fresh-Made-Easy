@@ -133,25 +133,7 @@ class PaymentMethod(db.Model):
      
     def __repr__(self):
         return f'<PaymentMethod payment_method_id = {self.payment_method_id} payment_method_type = {self.payment_method_type}>'
-
-
-class ShoppingCart(db.Model):
-    """User's shopping cart"""
-
-    __tablename__ = 'shopping_cart'
-
-    shopping_cart_id = db.Column(db.Integer,
-                                autoincrement = True,
-                                primary_key = True)
-    cart_email = db.Column(db.String, db.ForeignKey('user.email'))
-    cart_item_id = db.Column(db.Integer, db.ForeignKey('item.item_id'))
-
-    item = db.relationship('Item', backref = 'ShoppingCart')
-    user = db.relationship('User', backref = 'ShoppingCart')
-
-    def __repr__(self):
-        return f'<ShoppingCart shopping_cart_id = {self.shopping_cart_id} cart_email = {self.cart_email} cart_item = {self.cart_item}>'
-
+        
 
 
 if __name__ == '__main__':

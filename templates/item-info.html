@@ -13,11 +13,12 @@
     alt = "{{item_name}} image"></img>
 
 <h3>
+    <!-- <form action = "/add-item-to-cart"> -->
     <u>Name:</u> {{item_name}}<br><br>
     <u>Farm:</u> <i>2.0</i><br><br>
     <u>Description:</u> {{item_description}}<br><br>
     <u>Price:</u> {{item_cost}}<br><br>
-    <form action = "/add-item-to-cart">
+    <form action = "/add-item-to-cart/{{item_name}}" method = "POST">
     <div class = "add-to-cart">
         <input id = "add-to-cart" type = "number" min = "0" name = "add-to-cart" required /><br>
     </div>
@@ -27,6 +28,6 @@
 
     <h2>See where this comes from!</h2>
     <h3>*google maps api here*</h3>
-    
+
 
 {% endblock %}

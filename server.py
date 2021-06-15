@@ -41,8 +41,9 @@ def loginUser():
 
     if valid_user:
         session["current_user"] = email
+        session["shopping_cart"] = {"name": [], "price": [], "amount": []}
         flash(f"Welcome back, {fname}!")
-        return render_template("homepage.html", current_user = session["current_user"])
+        return render_template("homepage.html", current_user = "current_user")
     else:
         flash("Invalid login. Please try again.")
         return render_template('login.html', current_user = None)
@@ -114,7 +115,7 @@ def createUser():
         crud.create_user(email, password, fname, lname, username)
         flash("Account created! Please login.")
         
-    return render_template('login.html', current_user = session["current_user"])
+    return render_template('login.html', current_user = "current_user")
 
 
 @app.route('/about-us')
@@ -122,7 +123,7 @@ def aboutUsPage():
     """Display Fresh Made Easy's 'About Us' page."""
 
     if "current_user" in session:
-        return render_template('about-us.html', current_user = session['current_user'])
+        return render_template('about-us.html', current_user = "current_user")
     else:
         return render_template('about-us.html', current_user = None)
 
@@ -130,11 +131,17 @@ def aboutUsPage():
 @app.route('/shopping-cart')
 def shoppingCart():
     """Display a user's shopping cart."""
+    item_names = session["shopping_cart"]["name"]
+    item_prices = session["shopping_cart"]["price"]
+    item_amounts = session["shopping_cart"]["amount"]
 
-    email = session["current_user"]
 
     if "current_user" in session:
-        return render_template('shopping-cart.html', current_user = session["current_user"])
+        return render_template('shopping-cart.html', 
+                                current_user = "current_user", 
+                                item_names = item_names,
+                                item_prices = item_prices,
+                                item_amounts = item_amounts)
     else:
         flash("Please login.")
         return redirect('/')
@@ -155,7 +162,7 @@ def userProfile():
                                 lname = lname,
                                 username = username,
                                 email = email,
-                                current_user = session["current_user"])
+                                current_user = "current_user")
     else:
         flash("Please login.")
         return redirect('/')
@@ -166,7 +173,7 @@ def allPickupLocations():
     """Displays all pickup locations."""
 
     if "current_user" in session:
-        return render_template('all-pickup-locations.html', current_user = session['current_user'])
+        return render_template('all-pickup-locations.html', current_user = "current_user")
     else:
         return render_template('all-pickup-locations.html', current_user = None)
 
@@ -176,7 +183,7 @@ def allFarms():
     """Displays all farms."""
 
     if "current_user" in session:
-        return render_template('all-farms.html', current_user = session['current_user'])
+        return render_template('all-farms.html', current_user = "current_user")
     else:
         return render_template('all-farms.html', current_user = None)
 
@@ -186,7 +193,7 @@ def shop():
     """Takes user to the shop page."""
 
     if "current_user" in session:
-        return render_template('shop.html', current_user = session['current_user'])
+        return render_template('shop.html', current_user = "current_user")
     else:
         flash("Please login to view items!")
         return render_template('homepage.html', current_user = None)
@@ -197,7 +204,7 @@ def howItWorks():
     """Displays 'How It Works' page."""
 
     if "current_user" in session:
-        return render_template('how-it-works.html', current_user = session['current_user'])
+        return render_template('how-it-works.html', current_user = "current_user")
     else:
         return render_template('how-it-works.html', current_user = None)
 
@@ -210,7 +217,7 @@ def pickupLocationInfo(current_location):
 
     if "current_user" in session and location != None:
         return render_template('pickup-location-info.html', 
-                                current_user = session['current_user'],
+                                current_user = "current_user",
                                 location_name = location.location_name,
                                 location_address = location.location_address,
                                 neighborhood_name = location.neighborhood_name)
@@ -231,7 +238,7 @@ def farmInfo(current_farm):
 
     if 'current_user' in session and farm != None:
         return render_template('farm-info.html', 
-                                    current_user = session["current_user"],
+                                    current_user = "current_user",
                                     farm_name = farm.farm_name,
                                     farm_address = farm.farm_address)
     else:
@@ -249,7 +256,7 @@ def itemInfo(current_item):
 
     if 'current_user' in session and item != None:
         return render_template('item-info.html', 
-                                    current_user = session["current_user"],
+                                    current_user = "current_user",
                                     item_name = item.item_name,
                                     item_description = item.item_description,
                                     item_cost = item.item_cost,
@@ -266,7 +273,7 @@ def userPurchases():
     fname = crud.get_user_fname(session['current_user'])
 
     if "current_user" in session:
-        return render_template('user-purchases.html', fname = fname, current_user = session['current_user'])
+        return render_template('user-purchases.html', fname = fname, current_user = "current_user")
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)
@@ -277,7 +284,7 @@ def checkout():
     """Displays checkout page."""
 
     if "current_user" in session:
-        return render_template('checkout.html', current_user = session['current_user'])
+        return render_template('checkout.html', current_user = "current_user")
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)
@@ -288,7 +295,7 @@ def confirmed():
     """Displays a confirmation of a purchase."""
 
     if "current_user" in session:
-        return render_template('confirmed.html', current_user = session['current_user'])
+        return render_template('confirmed.html', current_user = "current_user")
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)    
@@ -299,35 +306,44 @@ def purchaseInfo():
     """Displays information for a user's purchase."""
 
     if "current_user" in session:
-        return render_template('purchase-info.html', current_user = session['current_user'])
+        return render_template('purchase-info.html', current_user = "current_user")
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)  
 
+
 #*********************************************
-@app.route('/add-item-to-cart/<current_item>', methods = ["GET"])
+@app.route('/add-item-to-cart/<current_item>', methods = ["POST"])
 def addToCart(current_item):
     """Adds an item to the user's shopping cart."""
     item = crud.get_item_by_name(current_item)
     item_amount = request.form.get("add-to-cart")
-    shopping_cart = {"name": [], "price": [], "amount": []}
+    # shopping_cart = {"name": [], "price": [], "amount": []}
+    # shopping_cart = []
 
 
     if "current_user" in session and item != None:
-        session["shopping_cart"]["name"].append(item.item_name)
-        session["shopping_cart"]["price"].append(item.item_cost)
-        session["shopping_cart"]["amount"].append(item_amount)
-        flash("Item added to cart!")
-        # return render_template('shopping-cart.html', 
-        #                         current_user = session['current_user'],
-        #                         item_names = session["shopping_cart"]["name"],
-        #                         item_prices = session["shopping_cart"]["price"],
-        #                         item_amounts = session["shopping_cart"]["amount"])
-        return redirect('/item_info/<current_item>')
+        session["shopping_cart"] = {"name": [], "price": [], "amount": []}
+        if item.item_name == current_item:
+            session['shopping_cart']["name"].append(item.item_name)
+            session['shopping_cart']["price"].append(item.item_cost)
+            session['shopping_cart']["amount"].append(item_amount)
+            # shopping_cart.append([item.item_name, item.item_cost, item_amount])
+            flash("Item added to cart!")
+            return render_template('shopping-cart.html', 
+                                    current_user = "current_user",
+                                    item_names = session["shopping_cart"]["name"],
+                                    item_prices = session["shopping_cart"]["price"],
+                                    item_amounts = session["shopping_cart"]["amount"]
+                                    # shopping_cart = shopping_cart
+                                    )
+            # return redirect('/item_info/<current_item>')
+            #^^^^ getting error: Not Found - URL is not found on the server.
+            # pretty sure the problem is where i'm trying to pull the item's name, it's trying to pull the input of the form
+            # as the item name and I'm not sure how to fix that.
     # else:
     #     flash("Please login.")
     #     return render_template('homepage.html', current_user = None) 
-#^^^^ getting error: Not Found - URL is not found on the server.
 #*********************************************
 
 

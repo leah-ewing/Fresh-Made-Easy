@@ -208,7 +208,8 @@ def howItWorks():
 @app.route('/pickup-location-info/<current_location>', methods = ["GET"])
 def pickupLocationInfo(current_location):
     """Displays information for a pickup location."""
-
+    print("*******************************")
+    print(current_location)
     location = crud.get_pickup_location_by_name(current_location)
 
     if "current_user" in session and location != None:

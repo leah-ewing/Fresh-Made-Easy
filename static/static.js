@@ -4,7 +4,7 @@
 // list of all pickup locations in 'all-pickup-locations.html' //
 $.get('/static/pickup-locations.json', (res) => {
     for (const pickup of res) {
-        $('#pickup-location-file').append(`<ol><a id = "location-info" href = '/pickup-location-info/${pickup.location_name}'>${pickup.location_name}</ol>`);
+        $('#pickup-location-file').append(`<ol><a id = "location-info" href = "/pickup-location-info/${pickup.location_name}">${pickup.location_name}</ol>`);
     }
 });
 

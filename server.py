@@ -27,7 +27,7 @@ def homepage():
         return render_template('homepage.html', current_user = "current_user")
     else:
        return render_template('homepage.html', current_user = None)
-# changing all current_user = session["current_user"] to current_user = "current_user" *might* be the answer to all the session problems
+
 
 @app.route('/', methods = ["POST"])
 def loginUser():
@@ -42,6 +42,7 @@ def loginUser():
     if valid_user:
         session["current_user"] = email
         session["shopping_cart"] = []
+        session["total"] = 0
         flash(f"Welcome back, {fname}!")
         return render_template("homepage.html", current_user = "current_user")
     else:
@@ -131,18 +132,12 @@ def aboutUsPage():
 @app.route('/shopping-cart')
 def shoppingCart():
     """Display a user's shopping cart."""
-    # item_names = session["shopping_cart"]["name"]
-    # item_prices = session["shopping_cart"]["price"]
-    # item_amounts = session["shopping_cart"]["amount"]
-
 
     if "current_user" in session:
         return render_template('shopping-cart.html', 
                                 current_user = "current_user", 
-                                # item_names = item_names,
-                                # item_prices = item_prices,
-                                # item_amounts = item_amounts
-                                shopping_cart = session["shopping_cart"])
+                                shopping_cart = session["shopping_cart"],
+                                total = session["total"])
     else:
         flash("Please login.")
         return redirect('/')
@@ -313,7 +308,6 @@ def purchaseInfo():
         return render_template('homepage.html', current_user = None)  
 
 
-#*********************************************
 @app.route('/add-item-to-cart/<current_item>', methods = ["POST"])
 def addToCart(current_item):
     """Adds an item to the user's shopping cart."""
@@ -321,42 +315,17 @@ def addToCart(current_item):
     item_amount = request.form.get("add-to-cart")
 
     if "current_user" in session and item != None:
-        # session["shopping_cart"] = {"name": [], "price": [], "amount": []}
         if item.item_name == current_item:
-            # if item.item_name in session["shopping_cart"]:
-                # session['shopping_cart']["name"].append(item.item_name)
-                # session['shopping_cart']["price"].append(int(item.item_cost) * int(item_amount))
-                # session['shopping_cart']["amount"].append(int(item_amount))
-                # total_cost += sum(item.item_cost)
-            session["shopping_cart"].append([item.item_name, item.item_cost, item_amount])
+            session["shopping_cart"].append([item.item_name, (int(item.item_cost) * int(item_amount)), item_amount])
+            session["total"] += (int(item.item_cost) * int(item_amount))
             flash("Item added to cart!")
             return render_template('shopping-cart.html', 
                                     current_user = "current_user",
-                                    # item_names = session["shopping_cart"]["name"],
-                                    # item_prices = session["shopping_cart"]["price"],
-                                    # item_amounts = session["shopping_cart"]["amount"]
                                     shopping_cart = session["shopping_cart"],
-                                    )
-            # elif item.item_name not in session["shopping_cart"]:
-            #     # session['shopping_cart']["amount"] = int(item_amount)
-            #     # session['shopping_cart']["name"] = item.item_name
-            #     # session['shopping_cart']["price"] = int(item.item_cost) * int(item_amount)
-            #     session["shopping_cart"].append([item.item_name, item.item_cost, item_amount])
-            #     return render_template('shopping-cart.html', 
-            #                             current_user = "current_user",
-            #                             # item_names = session["shopping_cart"]["name"],
-            #                             # item_prices = session["shopping_cart"]["price"],
-            #                             # item_amounts = session["shopping_cart"]["amount"]
-            #                             shopping_cart = session["shopping_cart"]
-            #                             )
-            # return redirect('/item_info/<current_item>')
-            #^^^^ getting error: Not Found - URL is not found on the server.
-            # pretty sure the problem is where i'm trying to pull the item's name, it's trying to pull the input of the form
-            # as the item name and I'm not sure how to fix that.
-    # else:
-    #     flash("Please login.")
-    #     return render_template('homepage.html', current_user = None) 
-#*********************************************
+                                    total = session["total"])
+    elif "current_user" not in session:
+        flash("Please login.")
+        return render_template('homepage.html', current_user = None) 
 
 
 

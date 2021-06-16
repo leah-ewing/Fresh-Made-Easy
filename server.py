@@ -280,7 +280,11 @@ def checkout():
     """Displays checkout page."""
 
     if "current_user" in session:
-        return render_template('checkout.html', current_user = "current_user")
+        if session['total'] == 0:
+            flash("Add some items to your cart to checkout!")
+            return redirect('/shopping-cart')
+        if session['total'] > 0:
+            return render_template('checkout.html', current_user = "current_user")
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)

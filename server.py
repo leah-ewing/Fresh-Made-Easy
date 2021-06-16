@@ -293,8 +293,17 @@ def checkout():
 @app.route('/confirmed')
 def confirmed():
     """Displays a confirmation of a purchase."""
+    user_id = crud.get_user_id_by_email(session["current_user"])
+    items = str(session["shopping_cart"])
+    date_time_of_purchase = "*"
+    payment_method = request.form.get("payment_method")
+    pickup_date = "*"
+    pickup_location = request.form.get("location")
+    purchase_total = session["total"]
 
     if "current_user" in session:
+        crud.create_new_purchase(user_id, items, date_time_of_purchase, payment_method, pickup_date, pickup_location, purchase_total)
+        session["shopping_cart"] = []
         return render_template('confirmed.html', current_user = "current_user")
     else:
         flash("Please login.")

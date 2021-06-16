@@ -43,11 +43,14 @@ class Purchase(db.Model):
                             autoincrement = True,
                             primary_key = True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
-    item_id = db.Column(db.Integer, db.ForeignKey('item.item_id'))
-    date_time_of_purchase = db.Column(db.DateTime)
-    payment_method_id = db.Column(db.Integer, db.ForeignKey('payment_method.payment_method_id'))
-    pickup_date = db.Column(db.DateTime)
-    location_id = db.Column(db.Integer, db.ForeignKey('pickup_location.location_id'))
+    items = db.Column(db.String)
+    date_time_of_purchase = db.Column(db.String)
+    # ^ temporarily "*", eventually DateTime
+    payment_method = db.Column(db.String)
+    pickup_date = db.Column(db.String)
+    # ^ temporarily "*", eventually DateTime
+    pickup_location = db.Column(db.String)
+    purchase_total = db.Column(db.Integer)
 
     def __repr__(self):
         return f'<Purchase purchase_id = {self.purchase_id} user_id = {self.user_id} date_time_of_purchase = {self.date_time_of_purchase} payment_method_id = {self.payment_method_id} pickup_date = {self.pickup_date} location_id = {self.location_id} order_cost = {self.order_cost}>'

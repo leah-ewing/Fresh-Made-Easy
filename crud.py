@@ -210,9 +210,47 @@ def get_pickup_location_by_neighborhood(location):
 
     for location in locations:
         if location.neighborhood_name == location:
-            return location
+            return location.neighborhood_name
 
 
+def create_new_purchase(user_id, items, date_time_of_purchase, payment_method, pickup_date, pickup_location, purchase_total):
+    """Creates a new user purchase."""
+
+    purchase = Purchase(user_id = user_id, items = items, date_time_of_purchase = date_time_of_purchase, payment_method = payment_method, pickup_date = pickup_date, pickup_location = pickup_location, purchase_total = purchase_total)
+
+    db.session.add(purchase)
+    db.session.commit()
+
+    return purchase
+
+
+def get_user_id_by_email(email):
+
+    users = User.query.all()
+
+    for user in users:
+        if user.email == email:
+            return user.user_id
+
+
+def get_pickup_location_id(location):
+    """Return a pickup location's id."""
+
+    locations = PickupLocation.query.all()
+
+    for location in locations:
+        if location.neighborhood_name == location:
+            return location.location_id
+
+
+def get_payment_method_id(payment_method):
+    """Returns a payment methods' id."""
+
+    methods = PaymentMethod.query.all()
+
+    for method in methods:
+        if method.payment_method_type == payment_method:
+            return method.payment_method_id
 
 
 if __name__ == '__main__':

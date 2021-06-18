@@ -77,10 +77,23 @@ def create_payment_method(payment_method_type):
     return payment_method
 
 
-def get_all_purchases(user):
+def get_all_purchases(user_id):
     """Returns all purchases made by a user."""
+    user_purchases = []
+    users = User.query.all()
+    purchases = Purchase.query.all()
 
-    return Purchases.query.all()
+    for purchase in purchases:
+        for user in users:
+            if purchase.user_id == user.user_id:
+                user_purchases.extend([purchase.purchase_id, user.user_id])
+                return purchases
+
+    # for user in users:
+    #     if user.email == email:
+    #         return user.user_id
+
+    # return Purchases.query.filter(Purchase.user_id == User.user_id)
     #started
 
 
@@ -251,6 +264,7 @@ def get_payment_method_id(payment_method):
     for method in methods:
         if method.payment_method_type == payment_method:
             return method.payment_method_id
+
 
 
 if __name__ == '__main__':

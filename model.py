@@ -53,7 +53,7 @@ class Purchase(db.Model):
     purchase_total = db.Column(db.Integer)
 
     def __repr__(self):
-        return f'<Purchase purchase_id = {self.purchase_id} user_id = {self.user_id} date_time_of_purchase = {self.date_time_of_purchase} payment_method_id = {self.payment_method_id} pickup_date = {self.pickup_date} location_id = {self.location_id} order_cost = {self.order_cost}>'
+        return f'Purchase ID: {self.purchase_id} Items: {self.items} Date/Time of Purchase: {self.date_time_of_purchase} Payment Method: {self.payment_method} Pickup Date: {self.pickup_date} Pickup Location: {self.pickup_location} Total: {self.purchase_total} \n'
 
 
 class Farm(db.Model):

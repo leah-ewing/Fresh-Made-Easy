@@ -208,8 +208,6 @@ def howItWorks():
 @app.route('/pickup-location-info/<current_location>', methods = ["GET"])
 def pickupLocationInfo(current_location):
     """Displays information for a pickup location."""
-    print("*******************************")
-    print(current_location)
     location = crud.get_pickup_location_by_name(current_location)
 
     if "current_user" in session and location != None:
@@ -267,10 +265,14 @@ def itemInfo(current_item):
 def userPurchases():
     """Displays user's purchase history."""
 
-    fname = crud.get_user_fname(session['current_user'])
+    email = session["current_user"]
+    fname = crud.get_user_fname(email)
+    user_id = crud.get_user_id_by_email(email)
+    user_purchases = crud.get_all_purchases(user_id)
+    
 
     if "current_user" in session:
-        return render_template('user-purchases.html', fname = fname, current_user = "current_user")
+        return render_template('user-purchases.html', fname = fname, current_user = "current_user", user_purchases = user_purchases)
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)
@@ -305,6 +307,7 @@ def confirmed():
     if "current_user" in session:
         crud.create_new_purchase(user_id, items, date_time_of_purchase, payment_method, pickup_date, pickup_location, purchase_total)
         session["shopping_cart"] = []
+        session["total"] = 0
         return render_template('confirmed.html', current_user = "current_user")
     else:
         flash("Please login.")

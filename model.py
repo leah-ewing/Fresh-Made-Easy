@@ -119,7 +119,7 @@ class Category(db.Model):
                             primary_key = True)
     category_name = db.Column(db.String)
 
-    item = db.relationship('Item', backref='category')
+    # item = db.relationship('Item', backref='category')
 
     def __repr__(self):
         return f'<Category category_id = {self.category_id} category_name = {self.category_name}>'

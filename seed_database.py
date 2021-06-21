@@ -51,7 +51,7 @@ for farm in farm_data:
 """Items"""
 items_in_db = []
 for item in item_data:
-    item_name, item_cost, item_description, item_img = (item['item_name'],
+    item_name, item_cost, item_description, item_img, farm_name, category_name = (item['item_name'],
                                                         item['item_cost'],
                                                         item['item_description'],
                                                         item['item_img'],

@@ -5,6 +5,9 @@
 $.get('/static/pickup-locations.json', (res) => {
     for (const pickup of res) {
         $('#pickup-location-file').append(`<ol><a id = "location-info" href = "/pickup-location-info/${pickup.location_name}">${pickup.location_name}</ol>`);
+        // $.get(`https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&input=${pickup.location_address}&input=textquery`, (res) => {
+        //     $("#all-pickup-locations-map").append(`<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?zoom=10&center=36.1627%2C-86.7816&key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&place=${res}"></iframe>`)
+        // })
     }
 });
 
@@ -34,4 +37,3 @@ $.get('/static/items.json', (res) => {
                                 </ol>`);
     }
 });
-

@@ -28,13 +28,15 @@ def create_farm(farm_name, farm_address):
     return farm
 
 
-def create_item(item_name, item_cost, item_description, item_img):
+def create_item(item_name, item_cost, item_description, item_img, farm_name, category_name):
     """Create and return a new item."""
     
     item = Item(item_name = item_name, 
             item_cost = item_cost,
             item_description = item_description, 
-            item_img = item_img)
+            item_img = item_img,
+            farm_name = farm_name,
+            category_name = category_name)
 
     db.session.add(item)
     db.session.commit()
@@ -86,7 +88,7 @@ def get_all_purchases(user_id):
     for purchase in purchases:
         for user in users:
             if purchase.user_id == user.user_id:
-                user_purchases.extend([purchase.purchase_id, user.user_id])
+                user_purchases.append([purchase.purchase_id, user.user_id])
                 return purchases
 
     # for user in users:

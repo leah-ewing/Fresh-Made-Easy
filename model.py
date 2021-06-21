@@ -86,10 +86,11 @@ class Item(db.Model):
     item_cost = db.Column(db.Integer)
     item_description = db.Column(db.String)
     item_img = db.Column(db.String)
-    category_id = db.Column(db.Integer, db.ForeignKey('category.category_id'))
+    farm_name = db.Column(db.String)
+    category_name = db.Column(db.String)
 
     def __repr__(self):
-        return f'<Item item_id = {self.item_id} farm_id = {self.farm_id} item_cost = {self.item_cost} item_name = {self.item_name} category_id = {self.category_id} item_description = {self.item_description}>'
+        return f'<Item item_id = {self.item_id} farm_id = {self.farm_id} item_cost = {self.item_cost} item_name = {self.item_name} category_name = {self.category_name} item_description = {self.item_description}>'
 
 
 class PickupLocation(db.Model):

@@ -19,39 +19,37 @@
 <!-- Javascript file for links -->
 <script src="/static/static.js"></script>
 
-<ol id = "pickup-location-file"></ol><br>
+<h4><ol id = "pickup-location-file"></ol><br></h4>
 
 
-<!-- <script src="/static/maps.js"></script>
-  <script
-    async defer
-    width="600"
-    height="450"
-    style="border:0"
-    loading="lazy"
-    allowfullscreen
-    src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&callback=initLocationMap">
-  </script> -->
-
-  <script async
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&callback=initLocationMap">
+<!-- ********* ATTEMPT ONE ******** -->
+<!-- shows map but doesn't show markers -->
+<div id = "location-map">
+<script
+  async defer
+  src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&callback=initLocationMap">
 </script>
+<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?zoom=10&center=36.1627%2C-86.7816&key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4">
+</iframe>
+</div>
+<!-- ******** ATTEMPT ONE ********* -->
 
-<!-- 
-<style>
+
+<!-- ******* ATTEMPT TWO ******** -->
+<!-- doesn't show maps or markers -->
+<!-- <style>
     #location-map {
-      height: 50%;
+      height: 75%;
     }
     html, body {
-      height: 50%;
-      margin: 0;
+      height: 75%;
       padding: 0;
     }
-  </style> -->
+  </style>
 
-<div id = "location-map" width="600" height="450"></div>
+<div id = "location-map"></div> -->
+<!-- ******* ATTEMPT TWO ******** -->
 
-<!-- <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?zoom=10&center=36.1627%2C-86.7816&key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4"></iframe> -->
 
 
 {% endblock %}

@@ -255,7 +255,8 @@ def itemInfo(current_item):
                                     item_name = item.item_name,
                                     item_description = item.item_description,
                                     item_cost = item.item_cost,
-                                    item_img = item.item_img)
+                                    item_img = item.item_img,
+                                    farm_name = item.farm_name)
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)

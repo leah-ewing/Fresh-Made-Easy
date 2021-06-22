@@ -1,5 +1,65 @@
 'use strict';
 
+// function initMap() {
+//     const locations = [
+//       {
+//         name: "Turnip Truck",
+//         coords: {
+//           lat: 36.174080,
+//           lng: -86.759710
+//         }
+//       },
+//       {
+//         name: "Fat Bottom Brewing",
+//         coords: {
+//           lat: 36.157028,
+//           lng: --86.839241
+//         }
+//       },
+//       {
+//         name: "Donelson Farmer's Market",
+//         coords: {
+//           lat: 36.190350,
+//           lng: -86.680153
+//         }
+//       },
+//     ];
+  
+//     const markers = [];
+//     for (const location of locations) {
+//       markers.push(new google.maps.Marker({
+//         position: location.coords,
+//         title: location.name,
+//         map: basicMap,
+//         icon: {  // custom icon
+//           url: '/static/img/marker.svg',
+//           scaledSize: {
+//             width: 30,
+//             height: 30
+//           }
+//         }
+//       }));
+//     }
+  
+//     for (const marker of markers) {
+//       const markerInfo = (`
+//         <h1>${marker.title}</h1>
+//         <p>
+//           Located at: <code>${marker.position.lat()}</code>,
+//           <code>${marker.position.lng()}</code>
+//         </p>
+//       `);
+  
+//       const infoWindow = new google.maps.InfoWindow({
+//         content: markerInfo,
+//         maxWidth: 200
+//       });
+  
+//       marker.addListener('click', () => {
+//         infoWindow.open(basicMap, marker);
+//       });
+//     }
+//   }
 
 // list of all pickup locations in 'all-pickup-locations.html' //
 $.get('/static/pickup-locations.json', (res) => {

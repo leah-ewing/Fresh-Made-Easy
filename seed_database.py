@@ -42,7 +42,7 @@ with open('static/pickup-locations.json') as l:
 farms_in_db = []
 for farm in farm_data:
     farm_name, farm_address = (farm['farm_name'],
-                                                farm['farm_address'])
+                               farm['farm_address'])
                                                 
     db_farm = crud.create_farm(farm_name, farm_address)
     farms_in_db.append(db_farm)

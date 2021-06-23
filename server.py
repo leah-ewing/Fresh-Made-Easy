@@ -358,24 +358,6 @@ def addToCart(current_item):
         return render_template('homepage.html', current_user = None) 
 
 
-# @app.route('/category-info/<current_category>', methods = ["GET"])
-# def categoryInfo(current_category):
-#     """Displays items fitting a category."""
-    
-#     item = crud.get_item_by_name(current_item)
-
-#     if 'current_user' in session and item != None:
-#         return render_template('item-info.html', 
-#                                     current_user = "current_user",
-#                                     item_name = item.item_name,
-#                                     item_description = item.item_description,
-#                                     item_cost = item.item_cost,
-#                                     item_img = item.item_img,
-#                                     farm_name = item.farm_name)
-#     else:
-#         flash("Please login.")
-#         return render_template('homepage.html', current_user = None)
-
 @app.route("/category-info/<current_category>", methods = ["GET"])
 def categoryInfo(current_category):
     """Displays items fitting a category."""

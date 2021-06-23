@@ -5,12 +5,11 @@
 {% block body %}
 
 <h1>{{location_name}}</h1>
-<h3><u>Name:</u> {{location_name}}<br><br>
-    <u>Address:</u> {{location_address}}<br><br>
-    <u>Neighborhood:</u> {{neighborhood_name}}<br><br><br>
 
-    
-    <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?zoom=10&center=36.1627%2C-86.7816&key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&q={{location_name}}"></iframe>
+<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?zoom=10&center=36.1627%2C-86.7816&key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&q={{location_name}}"></iframe>
+
+<h3><u>Address:</u> {{location_address}}<br><br>
+    <u>Neighborhood:</u> {{neighborhood_name}}
 </h3>
 
 {% endblock %}

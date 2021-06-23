@@ -10,11 +10,13 @@
     crossorigin="anonymous">
 </script>
 
+<h1><div id = "category-info-name">
+{{category_name}}
+</div></h1>
+
+<h4><ol id = "category-item-list"></ol></h4><br>
+
 <!-- Javascript file -->
-<script src="/static/static.js"></script>
-
-
-<h1>{{category_name}}</h1>
-<h4><ol id = "category-item-list"></ol>*items matching '{{category_name}}' listed here*</h4><br>
+<script src="/templates/category-items.js/"></script>
 
 {% endblock %}

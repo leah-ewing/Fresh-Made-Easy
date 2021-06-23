@@ -10,23 +10,24 @@
     crossorigin="anonymous">
 </script>
 
-<!-- Javascript file -->
-<script src="/static/static.js"></script>
-
 <h1><div id = "farm-info-name">
 {{farm_name}}
 </div></h1>
+
+<iframe
+width="600"
+height="450"
+frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/place?zoom=8&center=36.1627%2C-86.7816&key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&q={{farm_name}}" allowfullscreen>
+</iframe>
 
 <h3><u>Address:</u> {{farm_address}}<br><br>
     <u>Description:</u> {{farm_description}}<br><br>
     <u>Items:</u><ol id = "farm-item-list"></ol>
     <br><br>
-    
-    <iframe
-    width="600"
-    height="450"
-    frameborder="0" style="border:0"
-    src="https://www.google.com/maps/embed/v1/place?zoom=8&center=36.1627%2C-86.7816&key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&q={{farm_name}}" allowfullscreen>
-  </iframe>
+
+  
+<!-- Javascript file -->
+<script src="/templates/farm-items.js"></script>
 
 {% endblock %}

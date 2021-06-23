@@ -269,6 +269,15 @@ def get_category_by_name(category_name):
         if category.category_name == category_name:
             return category
 
+def get_item_by_category(category_name):
+    """Returns items given a category name"""
+
+    items = Item.query.all()
+
+    for item in items:
+        if item.category_name == category_name:
+            return item
+
 
 
 if __name__ == '__main__':

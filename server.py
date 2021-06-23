@@ -381,6 +381,7 @@ def categoryInfo(current_category):
     """Displays items fitting a category."""
 
     category = crud.get_category_by_name(current_category)
+    items = crud.get_item_by_category(current_category)
 
     if "current_user" in session and category != None:
         return render_template('category-info.html', 

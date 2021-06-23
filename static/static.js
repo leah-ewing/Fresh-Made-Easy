@@ -49,42 +49,17 @@ $.get('/static/farms.json', (res) => {
     }
 });
 
+// list of all items available from a farm on 'farm-info.html' //
+// currentFarm = document.getElementById("farm-info-name")
 
-// $.get('static/items.json', (res) => {
-//     for (const item of res) {
-//         $.get('static/item-categories.json', (result) => {
-//             for (const category of result) {
-//                 if (item.category_name === category.category_name) {
-//                     $('#category-item-list').append(`<ol><a id = "category-items" href = "/item-info/${item.item_name}`)
-//                 }
-//             }
-//         })
-//     }
-// })
-
-// $.get('/static/items.json', (res) => {
-//     for (const item of res) {
-//         $('#category-item-list').append(`<ol>
-//                                     <form action = "/item-info/${item.item_name}" id = "items">
-//                                         <a id = "item-info" href = "/item-info/${item.item_name}">
-//                                             <img class = "item-image"
-//                                                 src = ${item.item_img}
-//                                                 width = 200
-//                                                 alt = "${item.item_name} image"> 
-//                                             </img>
-//                                             <br> ${item.item_name}
-//                                         </a>
-//                                         <br>
-//                                         <br>
-//                                     </form>
-//                                 </ol>`);
-//     }
-// });
-
-
-// should be appending a list of items to the category-item-list -- not working right now.
-$.get('/static/items.json', (res) => {
-    for (const item of res) {
-        $('#category-item-list').append(`${item.item_name}`);
-    }
+$.get("/static/farms.json", (res) => {
+    $.get("/static/items.json", (result) => {
+        for (const farm of res) {
+            for (const item of result) {
+                if (item.farm_name == farm.farm_name) {
+                    $("#farm-item-list").append(`<ol><form action = "/item-info/${item.item_name}" id = "farms-items"><a id = "farm-item-list-info" href = "/item-info/${item.item_name}">${item.item_name}</a></form></ol>`)
+                }
+            }
+        }
+    })
 });

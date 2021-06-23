@@ -4,11 +4,23 @@
 
 {% block body %}
 
-<h1>{{farm_name}}</h1>
+<script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous">
+</script>
+
+<!-- Javascript file -->
+<script src="/static/static.js"></script>
+
+<h1><div id = "farm-info-name">
+{{farm_name}}
+</div></h1>
 
 <h3><u>Address:</u> {{farm_address}}<br><br>
     <u>Description:</u> {{farm_description}}<br><br>
-    <u>Items:</u> <i>2.0</i><br><br><br>
+    <u>Items:</u><ol id = "farm-item-list"></ol>
+    <br><br>
     
     <iframe
     width="600"

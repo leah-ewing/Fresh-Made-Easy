@@ -1,36 +1,45 @@
 [{
     "farm_name": "Gifford's Bacon",
-    "farm_address": "1109 Straightway Ave, Nashville, TN 37206"
+    "farm_address": "1109 Straightway Ave, Nashville, TN 37206",
+    "farm_description": "*"
 },
 {
     "farm_name": "Porter Road Butcher",
-    "farm_address": "501 Gallatin Ave, Nashville, Tennessee 37206"
+    "farm_address": "501 Gallatin Ave, Nashville, Tennessee 37206",
+    "farm_description": "*"
 },
 {
     "farm_name": "Johnson's Honey Farm",
-    "farm_address": "1206 South, Dickerson Rd, Goodlettsville, TN 37072"
+    "farm_address": "1206 South, Dickerson Rd, Goodlettsville, TN 37072",
+    "farm_description": "*"
 },
 {
     "farm_name": "Sequatchie Cove Creamery",
-    "farm_address": "2216 Coppinger Cove Rd, Sequatchie, TN 37374"
+    "farm_address": "2216 Coppinger Cove Rd, Sequatchie, TN 37374",
+    "farm_description": "*"
 }, 
 {
     "farm_name": "Hatcher Family Dairy",
-    "farm_address": "6545 Arno Road College Grove, TN 37046"
+    "farm_address": "6545 Arno Road College Grove, TN 37046",
+    "farm_description": "*"
 },
 {
     "farm_name": "Annie Acres",
-    "farm_address": "4610 Eatons Creek Road, Nashville, TN 37218"
+    "farm_address": "4610 Eatons Creek Road, Nashville, TN 37218",
+    "farm_description": "*"
 },
 {
     "farm_name": "Pure Pasture Farms",
-    "farm_address": "900 Rosa L Parks Blvd, Nashville, TN 37208"
+    "farm_address": "900 Rosa L Parks Blvd, Nashville, TN 37208",
+    "farm_description": "*"
 },
 {
     "farm_name": "Tennessee Grassfed",
-    "farm_address": "335 Williams Rd, Clarksville, TN 37043"
+    "farm_address": "335 Williams Rd, Clarksville, TN 37043",
+    "farm_description": "*"
 },
 {
     "farm_name": "Goo Goo Cluster",
-    "farm_address": "116 3rd Ave S, Nashville, TN 37201"
+    "farm_address": "116 3rd Ave S, Nashville, TN 37201",
+    "farm_description": "*"
 }]

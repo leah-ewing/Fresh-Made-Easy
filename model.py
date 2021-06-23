@@ -66,11 +66,12 @@ class Farm(db.Model):
                         primary_key = True)
     farm_name = db.Column(db.String(50))
     farm_address = db.Column(db.String(100))
+    farm_description = db.Column(db.String)
 
     item = db.relationship('Item', backref = 'farm')
 
     def __repr__(self):
-        return f'<Farm farm_id = {self.farm_id} farm_name = {self.farm_name} farm_address = {self.farm_address}>'
+        return f'<Farm farm_id = {self.farm_id} farm_name = {self.farm_name} farm_address = {self.farm_address} farm_description = {self.farm_description}>'
 
 
 class Item(db.Model):

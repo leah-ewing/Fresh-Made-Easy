@@ -18,10 +18,10 @@ def create_user(email, password, fname, lname, username):
     return user
 
 
-def create_farm(farm_name, farm_address):
+def create_farm(farm_name, farm_address, farm_description):
     """Create and return a new farm."""
 
-    farm = Farm(farm_name = farm_name, farm_address = farm_address)
+    farm = Farm(farm_name = farm_name, farm_address = farm_address, farm_description = farm_description)
     db.session.add(farm)
     db.session.commit()
 
@@ -90,13 +90,6 @@ def get_all_purchases(user_id):
             if purchase.user_id == user.user_id:
                 user_purchases.append([purchase.purchase_id, user.user_id])
                 return purchases
-
-    # for user in users:
-    #     if user.email == email:
-    #         return user.user_id
-
-    # return Purchases.query.filter(Purchase.user_id == User.user_id)
-    #started
 
 
 def get_user_by_email(email):

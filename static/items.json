@@ -4,7 +4,7 @@
     "item_description": "Dry cured, hickory-smoked country bacon",
     "item_img": "https://mraaronsgoods.com/wp-content/uploads/2020/06/GiffordsBaconforSite.jpg",
     "farm_name": "Gifford's Bacon",
-    "category_name": "bacon"
+    "category_name": "Bacon"
 },
 {
     "item_name": "Bone-in Ribeye",
@@ -12,7 +12,7 @@
     "item_description": "dry-aged, 1.19-1.31 lbs each",
     "item_img": "https://cdn.shopify.com/s/files/1/2373/1239/products/product-beef-steak-alt-1_2x_18f0a889-f649-46cf-bd0d-d63e635e3b52_1024x1024.jpg?v=1604955153",
     "farm_name": "Porter Road Butcher",
-    "category_name": "beef"
+    "category_name": "Beef"
 },
 {
     "item_name": "Wildflower Honey",
@@ -20,7 +20,7 @@
     "item_description": "wildflower honey made from local TN wildflowers",
     "item_img": "https://honey.com/images/default/about-honey.jpg",
     "farm_name": "Johnson's Honey Farm",
-    "category_name": "honey"
+    "category_name": "Honey"
 },
 {
     "item_name": "Dancing Fern",
@@ -28,7 +28,7 @@
     "item_description": "4 oz",
     "item_img": "image here",
     "farm_name": "Sequatchie Cove Creamery",
-    "category_name": "cheese"
+    "category_name": "Cheese"
 },
 {
     "item_name": "Shakerag Blue",
@@ -36,7 +36,7 @@
     "item_description": "4 oz",
     "item_img": "image here",
     "farm_name": "Sequatchie Cove Creamery",
-    "category_name": "cheese"
+    "category_name": "Cheese"
 },
 {
     "item_name": "Cumberland",
@@ -44,7 +44,7 @@
     "item_description": "4 oz",
     "item_img": "image here",
     "farm_name": "Sequatchie Cove Creamery",
-    "category_name": "cheese"
+    "category_name": "Cheese"
 },
 {
     "item_name": "Coppinger",
@@ -52,7 +52,7 @@
     "item_description": "4 oz",
     "item_img": "image here",
     "farm_name": "Sequatchie Cove Creamery",
-    "category_name": "cheese"
+    "category_name": "Cheese"
 }, 
 {
     "item_name": "Bellamy Blue",
@@ -60,7 +60,7 @@
     "item_description": "4 oz",
     "item_img": "image here",
     "farm_name": "Sequatchie Cove Creamery",
-    "category_name": "cheese"
+    "category_name": "Cheese"
 },
 {
     "item_name": "Gruetli",
@@ -68,7 +68,7 @@
     "item_description": "4 oz",
     "item_img": "image here",
     "farm_name": "Sequatchie Cove Creamery",
-    "category_name": "cheese"
+    "category_name": "Cheese"
 },
 {
     "item_name": "Fredonia",
@@ -76,7 +76,7 @@
     "item_description": "4 oz",
     "item_img": "image here",
     "farm_name": "Sequatchie Cove Creamery",
-    "category_name": "cheese"
+    "category_name": "Cheese"
 }, 
 {
     "item_name": "Walden",
@@ -84,7 +84,7 @@
     "item_description": "4 oz",
     "item_img": "image here",
     "farm_name": "Sequatchie Cove Creamery",
-    "category_name": "cheese"
+    "category_name": "Cheese"
 },
 {
     "item_name": "Whole Milk",
@@ -92,7 +92,7 @@
     "item_description": "1 gallon",
     "item_img": "image here",
     "farm_name": "Hatcher Family Dairy",
-    "category_name": "dairy"
+    "category_name": "Dairy"
 },
 {
     "item_name": "2% Milk",
@@ -100,7 +100,7 @@
     "item_description": "1 gallon",
     "item_img": "image here",
     "farm_name": "Hatcher Family Dairy",
-    "category_name": "dairy"
+    "category_name": "Dairy"
 }, 
 {
     "item_name": "Skim Milk",
@@ -108,7 +108,7 @@
     "item_description": "1 gallon",
     "item_img": "image here",
     "farm_name": "Hatcher Family Dairy",
-    "category_name": "dairy"
+    "category_name": "Dairy"
 },
 {
     "item_name": "Chocolate Milk",
@@ -116,7 +116,7 @@
     "item_description": "Half gallon",
     "item_img": "image here",
     "farm_name": "Hatcher Family Dairy",
-    "category_name": "dairy"
+    "category_name": "Dairy"
 },
 {
     "item_name": "Jumpin' Jimmy's",
@@ -124,7 +124,7 @@
     "item_description": "1 pint - caffeinated chocolate milk",
     "item_img": "image here",
     "farm_name": "Hatcher Family Dairy",
-    "category_name": "dairy"
+    "category_name": "Dairy"
 },
 {
     "item_name": "Half 'n' Half",
@@ -132,7 +132,7 @@
     "item_description": "1 pint",
     "item_img": "image here",
     "farm_name": "Hatcher Family Dairy",
-    "category_name": "dairy"
+    "category_name": "Dairy"
 },
 {
     "item_name": "Heavy Cream",
@@ -140,7 +140,7 @@
     "item_description": "1 pint",
     "item_img": "image here",
     "farm_name": "Hatcher Family Dairy",
-    "category_name": "dairy"
+    "category_name": "Dairy"
 },
 {
     "item_name": "Buttermilk",
@@ -148,7 +148,7 @@
     "item_description": "Half gallon",
     "item_img": "image here",
     "farm_name": "Hatcher Family Dairy",
-    "category_name": "dairy"
+    "category_name": "Dairy"
 },
 {
     "item_name": "Chicken Eggs",
@@ -156,7 +156,7 @@
     "item_description": "1 dozen",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "eggs"
+    "category_name": "Eggs"
 }, 
 {
     "item_name": "Duck Eggs",
@@ -164,7 +164,7 @@
     "item_description": "Half dozen",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "eggs"
+    "category_name": "Eggs"
 },
 {
     "item_name": "Goose Eggs",
@@ -172,7 +172,7 @@
     "item_description": "Each",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "eggs"
+    "category_name": "Eggs"
 },
 {
     "item_name": "Butter",
@@ -180,7 +180,7 @@
     "item_description": "1 pound",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "butter"
+    "category_name": "Butter"
 },
 {
     "item_name": "NY Strip Steak",
@@ -188,14 +188,14 @@
     "item_description": "dry-aged, .69-.81 lbs each",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "beef"
+    "category_name": "Beef"
 }, {
     "item_name": "Ground Beef",
     "item_cost": 7.00,
     "item_description": "dry-aged, 1 pound",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "beef"
+    "category_name": "Beef"
 }, 
 {
     "item_name": "Sirloin Filet",
@@ -203,7 +203,7 @@
     "item_description": "dry-aged, .44-.56 pounds each",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "beef"
+    "category_name": "Beef"
 }, 
 {
     "item_name": "Beef Bacon",
@@ -211,7 +211,7 @@
     "item_description": "1 pound",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "beef"
+    "category_name": "Beef"
 }, 
 {
     "item_name": "Beef Bratwurst",
@@ -219,7 +219,7 @@
     "item_description": "3 pack, .95-1.05 pounds",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "beef"
+    "category_name": "Sausage"
 }, 
 {
     "item_name": "Filet Mignon",
@@ -227,7 +227,7 @@
     "item_description": "dry-aged, .44-.56 pounds each",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "beef"
+    "category_name": "Beef"
 },
 {
     "item_name": "1/3 lb Burger Patties",
@@ -235,7 +235,7 @@
     "item_description": "dry-aged, 3 pack",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "beef"
+    "category_name": "Beef"
 },
 {
     "item_name": "Short Ribs",
@@ -243,7 +243,7 @@
     "item_description": "2 pack, 1.8-2.3 pounds",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "beef"
+    "category_name": "Beef"
 },
 {
     "item_name": "Boneless Ribeye",
@@ -251,7 +251,7 @@
     "item_description": ".94-1.06 pounds",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "beef"
+    "category_name": "Beef"
 },
 {
     "item_name": "Lamb Shoulder",
@@ -259,7 +259,7 @@
     "item_description": "2.3-2.8 pounds",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "lamb"
+    "category_name": "Lamb"
 }, 
 {
     "item_name": "Lamb Shanks", 
@@ -267,7 +267,7 @@
     "item_description": "2 pack, 1-1.5 pounds",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "lamb"
+    "category_name": "Lamb"
 }, 
 {
     "item_name": "Lamb Neck",
@@ -275,7 +275,7 @@
     "item_description": "1.5-2.5 pounds",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "lamb"
+    "category_name": "Lamb"
 },
 {
     "item_name": "Lamb Ribs",
@@ -283,7 +283,7 @@
     "item_description": "1.5-2.5 pounds",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "lamb"
+    "category_name": "Lamb"
 },
 {
     "item_name": "Bone-in Leg of Lamb",
@@ -291,7 +291,7 @@
     "item_description": "3.7-4.3 pounds",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "lamb"
+    "category_name": "Lamb"
 },
 {
     "item_name": "Coho Salmon Filet Portions",
@@ -299,7 +299,7 @@
     "item_description": "6-8 ounce each",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "fish"
+    "category_name": "Fish"
 },
 {
     "item_name": "Halibut Cheeks",
@@ -307,7 +307,7 @@
     "item_description": "8 oz each",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "fish"
+    "category_name": "Fish"
 },
 {
     "item_name": "Kodiak Weathervane Scallops",
@@ -315,7 +315,7 @@
     "item_description": "Pack of 30-40",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "fish"
+    "category_name": "Fish"
 }, 
 {
     "item_name": "Lox Portions",
@@ -323,7 +323,7 @@
     "item_description": "8.8 oz",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "fish"
+    "category_name": "Fish"
 },
 {
     "item_name": "Wild Alaskan Cod",
@@ -331,7 +331,7 @@
     "item_description": "1 pound",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "fish"
+    "category_name": "Fish"
 },
 {
     "item_name": "Salmon Burger",
@@ -339,7 +339,7 @@
     "item_description": "1 pound",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "fish"
+    "category_name": "Fish"
 }, 
 {
     "item_name": "Smoked Salmon Portions",
@@ -347,7 +347,7 @@
     "item_description": "8 oz",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "fish"
+    "category_name": "Fish"
 },
 {
     "item_name": "Tanner Crab Legs and Claws", 
@@ -355,7 +355,7 @@
     "item_description": "2 pound",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "fish"
+    "category_name": "Fish"
 },
 {
     "item_name": "Clover Honey",
@@ -363,7 +363,7 @@
     "item_description": "12 oz",
     "item_img": "image here",
     "farm_name": "Johnson's Honey Farm",
-    "category_name": "honey"
+    "category_name": "Honey"
 },
 {
     "item_name": "Orange Blossom Honey",
@@ -371,7 +371,7 @@
     "item_description": "12 oz",
     "item_img": "image here",
     "farm_name": "Johnson's Honey Farm",
-    "category_name": "honey"
+    "category_name": "Honey"
 },
 {
     "item_name": "Cinnamon Honey Stick",
@@ -379,7 +379,7 @@
     "item_description": "Each",
     "item_img": "image here",
     "farm_name": "Johnson's Honey Farm",
-    "category_name": "honey"
+    "category_name": "Honey"
 },
 {
     "item_name": "Wildflower Honey Stick",
@@ -387,7 +387,7 @@
     "item_description": "Each",
     "item_img": "image here",
     "farm_name": "Johnson's Honey Farm",
-    "category_name": "honey"
+    "category_name": "Honey"
 },
 {
     "item_name": "Orange Blosson Honey Stick",
@@ -395,7 +395,7 @@
     "item_description": "Each",
     "item_img": "image here",
     "farm_name": "Johnson's Honey Farm",
-    "category_name": "honey"
+    "category_name": "Honey"
 }, 
 {
     "item_name": "Clover Honey Stick",
@@ -403,7 +403,7 @@
     "item_description": "Each",
     "item_img": "image here",
     "farm_name": "Johnson's Honey Farm",
-    "category_name": "honey"
+    "category_name": "Honey"
 },
 {
     "item_name": "Bee Pollen",
@@ -411,7 +411,7 @@
     "item_description": "8 oz",
     "item_img": "image here",
     "farm_name": "Johnson's Honey Farm",
-    "category_name": "honey"
+    "category_name": "Honey"
 },
 {
     "item_name": "Boneless Chicken Breast",
@@ -419,7 +419,7 @@
     "item_description": "2 pack, 11 oz",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "chicken"
+    "category_name": "Chicken"
 },
 {
     "item_name": "Boneless Chicken Thigh",
@@ -427,7 +427,7 @@
     "item_description": "4 pack, 12-13 oz",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "chicken"
+    "category_name": "Chicken"
 },
 {
     "item_name": "Boneless/Skinless Chicken Breast",
@@ -435,7 +435,7 @@
     "item_description": "2 pack, 11 oz",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "chicken"
+    "category_name": "Chicken"
 },
 {
     "item_name": "Chicken Drumsticks",
@@ -443,7 +443,7 @@
     "item_description": "4 pack, 1 pound",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "chicken"
+    "category_name": "Chicken"
 },
 {
     "item_name": "Chicken Tenderloins",
@@ -451,7 +451,7 @@
     "item_description": "12-13 oz",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "chicken"
+    "category_name": "Chicken"
 },
 {
     "item_name": "Chicken Thighs",
@@ -459,7 +459,7 @@
     "item_description": "18 oz",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "chicken"
+    "category_name": "Chicken"
 },
 {
     "item_name": "Chicken Wings",
@@ -467,7 +467,7 @@
     "item_description": "Approx .9 pounds",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "chicken"
+    "category_name": "Chicken"
 },
 {
     "item_name": "Ground Chicken",
@@ -475,7 +475,7 @@
     "item_description": "1 pound",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "chicken"
+    "category_name": "Chicken"
 },
 {
     "item_name": "Nashville Hot Ground Chicken",
@@ -483,7 +483,7 @@
     "item_description": "1 pound",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "chicken"
+    "category_name": "Chicken"
 },
 {
     "item_name": "Pre-Cut Whole Chicken",
@@ -491,7 +491,7 @@
     "item_description": "split breast, 4-5 pounds",
     "item_img": "image here",
     "farm_name": "Pure Pasture Farms",
-    "category_name": "chicken"
+    "category_name": "Chicken"
 },
 {
     "item_name": "Bone-in Pork Chops",
@@ -499,7 +499,7 @@
     "item_description": "1 pound",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "pork"
+    "category_name": "Pork"
 },
 {
     "item_name": "Boneless Pork Chops",
@@ -507,7 +507,7 @@
     "item_description": "1 pound",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "pork"
+    "category_name": "Pork"
 },
 {
     "item_name": "Baby Back Ribs",
@@ -515,7 +515,7 @@
     "item_description": "1 pound",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "pork"
+    "category_name": "Pork"
 },
 {
     "item_name": "Ground Pork",
@@ -523,7 +523,7 @@
     "item_description": "2 pounds",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "pork"
+    "category_name": "Pork"
 },
 {
     "item_name": "Boston Butt",
@@ -531,7 +531,7 @@
     "item_description": "4-5 pounds",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "pork"
+    "category_name": "Pork"
 },
 {
     "item_name": "Sliced Ham",
@@ -539,7 +539,7 @@
     "item_description": "1 pound",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "pork"
+    "category_name": "Pork"
 },
 {
     "item_name": "Pork Tenderloin",
@@ -547,7 +547,7 @@
     "item_description": "Each",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "pork"
+    "category_name": "Pork"
 }, 
 {
     "item_name": "Pork Chorizo",
@@ -555,7 +555,7 @@
     "item_description": "1 pound",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "sausage"
+    "category_name": "Sausage"
 }, 
 {
     "item_name": "Hot Breakfast Sausage",
@@ -563,7 +563,7 @@
     "item_description": "1 pound",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "sausage"
+    "category_name": "Sausage"
 },
 {
     "item_name": "Country Breakfast Sausage",
@@ -571,7 +571,7 @@
     "item_description": "1 pound",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "sausage"
+    "category_name": "Sausage"
 },
 {
     "item_name": "Hot Italian Sausage",
@@ -579,7 +579,7 @@
     "item_description": "3 pack, 1 pound",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "sausage"
+    "category_name": "Sausage"
 },
 {
     "item_name": "Memphis Barbecue Sausage",
@@ -587,7 +587,7 @@
     "item_description": "3 pack, 1 pound",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "sausage"
+    "category_name": "Sausage"
 },
 {
     "item_name": "Andouille Sausage",
@@ -595,7 +595,7 @@
     "item_description": "3 pack, 1 pound",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "sausage"
+    "category_name": "Sausage"
 },
 {
     "item_name": "Kielbasa Sausage",
@@ -603,7 +603,7 @@
     "item_description": "2 pack, 1 pound",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "sausage"
+    "category_name": "Sausage"
 }, 
 {
     "item_name": "Dry-Aged Hotdogs",
@@ -611,7 +611,7 @@
     "item_description": "4 pack, 10 oz",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "sausage"
+    "category_name": "Sausage"
 },
 {
     "item_name": "Duck Breast",
@@ -619,7 +619,7 @@
     "item_description": "1 pound",
     "item_img": "image here",
     "farm_name": "Tennessee Grassfed",
-    "category_name": "duck"
+    "category_name": "Duck"
 },
 {
     "item_name": "Beef Stock",
@@ -627,7 +627,7 @@
     "item_description": "32 oz",
     "item_img": "image here",
     "farm_name": "Porter Road Butcher",
-    "category_name": "stocks and sauces"
+    "category_name": "Stocks & Sauces"
 },
 {
     "item_name": "Lard",
@@ -635,7 +635,7 @@
     "item_description": "1 quart",
     "item_img": "image here",
     "farm_name": "Annie Acres",
-    "category_name": "stocks and sauces"
+    "category_name": "Stocks & Sauces"
 }, 
 {
     "item_name": "Chicken Broth",
@@ -643,7 +643,7 @@
     "item_description": "15 oz",
     "item_img": "image here",
     "farm_name": "Tennessee Grassfed",
-    "category_name": "stocks and sauces"
+    "category_name": "Stocks & Sauces"
 },
 {
     "item_name": "Gifford's Barbecue Sauce",
@@ -651,7 +651,7 @@
     "item_description": "15 oz",
     "item_img": "image here",
     "farm_name": "Gifford's Bacon",
-    "category_name": "stocks and sauces"
+    "category_name": "Stocks & Sauces"
 }, 
 {
     "item_name": "Goo Goo Cluster, Lil Goos",
@@ -659,7 +659,7 @@
     "item_description": "6 oz",
     "item_img": "image here",
     "farm_name": "Goo Goo Cluster",
-    "category_name": "snacks"
+    "category_name": "Snacks"
 },
 {
     "item_name": "Goo Goo Cluster, Original (3 pack)",
@@ -667,7 +667,7 @@
     "item_description": "3 pack",
     "item_img": "image here",
     "farm_name": "Goo Goo Cluster",
-    "category_name": "snacks"
+    "category_name": "Snacks"
 },
 {
     "item_name": "Goo Goo Cluster, Peanut Butter (3 pack)",
@@ -675,7 +675,7 @@
     "item_description": "3 pack",
     "item_img": "image here",
     "farm_name": "Goo Goo Cluster",
-    "category_name": "snacks"
+    "category_name": "Snacks"
 },
 {
     "item_name": "Goo Goo Cluster, Pecan (3 pack)",
@@ -683,7 +683,7 @@
     "item_description": "3 pack",
     "item_img": "image here",
     "farm_name": "Goo Goo Cluster",
-    "category_name": "snacks"
+    "category_name": "Snacks"
 },
 {
     "item_name": "Goo Goo Cluster, Original (12 pack)",
@@ -691,7 +691,7 @@
     "item_description": "12 pack",
     "item_img": "image here",
     "farm_name": "Goo Goo Cluster",
-    "category_name": "snacks"
+    "category_name": "Snacks"
 },
 {
     "item_name": "Goo Goo Cluster, Peanut Butter (12 pack)",
@@ -699,7 +699,7 @@
     "item_description": "12 pack",
     "item_img": "image here",
     "farm_name": "Goo Goo Cluster",
-    "category_name": "snacks"
+    "category_name": "Snacks"
 },
 {
     "item_name": "Goo Goo Cluster, Pecan (12 pack)",
@@ -707,5 +707,5 @@
     "item_description": "12 pack",
     "item_img": "image here",
     "farm_name": "Goo Goo Cluster",
-    "category_name": "snacks"
+    "category_name": "Snacks"
 }]

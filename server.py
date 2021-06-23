@@ -246,7 +246,8 @@ def farmInfo(current_farm):
         return render_template('farm-info.html', 
                                     current_user = "current_user",
                                     farm_name = farm.farm_name,
-                                    farm_address = farm.farm_address)
+                                    farm_address = farm.farm_address,
+                                    farm_description = farm.farm_description)
     else:
         return render_template('farm-info.html', 
                                 current_user = None, 

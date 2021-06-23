@@ -22,24 +22,17 @@
 <h4><ol id = "pickup-location-file"></ol><br></h4>
 
 
-<!-- ********* ATTEMPT ONE ******** -->
-<!-- shows map but doesn't show markers -->
-<div id = "location-map">
+<!-- Javascript file for map -->
+<script src="/static/maps.js"></script>
 <script
   async defer
   src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&callback=initLocationMap">
 </script>
-<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?zoom=10&center=36.1627%2C-86.7816&key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4">
-</iframe>
-</div>
-<!-- ******** ATTEMPT ONE ********* -->
 
-
-<!-- ******* ATTEMPT TWO ******** -->
-<!-- doesn't show maps or markers -->
-<!-- <style>
+<style>
     #location-map {
-      height: 75%;
+      height: 450px;
+      width: 600px;
     }
     html, body {
       height: 75%;
@@ -47,8 +40,7 @@
     }
   </style>
 
-<div id = "location-map"></div> -->
-<!-- ******* ATTEMPT TWO ******** -->
+<div id = "location-map"></div>
 
 
 

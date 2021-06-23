@@ -267,6 +267,15 @@ def get_payment_method_id(payment_method):
         if method.payment_method_type == payment_method:
             return method.payment_method_id
 
+def get_category_by_name(category_name):
+    """Returns a category given a name."""
+
+    categories = Category.query.all()
+
+    for category in categories:
+        if category.category_name == category_name:
+            return category
+
 
 
 if __name__ == '__main__':

@@ -186,10 +186,21 @@ def allFarms():
 
 @app.route('/shop')
 def shop():
-    """Takes user to the shop page."""
+    """Takes the user to the shop page."""
 
     if "current_user" in session:
         return render_template('shop.html', current_user = "current_user")
+    else:
+        flash("Please login to shop!")
+        return render_template('homepage.html', current_user = None)
+
+
+@app.route('/all-items')
+def allItems():
+    """Shows a user all items available for purchase."""
+
+    if "current_user" in session:
+        return render_template('all-items.html', current_user = "current_user")
     else:
         flash("Please login to view items!")
         return render_template('homepage.html', current_user = None)
@@ -344,6 +355,39 @@ def addToCart(current_item):
     elif "current_user" not in session:
         flash("Please login.")
         return render_template('homepage.html', current_user = None) 
+
+
+# @app.route('/category-info/<current_category>', methods = ["GET"])
+# def categoryInfo(current_category):
+#     """Displays items fitting a category."""
+    
+#     item = crud.get_item_by_name(current_item)
+
+#     if 'current_user' in session and item != None:
+#         return render_template('item-info.html', 
+#                                     current_user = "current_user",
+#                                     item_name = item.item_name,
+#                                     item_description = item.item_description,
+#                                     item_cost = item.item_cost,
+#                                     item_img = item.item_img,
+#                                     farm_name = item.farm_name)
+#     else:
+#         flash("Please login.")
+#         return render_template('homepage.html', current_user = None)
+
+@app.route("/category-info/<current_category>", methods = ["GET"])
+def categoryInfo(current_category):
+    """Displays items fitting a category."""
+
+    category = crud.get_category_by_name(current_category)
+
+    if "current_user" in session and category != None:
+        return render_template('category-info.html', 
+                                current_user = "current_user",
+                                category_name = category.category_name)
+    else:
+        flash("Please login.")
+        return render_template('homepage.html', current_user = None)
 
 
 

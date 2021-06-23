@@ -9,13 +9,13 @@ const nashville_coords = {
 // ******* refers to existing map "location-map" ******
 // ******* currently shows map but doesn't show markers ******
 
-  const basicMap = google.maps.Map(
-    document.querySelector('#location-map'),
-    {
-      center: nashville_coords,
-      zoom: 11
-    }
-  );
+  // const locationMap = google.maps.Map(
+  //   document.querySelector('#location-map'),
+  //   {
+  //     center: nashville_coords,
+  //     zoom: 11
+  //   }
+  // );
 
 // ****** ATTEMPT ONE *********
 
@@ -24,7 +24,7 @@ const nashville_coords = {
 // ****** creates new map in div "location-map" ******
 // ****** currently doesn't show maps or markers ******
 
-// const basicMap = new google.maps.Map(document.querySelector("#location-map"),
+// const locationMap = new google.maps.Map(document.querySelector("#location-map"),
 //     {
 //         center: nashville_coords,
 //         zoom: 11
@@ -38,7 +38,7 @@ const nashville_coords = {
 // ****** refers to already-existing map "location-map" ******
 // ****** doesn't change the way the map reacts for attempt 1 or 2 *******
 
-// const basicMap = document.querySelector("#location-map"), {
+// const locationMap = document.querySelector("#location-map"), {
 //     center: nashville_coords
 // }
 
@@ -46,9 +46,17 @@ const nashville_coords = {
 
 
 function initLocationMap() {
+  const locationMap = new google.maps.Map(document.querySelector("#location-map"),
+    {
+        center: nashville_coords,
+        zoom: 11
+    }
+);
+  console.log("location-map")
     const locations = [
       {
         name: "Turnip Truck",
+        address: "701 Woodland St, Nashville, TN 37206",
         coords: {
           lat: 36.174080,
           lng: -86.759710
@@ -56,6 +64,7 @@ function initLocationMap() {
       },
       {
         name: "Fat Bottom Brewing",
+        address: "800 44th Ave N, Nashville, TN 37209",
         coords: {
           lat: 36.157028,
           lng: -86.839241
@@ -63,6 +72,7 @@ function initLocationMap() {
       },
       {
         name: "Donelson Farmer's Market",
+        address: "3130 McGavock Pk, Nashville, TN 37214",
         coords: {
           lat: 36.190350,
           lng: -86.680153
@@ -75,14 +85,8 @@ function initLocationMap() {
       markers.push(new google.maps.Marker({
         position: location.coords,
         title: location.name,
-        map: basicMap,
-        icon: {
-            url: 'google.maps.SymbolPath.BACKWARD_CLOSED_ARROW',
-            scaledSize: {
-              width: 30,
-              height: 30
-            }
-          }
+        address: location.address,
+        map: locationMap
       }));
     }
   
@@ -90,8 +94,7 @@ function initLocationMap() {
       const markerInfo = (`
         <h1>${marker.title}</h1>
         <p>
-          Located at: <code>${marker.position.lat()}</code>,
-          <code>${marker.position.lng()}</code>
+          <code>${marker.address}</code>
         </p>
       `);
   
@@ -100,8 +103,8 @@ function initLocationMap() {
         maxWidth: 200
       });
   
-      marker.addListener('click', () => {
-        infoWindow.open(basicMap, marker);
+      marker.addListener('mouseover', () => {
+        infoWindow.open(locationMap, marker);
       });
     }
   }

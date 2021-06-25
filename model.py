@@ -43,7 +43,6 @@ class Purchase(db.Model):
                             autoincrement = True,
                             primary_key = True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
-    items = db.Column(db.String)
     date_time_of_purchase = db.Column(db.String)
     # ^ temporarily "*", eventually DateTime
     payment_method = db.Column(db.String)
@@ -52,8 +51,10 @@ class Purchase(db.Model):
     pickup_location = db.Column(db.String)
     purchase_total = db.Column(db.Integer)
 
+    user = db.relationship('User', backref = 'purchase')
+
     def __repr__(self):
-        return f'Purchase ID: {self.purchase_id} Items: {self.items} Date/Time of Purchase: {self.date_time_of_purchase} Payment Method: {self.payment_method} Pickup Date: {self.pickup_date} Pickup Location: {self.pickup_location} Total: {self.purchase_total} \n'
+        return f'Purchase ID: {self.purchase_id} User ID: {self.user_id} Date/Time of Purchase: {self.date_time_of_purchase} Payment Method: {self.payment_method} Pickup Date: {self.pickup_date} Pickup Location: {self.pickup_location} Total: {self.purchase_total} \n'
 
 
 class Farm(db.Model):
@@ -138,7 +139,56 @@ class PaymentMethod(db.Model):
      
     def __repr__(self):
         return f'<PaymentMethod payment_method_id = {self.payment_method_id} payment_method_type = {self.payment_method_type}>'
-        
+
+
+class ShoppingCart(db.Model):
+    """User's shopping carts."""
+
+    __tablename__ = 'shopping_cart'
+
+    shopping_cart_id = db.Column(db.Integer,
+                                autoincrement = True, 
+                                primary_key = True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
+
+    user = db.relationship('User', backref = 'shopping_cart')
+
+
+class PurchaseItems(db.Model):
+    """Items a user has purchased."""
+
+    __tablename__ = 'purchase_items'
+
+    purchase_items_id = db.Column(db.Integer, 
+                                autoincrement = True,
+                                primary_key = True)
+    item_id = db.Column(db.Integer, db.ForeignKey('cart_items.item_id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
+    purchase_id = db.Column(db.Integer, db.ForeignKey('purchase.purchase_id'))
+
+    # item = db.relationship('Item', backref = 'purchase_items')
+    cart_items = db.relationship('CartItems', backref = 'purchase_items')
+    user = db.relationship('User', backref = 'purchase_items')
+    purchase = db.relationship('Purchase', backref = 'purchase_items')
+
+    
+class CartItems(db.Model):
+    """Items in a user's cart."""
+
+    __tablename__ = 'cart_items'
+
+    cart_items_id = db.Column(db.Integer, 
+                            autoincrement = True, 
+                            primary_key = True)
+    item_id = db.Column(db.Integer, db.ForeignKey('item.item_id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
+
+    item = db.relationship('Item', backref = 'cart_items')
+    user = db.relationship('User', backref = 'cart_items')
+
+
+
+
 
 
 if __name__ == '__main__':

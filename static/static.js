@@ -48,12 +48,3 @@ $.get('/static/farms.json', (res) => {
         $('#farm-list').append(`<ol><form action = "/farm-info/${farm.farm_name}" id = "farms"><a id = "farm-info" href = "/farm-info/${farm.farm_name}">${farm.farm_name}</a></form></ol>`);
     }
 });
-
-
-
-
-
-
-
-
-

@@ -1,6 +1,6 @@
 """CRUD operations."""
 
-from model import db, User, Purchase, Farm, Item, PickupLocation, Category, PaymentMethod, connect_to_db
+from model import db, User, Purchase, Farm, Item, PickupLocation, Category, PaymentMethod, ShoppingCart, PurchaseItems, CartItems, connect_to_db
 
 
 def create_user(email, password, fname, lname, username):
@@ -79,17 +79,19 @@ def create_payment_method(payment_method_type):
     return payment_method
 
 
-def get_all_purchases(user_id):
-    """Returns all purchases made by a user."""
-    user_purchases = []
-    users = User.query.all()
-    purchases = Purchase.query.all()
+# def get_all_purchases(user_id):
+#     """Returns all purchases made by a user."""
+#     # user_purchases = []
+#     # users = User.query.all()
+#     # purchases = Purchase.query.all()
 
-    for purchase in purchases:
-        for user in users:
-            if purchase.user_id == user.user_id:
-                user_purchases.append([purchase.purchase_id, user.user_id])
-                return purchases
+#     # for purchase in purchases:
+#     #     for user in users:
+#     #         if purchase.user_id == user.user_id:
+#     #             user_purchases.append([purchase.purchase_id, user.user_id])
+#     #             return user_purchases
+#     user = User.query.get(user_id)
+#     return user.purchases
 
 
 def get_user_by_email(email):
@@ -220,16 +222,34 @@ def get_pickup_location_by_neighborhood(location):
         if location.neighborhood_name == location:
             return location.neighborhood_name
 
+def create_new_cart(user_id):
+    """Creates a new user shopping cart."""
 
-def create_new_purchase(user_id, items, date_time_of_purchase, payment_method, pickup_date, pickup_location, purchase_total):
+    shopping_cart = ShoppingCart(user_id = user_id)
+
+    db.session.add(shopping_cart)
+    db.session.commit()
+
+    return shopping_cart
+
+
+def create_new_purchase(user_id, date_time_of_purchase, payment_method, pickup_date, pickup_location, purchase_total):
     """Creates a new user purchase."""
 
-    purchase = Purchase(user_id = user_id, items = items, date_time_of_purchase = date_time_of_purchase, payment_method = payment_method, pickup_date = pickup_date, pickup_location = pickup_location, purchase_total = purchase_total)
+    purchase = Purchase(user_id = user_id, date_time_of_purchase = date_time_of_purchase, payment_method = payment_method, pickup_date = pickup_date, pickup_location = pickup_location, purchase_total = purchase_total)
 
     db.session.add(purchase)
     db.session.commit()
 
     return purchase
+
+
+def add_items_to_purchase(item_id, user_id, purchase_id):
+
+    purchase_items = PurchaseItems(item_id = item_id, user_id = user_id, purchase_id = purchase_id)
+
+    db.session.add(purchase_items)
+    db.session.commit()
 
 
 def get_user_id_by_email(email):
@@ -260,6 +280,7 @@ def get_payment_method_id(payment_method):
         if method.payment_method_type == payment_method:
             return method.payment_method_id
 
+
 def get_category_by_name(category_name):
     """Returns a category given a name."""
 
@@ -269,6 +290,7 @@ def get_category_by_name(category_name):
         if category.category_name == category_name:
             return category
 
+
 def get_item_by_category(category_name):
     """Returns items given a category name"""
 
@@ -277,6 +299,29 @@ def get_item_by_category(category_name):
     for item in items:
         if item.category_name == category_name:
             return item
+
+
+def get_purchase_id(user_id):
+    """Returns purchase id's for a given user"""
+
+    purchases = Purchase.query.all()
+
+    for purchase in purchases:
+        if purchase.user_id == user_id:
+            return purchase.purchase_id
+
+
+def add_item_to_cart(item_id, user_id):
+    """Adds an item to a user's cart."""
+
+    cart_item = CartItems(item_id = item_id, user_id = user_id)
+
+    db.session.add(cart_items)
+    db.session.commit()
+
+    return cart_item
+
+
 
 
 

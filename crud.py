@@ -314,12 +314,22 @@ def get_purchase_id(user_id):
 def add_item_to_cart(item_id, user_id):
     """Adds an item to a user's cart."""
 
-    cart_item = CartItems(item_id = item_id, user_id = user_id)
+    cart_items = CartItems(item_id = item_id, user_id = user_id)
 
     db.session.add(cart_items)
     db.session.commit()
 
-    return cart_item
+    return cart_items
+
+
+def get_item_id_by_name(item_name):
+    """Gets an item id based on a given name."""
+
+    items = Item.query.all()
+
+    for item in items:
+        if item.item_name == item_name:
+            return item.item_id
 
 
 

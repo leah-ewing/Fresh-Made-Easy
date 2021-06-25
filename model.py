@@ -91,6 +91,9 @@ class Item(db.Model):
     farm_name = db.Column(db.String)
     category_name = db.Column(db.String)
 
+    # cart_items = db.relationship('CartItems', backref = 'item')
+
+
     def __repr__(self):
         return f'<Item item_id = {self.item_id} farm_id = {self.farm_id} item_cost = {self.item_cost} item_name = {self.item_name} category_name = {self.category_name} item_description = {self.item_description}>'
 
@@ -162,12 +165,12 @@ class PurchaseItems(db.Model):
     purchase_items_id = db.Column(db.Integer, 
                                 autoincrement = True,
                                 primary_key = True)
-    item_id = db.Column(db.Integer, db.ForeignKey('cart_items.item_id'))
+    item_id = db.Column(db.Integer, db.ForeignKey('item.item_id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
     purchase_id = db.Column(db.Integer, db.ForeignKey('purchase.purchase_id'))
 
-    # item = db.relationship('Item', backref = 'purchase_items')
-    cart_items = db.relationship('CartItems', backref = 'purchase_items')
+    item = db.relationship('Item', backref = 'purchase_items')
+    # cart_items = db.relationship('CartItems', backref = 'purchase_items')
     user = db.relationship('User', backref = 'purchase_items')
     purchase = db.relationship('Purchase', backref = 'purchase_items')
 

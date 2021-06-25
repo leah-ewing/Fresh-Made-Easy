@@ -154,7 +154,9 @@ class ShoppingCart(db.Model):
                                 primary_key = True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
 
+
     user = db.relationship('User', backref = 'shopping_cart')
+
 
 
 class PurchaseItems(db.Model):

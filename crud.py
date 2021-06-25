@@ -161,16 +161,6 @@ def get_item_by_description(item):
     for item in items:
         if item.item_description == item:
             return item
-    
-
-def get_item_by_cost(item):
-    """Return an item's cost."""
-
-    items = Item.query.all()
-
-    for item in items:
-        if item.item_cost == item:
-            return item
 
 
 def get_farm_by_name(farm_name):
@@ -315,8 +305,10 @@ def add_item_to_cart(item_id, user_id):
     """Adds an item to a user's cart."""
 
     cart_items = CartItems(item_id = item_id, user_id = user_id)
-
+    shopping_cart = ShoppingCart(user_id = user_id)
+    
     db.session.add(cart_items)
+    db.session.add(shopping_cart)
     db.session.commit()
 
     return cart_items
@@ -332,6 +324,34 @@ def get_item_id_by_name(item_name):
             return item.item_id
 
 
+def get_item_name_by_id(item_id):
+    """Gets an item based on a given id."""
+
+    items = Item.query.all()
+
+    for item in items:
+        if item.item_id == item_id:
+            return item.item_name
+
+
+def get_item_cost(item_id):
+    """Return an item's cost."""
+
+    items = Item.query.all()
+
+    for item in items:
+        if item.item_id == item_id:
+            return item.item_cost
+
+
+def get_cart_by_user_id(user_id):
+    """Returns a user's shopping cart."""
+
+    cart_item_id = CartItems.query.all()
+
+    for cart_item_id in cart_items:
+        if cart_item.user_id == user_id:
+            return cart_item_id
 
 
 

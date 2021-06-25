@@ -135,11 +135,14 @@ def aboutUsPage():
 @app.route('/shopping-cart')
 def shoppingCart():
     """Display a user's shopping cart."""
+    # email = session["current_user"]
+    # user_id = get_user_id_by_email(email)
+    # user_cart = []
+    # items_in_cart = []
 
     if "current_user" in session:
         return render_template('shopping-cart.html', 
-                                current_user = "current_user", 
-                                shopping_cart = session["shopping_cart"],
+                                current_user = "current_user",
                                 total = session["total"])
     else:
         flash("Please login.")
@@ -350,23 +353,6 @@ def purchaseInfo():
 # ******************************
 @app.route('/add-item-to-cart/<current_item>', methods = ["POST"])
 def addToCart(current_item):
-    # """Adds an item to the user's shopping cart."""
-    # item = crud.get_item_by_name(current_item)
-    # item_amount = request.form.get("add-to-cart")
-
-    # if "current_user" in session and item != None:
-    #         session["shopping_cart"].append([item.item_name, (int(item.item_cost) * int(item_amount)), item_amount])
-    #         session["total"] += (int(item.item_cost) * int(item_amount))
-    #         flash("Item added to cart!")
-    #         return render_template('shopping-cart.html', 
-    #                                 current_user = "current_user",
-    #                                 shopping_cart = session["shopping_cart"],
-    #                                 total = session["total"])
-    # elif "current_user" not in session:
-    #     flash("Please login.")
-    #     return render_template('homepage.html', current_user = None)
-# ******************************
-
     """Adds an item to the user's shopping cart."""
 
     email = session["current_user"]

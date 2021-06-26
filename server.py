@@ -135,15 +135,21 @@ def aboutUsPage():
 @app.route('/shopping-cart')
 def shoppingCart():
     """Display a user's shopping cart."""
-    # email = session["current_user"]
-    # user_id = get_user_id_by_email(email)
-    # user_cart = []
-    # items_in_cart = []
+    email = session["current_user"]
+    user_id = crud.get_user_id_by_email(email)
+    cart_ids = crud.get_cart_id_by_user_id(user_id)
+    item_names = crud.get_item_names_in_cart(user_id)
+    cart_total = crud.get_cart_total(user_id)
+    item_amounts = crud.get_item_amounts(user_id)
+    
 
     if "current_user" in session:
         return render_template('shopping-cart.html', 
                                 current_user = "current_user",
-                                total = session["total"])
+                                cart_total = cart_total, 
+                                cart_ids = cart_ids,
+                                item_names = item_names,
+                                item_amounts = item_amounts)
     else:
         flash("Please login.")
         return redirect('/')
@@ -302,11 +308,15 @@ def userPurchases():
 def checkout():
     """Displays checkout page."""
 
+    email = session["current_user"]
+    user_id = crud.get_user_id_by_email(email)
+    cart_total = crud.get_cart_total(user_id)
+
     if "current_user" in session:
-        if session['total'] == 0:
+        if cart_total == 0:
             flash("Add some items to your cart to checkout!")
             return redirect('/shopping-cart')
-        if session['total'] > 0:
+        if cart_total > 0:
             return render_template('checkout.html', current_user = "current_user")
     else:
         flash("Please login.")
@@ -360,14 +370,13 @@ def addToCart(current_item):
     user_id = crud.get_user_id_by_email(email)
     item = crud.get_item_by_name(current_item)
     item_amount = request.form.get("add-to-cart")
+    # cart_item_ids = crud.get_cart_id_by_user_id(user_id)
 
     if "current_user" in session:
-        crud.add_item_to_cart(item_id, user_id)
-        session["total"] += (int(item.item_cost) * int(item_amount))
+        crud.add_item_to_cart(item_id, user_id, item_amount)
+        # session["total"] += (int(item.item_cost) * int(item_amount))
         flash("Item added to cart!")
-        return render_template('shopping-cart.html', 
-                                current_user = "current_user",
-                                total = session["total"])
+        return redirect("/shopping-cart")
     elif "current_user" not in session:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)

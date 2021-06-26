@@ -11,12 +11,14 @@
 
 
   <h1>Your Cart:</h1>
+
+{% for item in item_names %}
+    <ul><a id = "cart-item-info" href = "/item-info/{{item}}">{{item}}</a></ul>
+{% endfor %}
   
 
-  <h4><ol id = "cart">*COMING SOON*</ol><br><br>
 
-
-  <h3>Cart Total: <small>{{total}}</small></h3>
+  <h3>Cart Total: {{cart_total}}</h3>
   <form action = "/checkout">
   <div class = "checkout">
     <button type = "submit">Checkout</button>

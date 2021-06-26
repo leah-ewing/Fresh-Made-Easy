@@ -187,6 +187,7 @@ class CartItems(db.Model):
                             primary_key = True)
     item_id = db.Column(db.Integer, db.ForeignKey('item.item_id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
+    item_amount = db.Column(db.Integer)
 
     item = db.relationship('Item', backref = 'cart_items')
     user = db.relationship('User', backref = 'cart_items')

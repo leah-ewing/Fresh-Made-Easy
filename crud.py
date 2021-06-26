@@ -301,10 +301,10 @@ def get_purchase_id(user_id):
             return purchase.purchase_id
 
 
-def add_item_to_cart(item_id, user_id):
+def add_item_to_cart(item_id, user_id, item_amount):
     """Adds an item to a user's cart."""
 
-    cart_items = CartItems(item_id = item_id, user_id = user_id)
+    cart_items = CartItems(item_id = item_id, user_id = user_id, item_amount = item_amount)
     shopping_cart = ShoppingCart(user_id = user_id)
     
     db.session.add(cart_items)
@@ -331,7 +331,7 @@ def get_item_name_by_id(item_id):
 
     for item in items:
         if item.item_id == item_id:
-            return item.item_name
+            return items.item_name
 
 
 def get_item_cost(item_id):
@@ -344,15 +344,62 @@ def get_item_cost(item_id):
             return item.item_cost
 
 
-def get_cart_by_user_id(user_id):
-    """Returns a user's shopping cart."""
+def get_cart_id_by_user_id(user_id):
+    """Returns id's of items in a user's shopping cart."""
 
-    cart_item_id = CartItems.query.all()
+    cart_item_ids = CartItems.query.all()
 
-    for cart_item_id in cart_items:
-        if cart_item.user_id == user_id:
-            return cart_item_id
+    for cart_item_id in cart_item_ids:
+        if cart_item_id.user_id == user_id:
+            return cart_item_ids
 
+
+def get_item_names_in_cart(user_id):
+    """Returns names of items in a user's cart."""
+
+    cart_items = set()
+    item_ids = CartItems.query.all()
+    items = Item.query.all()
+
+    for item_id in item_ids:
+        for item in items:
+            if item_id.user_id == user_id:
+                if item_id.item_id == item.item_id:
+                    cart_items.add(item.item_name)
+                    items_in_cart = list(cart_items)
+    return items_in_cart
+
+
+def get_item_amounts(user_id):
+    """Returns amounts of items in a user's cart."""
+
+    cart_amounts = []
+
+    cart_items = CartItems.query.all()
+    items = Item.query.all()
+
+    for cart_item in cart_items:
+        for item in items:
+            if cart_item.user_id == user_id:
+                if cart_item.item_id == item.item_id:
+                    cart_amounts.append(str(cart_item.item_amount))
+    return cart_amounts
+    
+
+def get_cart_total(user_id):
+
+    item_totals = []
+    item_ids = CartItems.query.all()
+    items = Item.query.all()
+
+    for item_id in item_ids:
+        for item in items:
+            if item_id.user_id == user_id:
+                if item_id.item_id == item.item_id:
+                    item_totals.append(item.item_cost)
+    return sum(item_totals)
+        
+        
 
 
 if __name__ == '__main__':

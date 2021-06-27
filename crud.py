@@ -425,26 +425,39 @@ def create_new_purchase(user_id, date_time_of_purchase, payment_method, pickup_d
             if item_in_cart.user_id == user_id:
                 item_ids.add(item_in_cart.item_id)
     for item_id in item_ids:
-        purchase_items = PurchaseItems(item_id = item_id, purchase_id = purchase.purchase_id)
+        purchase_items = PurchaseItems(item_id = item_id, purchase_id = purchase.purchase_id, user_id = user_id)
         db.session.add(purchase_items)
         db.session.commit()
 
+def get_all_purchase_ids(user_id):
+    """Returns ids of all purchases from a user."""
 
-# def add_items_to_purchase(user_id):
-#     """Adds items to a user's purchase."""
+    purchases = PurchaseItems.query.all()
+    purchase_ids = set()
 
-#     items_in_cart = CartItems.query.all()
-#     items = Item.query.all()
-#     item_ids = set()
+    for purchase in purchases:
+        if purchase.user_id == user_id:
+            purchase_ids.add(purchase.purchase_id)
+    return purchase_ids
 
-#     for item_in_cart in items_in_cart:
-#         for item in items:
-#             if item_in_cart.user_id == user_id:
-#                 item_ids.add(item_in_cart.item_id)
-#     for item_id in item_ids:
-#         purchase_items = PurchaseItems(item_id = item_id, purchase_id = purchase.purchase_id)
-#         db.session.add(purchase_items)
-#         db.session.commit()
+def get_all_user_purchases(user_id):
+    """Returns all purchases from a user."""
+
+    purchases = Purchase.query.all()
+    purchase_items = PurchaseItems.query.all()
+    purchase_ids = set()
+    user_purchases = []
+
+    for purchase_item in purchase_items:
+        if purchase_item.user_id == user_id:
+            purchase_ids.add(purchase_item.purchase_id)
+    for purchase_id in purchase_ids:
+        for purchase in purchases:
+            if purchase.purchase_id == purchase_id:
+                user_purchases.append(purchase)
+    return user_purchases
+
+
 
 
 

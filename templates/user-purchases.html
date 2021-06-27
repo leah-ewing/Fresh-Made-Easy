@@ -6,8 +6,13 @@
 
 
 <h1>{{fname}}'s Purchases:</h1>
-<h3>Coming soon...</h3>
 
-<ol id = "user-purchase-list"></ol>
+{% for purchase in purchases %}
+
+<ol><a id = "purchase-info" href = "/purchase-info">{{purchase}}</a></ol>
+
+{% endfor %}
+
+
 
 {% endblock %}

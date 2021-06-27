@@ -138,7 +138,6 @@ def shoppingCart():
     item_names = crud.get_item_names_in_cart(user_id)
     cart_total = crud.get_cart_total(user_id)
     fname = crud.get_user_fname(email)
-    # item_amounts = crud.get_item_amounts(user_id)
     
 
     if "current_user" in session:
@@ -292,9 +291,12 @@ def userPurchases():
 
     email = session["current_user"]
     fname = crud.get_user_fname(email)
+    user_id = crud.get_user_id_by_email(email)
+    # purchase_ids = crud.get_all_purchase_ids(user_id)
+    purchases = crud.get_all_user_purchases(user_id)
 
     if "current_user" in session:
-            return render_template('user-purchases.html', fname = fname, current_user = "current_user")
+            return render_template('user-purchases.html', fname = fname, current_user = "current_user", purchases = purchases)
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)
@@ -323,7 +325,7 @@ def checkout():
 
 
 # ****************************
-@app.route('/confirmed')
+@app.route('/confirmed', methods = ['POST'])
 def confirmed():
     """Displays a confirmation of a purchase."""
     email = session["current_user"]

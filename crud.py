@@ -5,19 +5,6 @@ from flask_sqlalchemy import SQLAlchemy
 import psycopg2
 from model import db, User, Purchase, Farm, Item, PickupLocation, Category, PaymentMethod, ShoppingCart, PurchaseItems, CartItems, connect_to_db
 
-db = SQLAlchemy()
-
-
-def connect_to_db(flask_app, db_uri='postgresql:///fresh', echo=True):
-    flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
-    flask_app.config['SQLALCHEMY_ECHO'] = echo
-    flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-    db.app = flask_app
-    db.init_app(flask_app)
-
-    print('Connected to the db!')
-
 
 def create_user(email, password, fname, lname, username):
     """Create and return a new user."""
@@ -222,25 +209,6 @@ def create_new_cart(user_id):
     db.session.commit()
 
     return shopping_cart
-
-
-# def create_new_purchase(user_id, date_time_of_purchase, payment_method, pickup_date, pickup_location, purchase_total):
-#     """Creates a new user purchase."""
-
-#     purchase = Purchase(user_id = user_id, date_time_of_purchase = date_time_of_purchase, payment_method = payment_method, pickup_date = pickup_date, pickup_location = pickup_location, purchase_total = purchase_total)
-
-#     db.session.add(purchase)
-#     db.session.commit()
-
-#     return purchase
-
-
-# def add_items_to_purchase(item_id, user_id, purchase_id):
-
-#     purchase_items = PurchaseItems(item_id = item_id, user_id = user_id, purchase_id = purchase_id)
-
-#     db.session.add(purchase_items)
-#     db.session.commit()
 
 
 def get_user_id_by_email(email):
@@ -487,7 +455,7 @@ def get_item_names_by_farm_name(farm_name):
             if item.farm_name == farm_name:
                 farm_items.add(item.item_name)
     return farm_items
-    
+
 
 def get_item_names_by_category_name(category_name):
     """Returns item names from a given category."""
@@ -501,8 +469,6 @@ def get_item_names_by_category_name(category_name):
             if item.category_name == category_name:
                 category_items.add(item.item_name)
     return category_items
-
-
 
 
 

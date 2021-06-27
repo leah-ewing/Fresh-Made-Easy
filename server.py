@@ -249,7 +249,6 @@ def farmInfo(current_farm):
     farm = crud.get_farm_by_name(current_farm)
     farm_items = crud.get_item_names_by_farm_name(current_farm)
 
-
     if 'current_user' in session and farm != None:
         return render_template('farm-info.html', 
                                     current_user = "current_user",
@@ -291,7 +290,6 @@ def userPurchases():
     email = session["current_user"]
     fname = crud.get_user_fname(email)
     user_id = crud.get_user_id_by_email(email)
-    # purchase_ids = crud.get_all_purchase_ids(user_id)
     purchases = crud.get_all_user_purchases(user_id)
 
     if "current_user" in session:
@@ -326,7 +324,7 @@ def confirmed():
     email = session["current_user"]
     user_id = crud.get_user_id_by_email(email)
     date_time_of_purchase = "*"
-    payment_method = request.form.get("payment_method")
+    payment_method = request.form.get("payment-method")
     pickup_date = "*"
     pickup_location = request.form.get("location")
     purchase_total = crud.get_cart_total(user_id)

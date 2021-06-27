@@ -7,7 +7,7 @@
 <h2>Checkout</h2>
 <form action = "/confirmed" id = "checkout" method = "POST">
     <div class = "checkout">
-        <label for = "pickup-location"><h3>Pickup Location:</h3></label>
+        <label for = "location"><h3>Pickup Location:</h3></label>
         <b>East Nashville:</b><br>
         <input id = "Turnip Truck" type = "radio" name = "location" value = "Turnip Truck" required />
         Turnip Truck<br><br>
@@ -49,13 +49,13 @@
 
     <div class = "checkout">
         <label for = "payment-method"><h3><b>Payment Method:</b></h3></label>
-        <input id = "Visa" type = "radio" name = "payment-method" required />
+        <input id = "Visa" type = "radio" name = "payment-method" value = "Visa" required />
         Visa<br>
-        <input id = "Mastercard" type = "radio" name = "payment-method">
+        <input id = "Mastercard" type = "radio" name = "payment-method" value = "Mastercard">
         Mastercard<br>
-        <input id = "Discover" type = "radio" name = "payment-method">
+        <input id = "Discover" type = "radio" name = "payment-method" value = "Discover">
         Discover<br>
-        <input id = "American Express" type = "radio" name = "payment-method">
+        <input id = "American Express" type = "radio" name = "payment-method" value = "American Express">
         American Express<br><br><br>
     </div>
 

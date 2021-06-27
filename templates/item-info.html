@@ -16,9 +16,9 @@
 
 <h3>
     <!-- <form action = "/add-item-to-cart"> -->
-    <u>Local Vendor:</u><br> {{farm_name}}<br><br>
+    <u>Local Vendor:</u><br> <a href = "/farm-info/{{farm_name}}">{{farm_name}}</a><br><br>
     <u>Description:</u><br> {{item_description}}<br><br>
-    <u>Price:</u> <div id = "item-cost">{{item_cost}}</div><br><br>
+    <u>Price:</u> <div id = "item-cost">${{item_cost}}.00</div><br><br>
     <form action = "/add-item-to-cart/{{item_name}}" method = "POST">
     <div class = "add-to-cart">
         <input id = "add-to-cart-amount" type = "number" min = "0" name = "add-to-cart" required /><br>

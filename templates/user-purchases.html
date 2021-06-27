@@ -9,7 +9,7 @@
 
 {% for purchase in purchases %}
 
-<h3><ol><a id = "purchase-info" href = "/purchase-info/{{purchase.purchase_id}}">Purchase ID: {{purchase.purchase_id}}, Total: {{purchase.purchase_total}}</a></ol></h3>
+<h3><ol><a id = "purchase-info" href = "/purchase-info/{{purchase.purchase_id}}">Purchase ID: {{purchase.purchase_id}}, Total: ${{purchase.purchase_total}}.00</a></ol></h3>
 
 {% endfor %}
 

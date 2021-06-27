@@ -475,6 +475,34 @@ def get_current_purchase(current_purchase):
     return current_purchase
 
 
+def get_item_names_by_farm_name(farm_name):
+    """Returns item names from a given farm."""
+
+    farms = Farm.query.all()
+    items = Item.query.all()
+    farm_items = set()
+
+    for farm in farms:
+        for item in items:
+            if item.farm_name == farm_name:
+                farm_items.add(item.item_name)
+    return farm_items
+    
+
+def get_item_names_by_category_name(category_name):
+    """Returns item names from a given category."""
+
+    categories = Category.query.all()
+    items = Item.query.all()
+    category_items = set()
+
+    for category in categories:
+        for item in items:
+            if item.category_name == category_name:
+                category_items.add(item.item_name)
+    return category_items
+
+
 
 
 

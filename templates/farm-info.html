@@ -4,12 +4,6 @@
 
 {% block body %}
 
-<script
-    src="https://code.jquery.com/jquery-3.5.1.js"
-    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous">
-</script>
-
 <h1><div id = "farm-info-name">
 {{farm_name}}
 </div></h1>
@@ -26,13 +20,20 @@ src="https://www.google.com/maps/embed/v1/place?zoom=8&center=36.1627%2C-86.7816
 
     {% if current_user != None %}
 
-    <u>Items:</u><ol id = "farm-item-list"></ol>
-    <br><br>
+    <u>Items:</u>
+    
+    {% for item_name in farm_items %}
 
+    
+    <ol><a href = "/item-info/{{item_name}}">{{item_name}}</a></ol>
+
+
+    {% endfor %}
+
+    <ol id = "farm-item-list"></ol>
+    <br><br>
     {% endif %}
 
-  
-<!-- Javascript file -->
-<script src="/static/farm-items.js"></script>
+
 
 {% endblock %}

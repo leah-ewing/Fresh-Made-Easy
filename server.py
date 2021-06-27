@@ -128,7 +128,6 @@ def aboutUsPage():
         return render_template('about-us.html', current_user = None)
 
 
-# ******************************
 @app.route('/shopping-cart')
 def shoppingCart():
     """Display a user's shopping cart."""
@@ -150,7 +149,6 @@ def shoppingCart():
     else:
         flash("Please login.")
         return redirect('/')
-# ******************************
 
 
 @app.route('/user-profile')
@@ -249,14 +247,16 @@ def farmInfo(current_farm):
     """Displays information for a farm."""
 
     farm = crud.get_farm_by_name(current_farm)
-    
+    farm_items = crud.get_item_names_by_farm_name(current_farm)
+
 
     if 'current_user' in session and farm != None:
         return render_template('farm-info.html', 
                                     current_user = "current_user",
                                     farm_name = farm.farm_name,
                                     farm_address = farm.farm_address,
-                                    farm_description = farm.farm_description)
+                                    farm_description = farm.farm_description,
+                                    farm_items = farm_items)
     else:
         return render_template('farm-info.html', 
                                 current_user = None, 
@@ -284,7 +284,6 @@ def itemInfo(current_item):
         return render_template('homepage.html', current_user = None)
 
 
-# ******************************
 @app.route('/user-purchases')
 def userPurchases():
     """Displays user's purchase history."""
@@ -300,10 +299,8 @@ def userPurchases():
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)
-# ******************************
 
 
-# ******************************
 @app.route('/checkout')
 def checkout():
     """Displays checkout page."""
@@ -321,10 +318,8 @@ def checkout():
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)
-# ******************************
 
 
-# ****************************
 @app.route('/confirmed', methods = ['POST'])
 def confirmed():
     """Displays a confirmation of a purchase."""
@@ -344,10 +339,8 @@ def confirmed():
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)  
-# ******************************  
 
 
-# ******************************
 @app.route('/purchase-info/<current_purchase>', methods = ["GET"])
 def purchaseInfo(current_purchase):
     """Displays information for a user's purchase."""
@@ -371,10 +364,8 @@ def purchaseInfo(current_purchase):
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None) 
-# ******************************
 
 
-# ******************************
 @app.route('/add-item-to-cart/<current_item>', methods = ["POST"])
 def addToCart(current_item):
     """Adds an item to the user's shopping cart."""
@@ -393,7 +384,6 @@ def addToCart(current_item):
     elif "current_user" not in session:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)
-# ******************************
 
 
 @app.route("/category-info/<current_category>", methods = ["GET"])
@@ -402,11 +392,13 @@ def categoryInfo(current_category):
 
     category = crud.get_category_by_name(current_category)
     items = crud.get_item_by_category(current_category)
+    category_items = crud.get_item_names_by_category_name(current_category)
 
     if "current_user" in session and category != None:
         return render_template('category-info.html', 
                                 current_user = "current_user",
-                                category_name = category.category_name)
+                                category_name = category.category_name,
+                                category_items = category_items)
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)

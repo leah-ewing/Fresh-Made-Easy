@@ -1,6 +1,22 @@
 """CRUD operations."""
 
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+import psycopg2
 from model import db, User, Purchase, Farm, Item, PickupLocation, Category, PaymentMethod, ShoppingCart, PurchaseItems, CartItems, connect_to_db
+
+db = SQLAlchemy()
+
+
+def access_db(flask_app, db_uri='postgresql:///fresh', echo=True):
+    flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+    flask_app.config['SQLALCHEMY_ECHO'] = echo
+    flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    db.app = flask_app
+    db.init_app(flask_app)
+
+    print('Connected to the db!')
 
 
 def create_user(email, password, fname, lname, username):
@@ -366,24 +382,7 @@ def get_item_names_in_cart(user_id):
             if item_id.user_id == user_id:
                 if item_id.item_id == item.item_id:
                     cart_items.add(item.item_name)
-                    items_in_cart = list(cart_items)
-    return items_in_cart
-
-
-def get_item_amounts(user_id):
-    """Returns amounts of items in a user's cart."""
-
-    cart_amounts = []
-
-    cart_items = CartItems.query.all()
-    items = Item.query.all()
-
-    for cart_item in cart_items:
-        for item in items:
-            if cart_item.user_id == user_id:
-                if cart_item.item_id == item.item_id:
-                    cart_amounts.append(str(cart_item.item_amount))
-    return cart_amounts
+    return cart_items
     
 
 def get_cart_total(user_id):
@@ -396,10 +395,35 @@ def get_cart_total(user_id):
         for item in items:
             if item_id.user_id == user_id:
                 if item_id.item_id == item.item_id:
-                    item_totals.append(item.item_cost)
+                    item_totals.append(item.item_cost * item_id.item_amount)
     return sum(item_totals)
-        
-        
+
+
+def delete_all_cart_items(user):
+    """Deletes all items from a user's cart."""
+
+    delete_items = f"DELETE FROM cart_items WHERE user_id = {user}"
+
+    db.session.execute(delete_items)
+
+    db.session.commit()
+
+
+def get_item_id(item_name):
+    """Returns ids of items in a user's cart."""
+
+    cart_items = set()
+    item_ids = CartItems.query.all()
+    items = Item.query.all()
+
+    for item_id in item_ids:
+        for item in items:
+            if item_id.user_id == user_id:
+                if item_id.item_id == item.item_id:
+                    cart_items.add(item.item_name)
+                    items_in_cart = list(cart_items)
+    return items_in_cart
+
 
 
 if __name__ == '__main__':

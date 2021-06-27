@@ -3,12 +3,6 @@
 
 {% block body %}
 
-<script
-    src="https://code.jquery.com/jquery-3.5.1.js"
-    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-    crossorigin="anonymous">
-</script>
-
 
   <h1>Your Cart:</h1>
 
@@ -23,9 +17,10 @@
   <div class = "checkout">
     <button type = "submit">Checkout</button>
 </div></form>
+  <form action = "/delete-cart" method = "POST">
+  <div class = "delete-cart">
+    <button type = "submit">Empty Cart</button>
+  </div></form>
 
-
-<!-- Javascript file -->
-<script src="/static/static.js"></script>
 
 {% endblock %}

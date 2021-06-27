@@ -140,7 +140,7 @@ def shoppingCart():
     cart_ids = crud.get_cart_id_by_user_id(user_id)
     item_names = crud.get_item_names_in_cart(user_id)
     cart_total = crud.get_cart_total(user_id)
-    item_amounts = crud.get_item_amounts(user_id)
+    # item_amounts = crud.get_item_amounts(user_id)
     
 
     if "current_user" in session:
@@ -148,8 +148,7 @@ def shoppingCart():
                                 current_user = "current_user",
                                 cart_total = cart_total, 
                                 cart_ids = cart_ids,
-                                item_names = item_names,
-                                item_amounts = item_amounts)
+                                item_names = item_names)
     else:
         flash("Please login.")
         return redirect('/')
@@ -336,10 +335,11 @@ def confirmed():
     pickup_location = request.form.get("location")
     purchase_total = session["total"]
 
+
     if "current_user" in session:
-        crud.create_new_purchase(user_id, items, date_time_of_purchase, payment_method, pickup_date, pickup_location, purchase_total)
-        session["shopping_cart"] = []
-        session["total"] = 0
+        # crud.create_new_purchase(user_id, items, date_time_of_purchase, payment_method, pickup_date, pickup_location, purchase_total)
+        # session["shopping_cart"] = []
+        # session["total"] = 0
         return render_template('confirmed.html', current_user = "current_user")
     else:
         flash("Please login.")
@@ -380,6 +380,7 @@ def addToCart(current_item):
     elif "current_user" not in session:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)
+# ******************************
 
 
 @app.route("/category-info/<current_category>", methods = ["GET"])
@@ -393,6 +394,21 @@ def categoryInfo(current_category):
         return render_template('category-info.html', 
                                 current_user = "current_user",
                                 category_name = category.category_name)
+    else:
+        flash("Please login.")
+        return render_template('homepage.html', current_user = None)
+
+
+@app.route("/delete-cart", methods = ["POST"])
+def deleteCart():
+
+    email = session["current_user"]
+    user_id = crud.get_user_id_by_email(email)
+
+    if "current_user" in session:
+        crud.delete_all_cart_items(user_id)
+        flash("Items deleted!")
+        return redirect("/shopping-cart")
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)

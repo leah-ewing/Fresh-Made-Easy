@@ -429,6 +429,7 @@ def create_new_purchase(user_id, date_time_of_purchase, payment_method, pickup_d
         db.session.add(purchase_items)
         db.session.commit()
 
+
 def get_all_purchase_ids(user_id):
     """Returns ids of all purchases from a user."""
 
@@ -439,6 +440,7 @@ def get_all_purchase_ids(user_id):
         if purchase.user_id == user_id:
             purchase_ids.add(purchase.purchase_id)
     return purchase_ids
+    
 
 def get_all_user_purchases(user_id):
     """Returns all purchases from a user."""
@@ -456,6 +458,21 @@ def get_all_user_purchases(user_id):
             if purchase.purchase_id == purchase_id:
                 user_purchases.append(purchase)
     return user_purchases
+
+
+def get_purchase_by_id(purchase_id):
+    """Returns a purchase given a purchase ID."""
+
+    purchases = Purchase.query.all()
+    # user_purchases = []
+
+    for purchase in purchases:
+        if purchase.purchase_id == int(purchase_id):
+            return purchase
+
+
+def get_current_purchase(current_purchase):
+    return current_purchase
 
 
 

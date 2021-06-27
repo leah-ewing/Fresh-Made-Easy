@@ -54,7 +54,7 @@ class Purchase(db.Model):
     user = db.relationship('User', backref = 'purchase')
 
     def __repr__(self):
-        return f'Purchase ID: {self.purchase_id} User ID: {self.user_id} Date/Time of Purchase: {self.date_time_of_purchase} Payment Method: {self.payment_method} Pickup Date: {self.pickup_date} Pickup Location: {self.pickup_location} Total: {self.purchase_total} \n'
+        return f'Purchase ID: {self.purchase_id} || User ID: {self.user_id} || Date/Time of Purchase: {self.date_time_of_purchase} || Payment Method: {self.payment_method} || Pickup Date: {self.pickup_date} || Pickup Location: {self.pickup_location} || Total: {self.purchase_total}'
 
 
 class Farm(db.Model):

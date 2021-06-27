@@ -10,7 +10,13 @@
     <ul><a id = "cart-item-info" href = "/item-info/{{item}}">{{item}}</a></ul>
 {% endfor %}
 
-  <h3>Cart Total: {{cart_total}}</h3>
+
+
+  <h3>Cart Total: {{cart_total}}</h3><br>
+
+<b><a id = "continue-shopping" href = "/shop">Click here to continue shopping!</a></b><br><br>
+
+
   <form action = "/checkout">
   <div class = "checkout">
     <button type = "submit">Checkout</button>

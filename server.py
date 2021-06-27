@@ -348,12 +348,26 @@ def confirmed():
 
 
 # ******************************
-@app.route('/purchase-info')
-def purchaseInfo():
+@app.route('/purchase-info/<current_purchase>', methods = ["GET"])
+def purchaseInfo(current_purchase):
     """Displays information for a user's purchase."""
 
+    email = session["current_user"]
+    fname = crud.get_user_fname(email)
+
+    purchase_id = crud.get_current_purchase(current_purchase)
+    purchase = crud.get_purchase_by_id(purchase_id)
+
     if "current_user" in session:
-        return render_template('purchase-info.html', current_user = "current_user")
+        return render_template('purchase-info.html', 
+                                current_user = "current_user", 
+                                fname = fname,
+                                purchase_id = purchase.purchase_id,
+                                date_time_of_purchase = purchase.date_time_of_purchase,
+                                pickup_location = purchase.pickup_location,
+                                pickup_date = purchase.pickup_date,
+                                payment_method = purchase.payment_method,
+                                purchase_total = purchase.purchase_total)
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None) 

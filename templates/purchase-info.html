@@ -4,14 +4,16 @@
 
 {% block body %}
 
-<h1>Purchase Information</h1>
-<h3>Purchase ID: <br>
-Name: <br>
-Date and Time Placed: <br>
-Pickup Location: <br>
-Payment: <br>
-Payment Method: <br>
-Order Total: </h3>
+<h1>{{fname}}'s Purchase Information</h1>
+<h3><u>Purchase ID:</u>  {{purchase_id}}<br><br>
+<u>Date and Time Placed:</u> {{date_time_of_purchase}}<br><br>
+<u>Pickup Location:</u>  {{pickup_location}}<br><br>
+<u>Pickup Date and Time:</u> {{pickup_date}}<br><br>
+<u>Payment Method:</u> {{payment_method}}<br><br>
+<u>Order Total:</u> {{purchase_total}}<br><br>
+<u>Items:</u> <i>2.0</i></h3>
+
+
 
 
 {% endblock %}

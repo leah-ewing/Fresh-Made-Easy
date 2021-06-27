@@ -4,13 +4,11 @@
 {% block body %}
 
 
-  <h1>Your Cart:</h1>
+  <h1>{{fname}}'s Cart:</h1>
 
 {% for item in item_names %}
     <ul><a id = "cart-item-info" href = "/item-info/{{item}}">{{item}}</a></ul>
 {% endfor %}
-  
-
 
   <h3>Cart Total: {{cart_total}}</h3>
   <form action = "/checkout">

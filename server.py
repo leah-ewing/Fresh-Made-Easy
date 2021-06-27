@@ -36,14 +36,11 @@ def loginUser():
 
     email = request.form.get("email")
     password = request.form.get("password")
-
     fname = crud.get_user_fname(email)
     valid_user = crud.login_user(email, password)
 
     if valid_user:
         session["current_user"] = email
-        session["shopping_cart"] = []
-        session["total"] = 0
         flash(f"Welcome back, {fname}!")
         return render_template("homepage.html", current_user = "current_user")
     else:
@@ -140,6 +137,7 @@ def shoppingCart():
     cart_ids = crud.get_cart_id_by_user_id(user_id)
     item_names = crud.get_item_names_in_cart(user_id)
     cart_total = crud.get_cart_total(user_id)
+    fname = crud.get_user_fname(email)
     # item_amounts = crud.get_item_amounts(user_id)
     
 
@@ -148,7 +146,8 @@ def shoppingCart():
                                 current_user = "current_user",
                                 cart_total = cart_total, 
                                 cart_ids = cart_ids,
-                                item_names = item_names)
+                                item_names = item_names,
+                                fname = fname)
     else:
         flash("Please login.")
         return redirect('/')
@@ -327,20 +326,19 @@ def checkout():
 @app.route('/confirmed')
 def confirmed():
     """Displays a confirmation of a purchase."""
-    user_id = crud.get_user_id_by_email(session["current_user"])
-    items = str(session["shopping_cart"])
+    email = session["current_user"]
+    user_id = crud.get_user_id_by_email(email)
     date_time_of_purchase = "*"
     payment_method = request.form.get("payment_method")
     pickup_date = "*"
     pickup_location = request.form.get("location")
-    purchase_total = session["total"]
-
+    purchase_total = crud.get_cart_total(user_id)
+    fname = crud.get_user_fname(email)
 
     if "current_user" in session:
-        # crud.create_new_purchase(user_id, items, date_time_of_purchase, payment_method, pickup_date, pickup_location, purchase_total)
-        # session["shopping_cart"] = []
-        # session["total"] = 0
-        return render_template('confirmed.html', current_user = "current_user")
+        crud.create_new_purchase(user_id, date_time_of_purchase, payment_method, pickup_date, pickup_location, purchase_total)
+        crud.delete_all_cart_items(user_id)
+        return render_template('confirmed.html', current_user = "current_user", fname = fname)
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None)  
@@ -374,7 +372,6 @@ def addToCart(current_item):
 
     if "current_user" in session:
         crud.add_item_to_cart(item_id, user_id, item_amount)
-        # session["total"] += (int(item.item_cost) * int(item_amount))
         flash("Item added to cart!")
         return redirect("/shopping-cart")
     elif "current_user" not in session:

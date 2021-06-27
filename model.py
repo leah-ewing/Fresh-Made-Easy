@@ -172,7 +172,6 @@ class PurchaseItems(db.Model):
     purchase_id = db.Column(db.Integer, db.ForeignKey('purchase.purchase_id'))
 
     item = db.relationship('Item', backref = 'purchase_items')
-    # cart_items = db.relationship('CartItems', backref = 'purchase_items')
     user = db.relationship('User', backref = 'purchase_items')
     purchase = db.relationship('Purchase', backref = 'purchase_items')
 

@@ -9,21 +9,21 @@
     <div class = "checkout">
         <label for = "pickup-location"><h3>Pickup Location:</h3></label>
         <b>East Nashville:</b><br>
-        <input id = "turnip-truck" type = "radio" name = "location" value = "Turnip Truck" required />
+        <input id = "Turnip Truck" type = "radio" name = "location" value = "Turnip Truck" required />
         Turnip Truck<br><br>
         <b>Donelson:</b><br>
-        <input id = "donelson-farmers-market" type = "radio" name = "location" value = "Donelson Farmer's Market">
+        <input id = "Donelson Farmer's Market" type = "radio" name = "location" value = "Donelson Farmer's Market">
         Donelson Farmer's Market<br><br>
         <b>West Nashville - The Nations:</b><br>
-        <input id = "fat-bottom-brewing" type = "radio" name = "location" value = "Fat Bottom Brewing">
+        <input id = "Fat Bottom Brewing" type = "radio" name = "location" value = "Fat Bottom Brewing">
         Fat Bottom Brewing<br><br><br>
     </div> 
     
     <div class = "checkout">
     <label for = "pickup-date"><b>Pickup Date:</b></label><br>
     <input type = "date" id = "pickup-date"
-       value = "2021-06-11"
-       min = "2021-06-11" max = "22-12-31" required />
+       value = "2021-06-28"
+       min = "2021-06-28" max = "22-12-31" required />
     </div><small>Available for pickup after 2:00 PM</small><br><br>
 
     <div class = "checkout">
@@ -43,18 +43,19 @@
 
     <div class = "checkout">
         <label for = "cc-number"><b>Credit Card Number:</b></label><br>
-        <input type = "tel" pattern = "[0-9\s]{13,19}" placeholder="xxxxxxxxxxxxx" id = "cc-number" required /><br><br>
+        <input type = "tel" pattern = "[0-9]{1-15}" placeholder="xxxxxxxxxxxxx" id = "cc-number" required /><br>
+        <small>Beta Site - please <b>DO NOT</b> give real card number</small><br>
     </div>
 
     <div class = "checkout">
         <label for = "payment-method"><h3><b>Payment Method:</b></h3></label>
-        <input id = "visa" type = "radio" name = "payment-method" required />
+        <input id = "Visa" type = "radio" name = "payment-method" required />
         Visa<br>
-        <input id = "mastercard" type = "radio" name = "payment-method">
+        <input id = "Mastercard" type = "radio" name = "payment-method">
         Mastercard<br>
-        <input id = "discover" type = "radio" name = "payment-method">
+        <input id = "Discover" type = "radio" name = "payment-method">
         Discover<br>
-        <input id = "american-express" type = "radio" name = "payment-method">
+        <input id = "American Express" type = "radio" name = "payment-method">
         American Express<br><br><br>
     </div>
 

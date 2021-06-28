@@ -2,6 +2,7 @@ from flask import (Flask,render_template, request, flash, session, redirect)
 from model import User, connect_to_db
 import crud, requests, json
 from jinja2 import StrictUndefined
+from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = "dev"
@@ -321,15 +322,18 @@ def checkout():
 @app.route('/confirmed', methods = ['POST'])
 def confirmed():
     """Displays a confirmation of a purchase."""
+    
     email = session["current_user"]
     user_id = crud.get_user_id_by_email(email)
-    date_time_of_purchase = "*"
     payment_method = request.form.get("payment-method")
-    pickup_date = "*"
     pickup_location = request.form.get("location")
     purchase_total = crud.get_cart_total(user_id)
     fname = crud.get_user_fname(email)
-
+    purchase_placed = datetime.now()
+    user_pickup_date = request.form.get("pickup-date")
+    pickup_date = datetime.strptime(user_pickup_date, "%Y-%d-%M")
+    date_time_of_purchase = purchase_placed.strftime("%m/%d/%Y, %H:%M")
+    
     if "current_user" in session:
         crud.create_new_purchase(user_id, date_time_of_purchase, payment_method, pickup_date, pickup_location, purchase_total)
         crud.delete_all_cart_items(user_id)

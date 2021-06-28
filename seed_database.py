@@ -103,4 +103,12 @@ for n in range(1, 10):
         user = crud.create_user(email, password, fname, lname, username)
 
 
+"""Creator login."""
+c_email = 'leah@test.test'
+c_password = 'test'
+c_fname = 'Leah'
+c_lname = 'Ewing'
+c_username = 'leahnidus'
+
+creator = crud.create_user(c_email, c_password, c_fname, c_lname, c_username)
 

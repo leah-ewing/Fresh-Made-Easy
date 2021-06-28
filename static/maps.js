@@ -4,7 +4,6 @@ const nashville_coords = {
 };
 
 // map on 'all-farms.html' //
-
 function initFarmMap() {
   const farmMap = new google.maps.Map(document.querySelector("#farm-map"),
     {

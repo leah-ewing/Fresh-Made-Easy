@@ -11,8 +11,16 @@
 <u>Pickup Date:</u><br> {{pickup_date}}<br><br>
 <u>Payment Method:</u><br> {{payment_method}}<br><br>
 <u>Order Total:</u><br> ${{purchase_total}}.00<br><br>
-<u>Items:</u><br> <i>2.0</i></h3>
+<u>Items:</u><br>
 
+{% for item in items %}
+<ol><a href = "/item-info/{{item}}">{{item}}</a></ol>
+{% endfor %}
+
+<br><br>
+<form action = "/user-purchases">
+      <button type = "submit" id = "back-to-purchases">Back to Your Purchases</button>
+    </form>
 
 
 

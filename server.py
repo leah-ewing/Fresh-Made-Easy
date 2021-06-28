@@ -322,7 +322,7 @@ def checkout():
 @app.route('/confirmed', methods = ['POST'])
 def confirmed():
     """Displays a confirmation of a purchase."""
-    
+
     email = session["current_user"]
     user_id = crud.get_user_id_by_email(email)
     payment_method = request.form.get("payment-method")
@@ -352,6 +352,7 @@ def purchaseInfo(current_purchase):
 
     purchase_id = crud.get_current_purchase(current_purchase)
     purchase = crud.get_purchase_by_id(purchase_id)
+    items = crud.get_items_in_purchase(purchase.purchase_id)
 
     if "current_user" in session:
         return render_template('purchase-info.html', 
@@ -362,7 +363,8 @@ def purchaseInfo(current_purchase):
                                 pickup_location = purchase.pickup_location,
                                 pickup_date = purchase.pickup_date,
                                 payment_method = purchase.payment_method,
-                                purchase_total = purchase.purchase_total)
+                                purchase_total = purchase.purchase_total,
+                                items = items)
     else:
         flash("Please login.")
         return render_template('homepage.html', current_user = None) 

@@ -44,12 +44,8 @@ class Purchase(db.Model):
                             primary_key = True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
     date_time_of_purchase = db.Column(db.String)
-    # date_time_of_purchase = db.Column(db.DateTime)
-    # ^ temporarily "*", eventually DateTime
     payment_method = db.Column(db.String)
-    # pickup_date = db.Column(db.Date)
     pickup_date = db.Column(db.String)
-    # ^ temporarily "*", eventually DateTime
     pickup_location = db.Column(db.String)
     purchase_total = db.Column(db.Integer)
 

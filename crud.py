@@ -200,6 +200,7 @@ def get_pickup_location_by_neighborhood(location):
         if location.neighborhood_name == location:
             return location.neighborhood_name
 
+
 def create_new_cart(user_id):
     """Creates a new user shopping cart."""
 
@@ -470,6 +471,25 @@ def get_item_names_by_category_name(category_name):
                 category_items.add(item.item_name)
     return category_items
 
+
+def get_items_in_purchase(purchase_id):
+    """Returns item names in a user's purchase."""
+
+    purchase_items = PurchaseItems.query.all()
+    items = Item.query.all()
+    item_ids = set()
+    item_names = set()
+    
+
+    for purchase_item in purchase_items:
+        if purchase_item.purchase_id == purchase_id:
+            item_ids.add(purchase_item.item_id)
+    # return item_ids
+    for item in items:
+        for item_id in item_ids:
+            if item.item_id == item_id:
+                item_names.add(item.item_name)
+    return item_names
 
 
 if __name__ == '__main__':

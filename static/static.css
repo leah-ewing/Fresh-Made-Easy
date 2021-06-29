@@ -21,6 +21,7 @@ nav a {
     padding: 20px 0;
     margin: 0 5px;
     font-size: 17px;
+    font-family: Geneva, Verdana, sans-serif;
 }
 nav a:hover {
     border-top: 4px solid #c6ad94;
@@ -38,16 +39,24 @@ nav p {
     text-align: right;
 }
 .tab-1 {
-    margin-left: 400px
+    font-family: 'Gochi Hand', sans-serif;
+    letter-spacing: 2px;
+    margin-left: 275px
 }
 .tab-2 {
-    margin-left: 320px;
+    font-family: Geneva, Verdana, sans-serif;
+    letter-spacing: 8px;
+    margin-left: 275px;
 }
 .tab-3 { 
-    margin-left: 360px; 
+    font-family: Geneva, Verdana, sans-serif;
+    letter-spacing: 8px;
+    margin-left: 315px; 
 }
 .tab-4 {
-    margin-left: 320px;
+    font-family: Geneva, Verdana, sans-serif;
+    letter-spacing: 8px;
+    margin-left: 275px;
 }
 .home {
     border-top: 8px solid #c6ad94;
@@ -67,7 +76,7 @@ nav p {
     background-image: url("https://cdn.pixabay.com/photo/2018/10/07/08/05/radishes-3729392_1280.png"), url("https://cdn.pixabay.com/photo/2016/03/05/19/22/baking-1238370_1280.jpg");
     background-repeat: no-repeat, no-repeat;
     background-size: 30%, 50%;
-    background-position: 5% top, right bottom;
+    background-position: 3% top, right bottom;
     /* margin-left: 0px;
     margin-right: 0px; */
 }

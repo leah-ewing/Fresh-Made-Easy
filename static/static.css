@@ -1,6 +1,6 @@
 /* Navigation Bar (base.html) */
 .navbar {
-    border-bottom: 10px solid #c6ad94;
+    border-bottom: 8px solid #c6ad94;
 }
 .mr-auto {
   margin-right: 0 !important;
@@ -10,7 +10,6 @@
   justify-content: flex-end;  
 }
 nav {
-    margin-top: 10px;
     padding: 24px;
     text-align: center;
 }
@@ -26,3 +25,21 @@ nav a:hover {
     border-top: 4px solid #c6ad94;
     border-bottom: 4px solid #c6ad94;
 }
+
+/* Homepage tabs (homepage.html) */
+.tab-1 {
+    margin-left: 20px;
+}
+.tab-2 { 
+    margin-left: 60px; 
+}
+.tab-3 {
+    margin-left: 100px;
+}
+.home {
+    border-top: 8px solid #c6ad94;
+    border-bottom: 8px solid #c6ad94;
+}
+.navbar-1 {
+    margin-left: 0 !important;
+  }

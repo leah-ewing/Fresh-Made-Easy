@@ -2,9 +2,105 @@
 {% block title %}Fresh Made Easy Home{% endblock %}
 
 {% block body %}
-  <h1>Fresh Made Easy</h1>
 
-  <h2>Make Fresh Easy... With Fresh Made Easy!</h2><br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+        <br>
+      <img class = "homepage-image-1"
+          src = "https://images.unsplash.com/photo-1587334274535-5f82e7e55dc0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          width = 250
+          alt = "homepage-image-1"> 
+      </img> 
+        <br>
+      <img class = "homepage-image-3"
+          src = "https://images.unsplash.com/photo-1583116935756-f66cd999cdbe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          width = 250
+          alt = "homepage-image-3"> 
+      </img>
+    </div>
+    <div class="col-4">
+      <img class = "homepage-image-2"
+          src = "https://images.unsplash.com/photo-1587131772102-9fdd2a9a9f71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          width = 250
+          alt = "homepage-image-2"> 
+      </img>
+        <br>
+      <img class = "homepage-image-4"
+          src = "https://images.unsplash.com/photo-1587411768638-ec71f8e33b78?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          width = 250
+          alt = "homepage-image-4"> 
+    </div>
+    <div class="col-4"> 
+        <br><br><br><br><br>
+          <h2 style="color:#046865; font-size:200%;">
+              Eating Fresh is Easy With...
+          </h2>
+      <h1 style="color:#046865; font-size:600%;">
+          <text class="tab-1">
+              <b>
+                Fresh
+          </text>
+              <br>
+          <text class="tab-2">
+                Made
+          </text>
+        <br>
+          <text class="tab-3">
+                Easy!
+          </text>
+              </b>
+        <br>
+      </h1>
+        <br><br>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- temp nav bar -->
+<nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/about-us"><text style="color:#046865; font-size:150%;"><b>About Us</b></text</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        {% if current_user != None %}
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/user-profile"><text style="color:#21a0a0; font-size:110%;"><b>Your Profile</b></text></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/shopping-cart"><text style="color:#21a0a0; font-size:110%;"><text><b>Your Cart</b></text></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout"><text style="color:#21a0a0; font-size:110%;"><b>Logout</b></text></a>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <li class="nav-item">
+    <a class="nav-link" href="/login"><text style="color:#21a0a0; font-size:110%;"><b>Login</b></text></a>
+  <li class="nav-item">
+    <a class="nav-link" href="/sign-up"><text style="color:#21a0a0; font-size:110%;"><b>Sign Up</b></text></a>
+  {% endif %}
+</nav>
+<!--  -->
+
+
+
+
+
+
+  
 
 
   <form action = "/about-us">

@@ -1,6 +1,6 @@
 /* Navigation Bar (base.html) */
 .navbar {
-    border-top: 15px solid #B8D1B2;
+    border-top: 10px solid #B8D1B2;
     border-bottom: 8px solid #c6ad94;
 }
 .mr-auto {
@@ -28,6 +28,12 @@ nav a:hover {
 }
 
 /* Homepage tabs (homepage.html) */
+.middle-column {
+    text-align: left;
+}
+.col-3{
+    text-align: right;
+}
 .tab-1 {
     margin-left: 20px;
 }
@@ -40,4 +46,14 @@ nav a:hover {
 .home {
     border-top: 8px solid #c6ad94;
     border-bottom: 15px solid #B8D1B2;
+}
+.created-by {
+    text-align: right;
+}
+.left-row {
+    margin-left: 200px;
+    margin-right: 0px;
+}
+.right-row {
+    margin-left: 200px;
 }

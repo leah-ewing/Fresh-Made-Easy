@@ -1,5 +1,6 @@
 /* Navigation Bar (base.html) */
 .navbar {
+    border-top: 15px solid #B8D1B2;
     border-bottom: 8px solid #c6ad94;
 }
 .mr-auto {
@@ -38,8 +39,5 @@ nav a:hover {
 }
 .home {
     border-top: 8px solid #c6ad94;
-    border-bottom: 8px solid #c6ad94;
+    border-bottom: 15px solid #B8D1B2;
 }
-.navbar-1 {
-    margin-left: 0 !important;
-  }

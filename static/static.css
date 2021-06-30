@@ -270,5 +270,15 @@ html, body {
 .about-us-p {
     font-family: 'M Plus Rounded 1c', sans-serif;
 }
-
+#location-map-info {
+    height: 450px;
+    width: 600px;
+    border-style: solid;
+    border-style: solid;
+    border-color: #c6ad94;
+    border-width: 5px;
+}
+.farm-address {
+    margin-left: 50;
+}
   

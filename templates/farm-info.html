@@ -4,35 +4,52 @@
 
 {% block body %}
 
-<h1><div id = "farm-info-name">
-{{farm_name}}
-</div></h1>
 
-<iframe
-width="600"
-height="450"
-frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/place?zoom=8&center=36.1627%2C-86.7816&key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&q={{farm_name}}" allowfullscreen>
-</iframe>
+<div class="farm-info container-fluid">
+    <div class="row farm-info-page">
+        <div class="col left-row-farm-info">
+            <h1 class="farm-info-head" style="color:#21a0a0; font-size:300%; text-align:center; font-family: Barlow Condensed, sans-serif;"><div id = "farm-info-name">
+                <br>
+                {{farm_name}}
+                <br><br>
+                </div></h1>
+                <h3 style="color:#046865; font-family: M Plus Rounded 1c, sans-serif;">Address:<br> 
+                    <h3 class="farm-address" style="color:#21a0a0; font-family: Barlow Condensed, sans-serif;">{{farm_address}}</h3><br><br>
+                    <h3 style="color:#046865; font-family: M Plus Rounded 1c, sans-serif;">
+                    Description:<br> 
+                    <h3 class="farm-address" style="color:#21a0a0; font-family: Barlow Condensed, sans-serif;">
+                    {{farm_description}}<br><br>
+                        {% if current_user != None %}
+                        <h3 style="color:#046865; font-family: M Plus Rounded 1c, sans-serif;">
+                        Items:<br>
+                        {% for item_name in farm_items %}
+                        <h3 class="farm-address" style="color:#21a0a0; font-family: Barlow Condensed, sans-serif;">
+                    <ol><a href = "/item-info/{{item_name}}">{{item_name}}</a></ol>
+                        {% endfor %}
+                    <ol id = "farm-item-list"></ol>
+                        <br><br>
+                        {% endif %}
+        </div>
+        <div class="col right-row-farm-info">
+            <br><br><br><br><br><br><br><br>
+            <iframe
+                width="600"
+                height="450"
+                frameborder="1" style="border-style:solid; border-color:#c6ad94; border-width:5px;"
+                src="https://www.google.com/maps/embed/v1/place?zoom=8&center=36.1627%2C-86.7816&key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&q={{farm_name}}" allowfullscreen>
+            </iframe>
+            <br><br><br><br>
+        </div>
+    </div>
+</div>
 
-<h3><u>Address:</u> {{farm_address}}<br><br>
-    <u>Description:</u> {{farm_description}}<br><br>
-
-    {% if current_user != None %}
-
-    <u>Items:</u>
-    
-    {% for item_name in farm_items %}
-
-    
-    <ol><a href = "/item-info/{{item_name}}">{{item_name}}</a></ol>
-
-
-    {% endfor %}
-
-    <ol id = "farm-item-list"></ol>
-    <br><br>
-    {% endif %}
+<nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
+    <div class="container-fluid">
+      <a class="navbar-brand view-all" href="/"><text style="color:#046865; font-size:150%; font-weight:500;">Head Back Home!</text></a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
 
 

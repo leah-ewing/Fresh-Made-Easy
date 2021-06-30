@@ -74,13 +74,7 @@ nav p {
     background-position: 3% top, right bottom;
 }
 .about-us {
-    margin-left: 150px;
-}
-.pickup-locations {
-    margin-left: 110px;
-}
-.farms {
-    margin-left: 75px;
+    margin-left: 70px;
 }
 .glow {
     color: #fff;
@@ -94,7 +88,9 @@ nav p {
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 25px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
     padding: 20px;
     width: 250px;
     transition: all 0.5s;

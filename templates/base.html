@@ -25,10 +25,11 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        {% for msg in get_flashed_messages() %}
-          <p class="flash-msg"><text style="color:#046865; font-size:150%;"><b>{{ msg }}</b></text></p>
-          {% endfor %}
         <ul class="navbar-nav mr-auto">
+        {% for msg in get_flashed_messages() %}
+          <p class="flash-msg"><a class="nav-link" href="/user-profile"><text style="color:#046865; font-size:175%;">{{ msg }}</a></b></text></p>
+          {% endfor %}
+        
           {% if current_user != None %}
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">

@@ -5,13 +5,32 @@
 {% block body %}
 
 
-<h1><div id = "category-info-name">
+<!-- <h1 class="category-view" style="color:#21a0a0; font-size:400%;"><div id = "category-info-name">
+    <div class="row category-view-head"></div>
 {{category_name}}
-</div></h1>
+</div></h1> -->
 
+<div class="category-view container-fluid">
+    <h1 class="category-view-head" style="color:#21a0a0; font-size:400%;"><div id = "category-info-name">
+        <div class="row category-view-head"></div>
+    {{category_name}}
+    </div></h1><br>
+    <div class="row category-view-head">
 {% for item in category_items %}
-<h3><ol><a href = "/item-info/{{item}}">{{item}}</a></h3></ol>
+<h3 class="category-view-list"><ol><a href = "/item-info/{{item}}">{{item}}</a></h3></ol>
 {% endfor %}
+</div>
+</div><br><br>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
+    <div class="container-fluid">
+      <a class="navbar-brand category-nav" href="/shop"><text style="color:#046865; font-size:150%; font-weight:500;">Go Back to Shop Page</text></a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
 
 {% endblock %}

@@ -263,5 +263,12 @@ html, body {
     background-position: left;
     background-size: 22%;
 }
+.about-us-head {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-align: center;
+}
+.about-us-p {
+    font-family: 'M Plus Rounded 1c', sans-serif;
+}
 
   

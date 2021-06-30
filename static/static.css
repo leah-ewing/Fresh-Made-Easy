@@ -31,36 +31,26 @@ nav a:hover {
 nav p {
     text-align: center;
 }
-
-/* Homepage(homepage.html) */
-.middle-column {
-    text-align: left;
-}
-.col-3{
-    text-align: right;
-}
 .tab-1 {
-    font-family: 'Just Another Hand', sans-serif;
-    letter-spacing: 8px;
-    margin-left: 290px;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
+    margin-left: -150px;
+    text-align: left;
 }
 .tab-2 {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: 400;
-    letter-spacing: 2px;
-    margin-left: 310px;
+    margin-left: -120px;
 }
 .tab-3 { 
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: 400;
-    letter-spacing: 2px;
-    margin-left: 360px; 
+    margin-left: -160px; 
 }
 .tab-4 {
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: 400;
-    letter-spacing: 2px;
-    margin-left: 310px;
+    margin-left: -120px;
 }
 .home {
     border-top: 8px solid #c6ad94;
@@ -82,4 +72,53 @@ nav p {
     background-repeat: no-repeat, no-repeat;
     background-size: 30%, 50%;
     background-position: 3% top, right bottom;
+}
+.about-us {
+    margin-left: 150px;
+}
+.pickup-locations {
+    margin-left: 110px;
+}
+.farms {
+    margin-left: 75px;
+}
+.glow {
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 15px #046865, 0 0 20px #B8D1B2, 0 0 22px #B8D1B2
+}
+.shop-button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #21a0a0;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 25px;
+    padding: 20px;
+    width: 250px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: -100px;
+}
+.shop-button span {
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+}
+.shop-button span:after {
+content: '\00bb';
+position: absolute;
+opacity: 0;
+top: 0;
+right: -20px;
+transition: 0.5s;
+}
+.shop-button:hover span {
+padding-right: 25px;
+}
+.shop-button:hover span:after {
+opacity: 1;
+right: 0;
 }

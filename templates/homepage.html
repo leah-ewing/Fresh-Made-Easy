@@ -6,23 +6,31 @@
 
 <div class="homepage container-fluid">
   <div class="row">
-    <div class="col right-row"> 
+    <div class="col-2 left-row">
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          {% if current_user != None %}
+      <a href="/shop">
+        <button class="shop-button" style="vertical-align:middle"><span>Create Your Box!</span></button>
+      </a>
+          {% endif %}
+    </div>
+    <div class="col-6 right-row"> 
         <br><br>
-          <h2 style="color:#21a0a0; font-size:475%;">
-            <text class="tab-1">
-              Eating Fresh is Easy With...
+          <h2 style="color:#21a0a0; font-size:375%;">
+            <text class="tab-1 stroke">
+              Eating fresh is easy with...
         </text>
-      </h2>
+      </h2><br>
       <h1 style="color:#046865; font-size:700%;">
-          <text class="tab-2">
+          <text class="tab-2 glow">
                 Fresh
           </text>
               <br>
-          <text class="tab-3">
+          <text class="tab-3 glow">
                 Made
           </text>
         <br>
-          <text class="tab-4">
+          <text class="tab-4 glow">
                 Easy!
           </text>
               </b>
@@ -34,20 +42,13 @@
 
 <nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/about-us"><text style="color:#046865; font-size:150%;"><b>About Us</b></text</a>
-    <a class="navbar-brand" href="/all-pickup-locations"><text style="color:#046865; font-size:150%;"><b>View Pickup Locations</b></text</a>
-    <a class="navbar-brand" href="/all-farms"><text style="color:#046865; font-size:150%;"><b>Get to Know Our Local Vendors</b></text</a>
-    </button>
-        {% if current_user != None %}
-      <a class="navbar-brand" href="/shop"><text style="color:#046865; font-size:150%;"><b>Create Your Box</b></a></text>
-      </button>
+    <a class="navbar-brand about-us" href="/about-us"><text style="color:#046865; font-size:150%; font-weight:500;">About Us</text</a>
+    <a class="navbar-brand pickup-locations" href="/all-pickup-locations"><text style="color:#046865; font-size:150%; font-weight:500;">View Pickup Locations</text</a>
+    <a class="navbar-brand farms" href="/all-farms"><text style="color:#046865; font-size:150%; font-weight:500;">Get to Know Our Local Vendors</text</a>
       </div>
     </div>
   </div>
-  {% endif %}
 </nav>
-
-
 
 
 {% endblock %}

@@ -11,15 +11,8 @@
 </script>
 
 
-
-<h1>Pickup Locations</h1>
-<h3>Click to view more information</h3>
-
-
 <!-- Javascript file for links -->
 <script src="/static/static.js"></script>
-
-<h4><ol id = "pickup-location-file"></ol><br></h4>
 
 
 <!-- Javascript file for map -->
@@ -29,19 +22,30 @@
   src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&callback=initLocationMap">
 </script>
 
-<style>
-    #location-map {
-      height: 450px;
-      width: 600px;
-    }
-    html, body {
-      height: 75%;
-      padding: 0;
-    }
-  </style>
 
-<div id = "location-map"></div>
+<br><br>
+<div class="pickup-view container-fluid">
+  <div class="row pickup-head">
+    <h1 class="pickup-location" style="color:#21a0a0; font-size:300%;">Pickup Locations</h1>
+    <h3 class="pickup-location" style="color:#046865; font-size:150%;">Click to view more information</h3>
+  </div><br>
+  <div class="row pickup-body">
+    <div class="col left-pickup">
+      <h4><ol id = "pickup-location-file"></ol><br></h4>
+    </div>
+    <div class="col right-pickup">
+      <div id = "location-map"></div>
+    </div>
+  </div>
+</div><br><br><br><br>
 
+<nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
+  <div class="container-fluid">
+    <a class="navbar-brand view-all" href="/all-farms"><text style="color:#046865; font-size:150%; font-weight:500;">Check Out Our Local Vendors!</text></a>
+      </div>
+    </div>
+  </div>
+</nav>
 
 
 {% endblock %}

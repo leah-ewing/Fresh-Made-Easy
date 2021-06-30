@@ -10,16 +10,6 @@
     crossorigin="anonymous">
 </script>
 
-<h1>Our Local Vendors</h1>
-<h3>Click to view more information</h3>
-
-<!-- Javascript file -->
-<script src="/static/static.js"></script>
-
-<h4><ol id = "farm-file"></ol><br>
-
-
-
 <!-- Javascript file for map -->
 <script src="/static/maps.js"></script>
 <script
@@ -27,17 +17,32 @@
   src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&callback=initFarmMap">
 </script>
 
-<style>
-    #farm-map {
-      height: 450px;
-      width: 600px;
-    }
-    html, body {
-      height: 75%;
-      padding: 0;
-    }
-  </style>
+<!-- Javascript file -->
+<script src="/static/static.js"></script>
 
-<div id = "farm-map"></div>
+
+<div class="farm-view container-fluid">
+  <br><br>
+  <div class="row pickup-head">
+    <h1 class="farm-location" style="color:#21a0a0; font-size:300%;">Our Local Vendors</h1>
+    <h3 class="farm-location" style="color:#046865; font-size:150%;">Click to view more information</h3>
+  </div><br>
+  <div class="row farm-body">
+    <div class="col left-farm">
+      <h4><ol id = "farm-file"></ol><br>
+    </div>
+    <div class="col right-farm">
+      <div id = "farm-map"></div>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
+  <div class="container-fluid">
+    <a class="navbar-brand view-all" href="/all-pickup-locations"><text style="color:#046865; font-size:150%; font-weight:500;">Check Out Our Pickup Locations!</text></a>
+      </div>
+    </div>
+  </div>
+</nav>
 
 {% endblock %}

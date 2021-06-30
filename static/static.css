@@ -227,3 +227,41 @@ html, body {
     background-position: bottom left;
     background-size: 22%;
 }
+#farm-map {
+    height: 450px;
+    width: 600px;
+    border-style: solid;
+    border-color: #c6ad94;
+    border-width: 5px;
+}
+html, body {
+    height: 75%;
+    padding: 0;
+}
+.farm-head {
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.farm-location {
+    margin-left: -250;
+}
+#farm-file a {
+    text-decoration: none;
+    color: #21a0a0;
+    font-family: 'M Plus Rounded 1c', sans-serif;
+}
+#farm-file {
+    text-align: center;
+    margin-left: 220;
+}
+#farm-file a:hover {
+    color: #046865;
+}
+.farm-view {
+    background-image: url(https://cdn.pixabay.com/photo/2018/09/06/08/30/fennel-3657761_1280.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 22%;
+}
+
+  

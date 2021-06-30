@@ -20,8 +20,9 @@ nav a {
     border-bottom: 4px solid transparent;
     padding: 20px 0;
     margin: 0 5px;
-    font-size: 17px;
-    font-family: Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 300;
 }
 nav a:hover {
     border-top: 4px solid #c6ad94;
@@ -39,24 +40,27 @@ nav p {
     text-align: right;
 }
 .tab-1 {
-    font-family: 'Gochi Hand', sans-serif;
-    letter-spacing: 2px;
-    margin-left: 275px
+    font-family: 'Just Another Hand', sans-serif;
+    letter-spacing: 8px;
+    margin-left: 290px;
 }
 .tab-2 {
-    font-family: Geneva, Verdana, sans-serif;
-    letter-spacing: 8px;
-    margin-left: 275px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-left: 310px;
 }
 .tab-3 { 
-    font-family: Geneva, Verdana, sans-serif;
-    letter-spacing: 8px;
-    margin-left: 315px; 
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-left: 360px; 
 }
 .tab-4 {
-    font-family: Geneva, Verdana, sans-serif;
-    letter-spacing: 8px;
-    margin-left: 275px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-left: 310px;
 }
 .home {
     border-top: 8px solid #c6ad94;
@@ -64,6 +68,7 @@ nav p {
 }
 .created-by {
     text-align: right;
+    font-family: 'M Plus Rounded 1c', sans-serif;
 }
 .left-row {
     margin-left: 200px;
@@ -77,6 +82,4 @@ nav p {
     background-repeat: no-repeat, no-repeat;
     background-size: 30%, 50%;
     background-position: 3% top, right bottom;
-    /* margin-left: 0px;
-    margin-right: 0px; */
 }

@@ -30,9 +30,13 @@
           <p class="flash-msg"><a class="nav-link" href="/user-profile"><text style="color:#046865; font-size:175%;">{{ msg }}</a></b></text></p>
           {% endfor %}
         
-          {% if current_user != None %}
+          
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/how-it-works"><text style="color:#046865; font-size:130%;"><b>How It Works</b></text></a>
+            </li>
+            {% if current_user != None %}
           <li class="nav-item">
             <a class="nav-link" href="/user-profile"><text style="color:#21a0a0; font-size:130%;"><b>Your Profile</b></text></a>
           </li>

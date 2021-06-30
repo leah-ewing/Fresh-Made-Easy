@@ -118,3 +118,49 @@ padding-right: 25px;
 opacity: 1;
 right: 0;
 }
+.shop {
+    background-image: url(https://cdn.pixabay.com/photo/2018/10/07/14/54/raspberries-in-the-bag-3730318_1280.png), url(https://cdn.pixabay.com/photo/2017/05/31/22/56/the-hen-2361934_1280.png);
+    background-size: 30%, 25%;
+    background-position: left top, right bottom;
+    background-repeat: no-repeat, no-repeat;
+}
+.shop-head {
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+
+}
+.left-row-shop {
+    text-align: center;
+    font-family: 'M Plus Rounded 1c'
+}
+.right-row-shop {
+    text-align: center;
+    font-family: 'M Plus Rounded 1c'
+}
+.shop-local-head {
+    margin-left: -400;
+    font-weight: 600;
+}
+.shop-category-head {
+    margin-left: 400;
+    font-weight: 600;
+}
+.category-list a {
+    margin-left: 375;
+    text-decoration: none;
+    color: #21a0a0;
+}
+.farm-list a {
+    margin-left: -475;
+    text-decoration: none;
+    color: #21a0a0;
+}
+.category-list a:hover {
+    color: #046865;
+}
+.farm-list a:hover {
+    color: #046865
+}
+.view-all {
+    margin-left: 600;
+}

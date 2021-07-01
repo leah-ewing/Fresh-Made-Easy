@@ -3,28 +3,32 @@
 
 {% block body %}
 
+<div class="shopping-cart container-fluid">
+  <h1 style="color:#046865; margin-left:550; font-family: Barlow Condensed, sans-serif; font-size:55;"><br>
+      {{fname}}'s Cart:<br>
+      <text style="font-size:30; color:#21a0a0; line-height:1.5;">{% for item in item_names %}
+        <ul><a id = "cart-item-info" href = "/item-info/{{item}}">{{item}}</a></ul>
+    {% endfor %}
+    <h3 style="font-size:35; color:#046865; line-height:3; margin-left:25; margin-top:-15">Total: ${{cart_total}}.00</h3>
+    <a href="/checkout">
+      <button class="checkout" type = "submit" id = "submit-info">Checkout!</button>
+  </a>
+  <br>
+  <form action="/delete-cart" method = "POST">
+    <button class="delete-cart" type = "submit" id = "submit-info">Empty Cart</button>
+</form>
+</div>
+<h3></text></h2><br>
 
-  <h1>{{fname}}'s Cart:</h1><br>
+</h3>
+  <nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
+      <div class="container-fluid">
+        <a class="navbar-brand view-all" href="/shop"><text style="color:#046865; font-size:150%; font-weight:500; margin-left:-140;">Click here to continue shopping!</text></a>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-{% for item in item_names %}
-    <ul><a id = "cart-item-info" href = "/item-info/{{item}}">{{item}}</a></ul>
-{% endfor %}<br>
-
-
-
-  <h3>Cart Total: ${{cart_total}}.00</h3><br>
-
-<b><a id = "continue-shopping" href = "/shop">Click here to continue shopping!</a></b><br><br>
-
-
-  <form action = "/checkout">
-  <div class = "checkout">
-    <button type = "submit">Checkout</button>
-</div></form>
-  <form action = "/delete-cart" method = "POST">
-  <div class = "delete-cart">
-    <button type = "submit">Empty Cart</button>
-  </div></form>
 
 
 {% endblock %}

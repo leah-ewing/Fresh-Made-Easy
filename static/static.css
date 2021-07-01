@@ -570,3 +570,97 @@ html, body {
     background-size: 20%, 38%;
     background-position: 150px 65px, center right 200px;
 }
+.delete-cart {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #046865;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    padding: 2px;
+    width: 220px;
+    height: 52px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 10;
+}
+.delete-cart span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.delete-cart span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.delete-cart:hover span {
+    padding-right: 25px;
+}
+.delete-cart:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.shopping-cart {
+    min-height: 500;
+    background-image: url(https://cdn.pixabay.com/photo/2017/07/11/19/29/bokchoy-2494763__480.png), url(https://cdn.pixabay.com/photo/2018/09/04/18/55/eat-3654444__340.png);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 32%, 38%;
+    background-position: 0px 35px, 850px 50px;
+    min-height: 550;
+}
+.shopping-cart a {
+    text-decoration: none;
+    color: #21a0a0;
+    font-family: 'M Plus Rounded 1c', sans-serif;
+    font-size: 25;
+}
+.shopping-cart a:hover {
+    color: #046865
+}
+.checkout {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #21a0a0;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    padding: 2px;
+    width: 220px;
+    height: 52px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.checkout span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.checkout span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.checkout:hover span {
+    padding-right: 25px;
+}
+.checkout:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+

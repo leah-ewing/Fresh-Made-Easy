@@ -4,66 +4,87 @@
 
 {% block body %}
 
-<h2>Checkout</h2>
-<form action = "/confirmed" id = "checkout" method = "POST">
-    <div class = "checkout">
-        <label for = "location"><h3>Pickup Location:</h3></label>
-        <b>East Nashville:</b><br>
-        <input id = "Turnip Truck" type = "radio" name = "location" value = "Turnip Truck" required />
-        Turnip Truck<br><br>
-        <b>Donelson:</b><br>
-        <input id = "Donelson Farmer's Market" type = "radio" name = "location" value = "Donelson Farmer's Market">
-        Donelson Farmer's Market<br><br>
-        <b>West Nashville - The Nations:</b><br>
-        <input id = "Fat Bottom Brewing" type = "radio" name = "location" value = "Fat Bottom Brewing">
-        Fat Bottom Brewing<br><br><br>
-    </div> 
+<div class="checkout-page container-fluid">
+    <div class="row checkout-head">
+        <h1 style="color:#046865; font-family: Barlow Condensed, sans-serif;"><br>Checkout</h2><br>
+        <form method = "POST" action = "/">
+    </div>
+        <div class="row checkout-body">
+            <div class="col left-checkout">
+                <form action = "/confirmed" id = "checkout" method = "POST">
+                    <div class = "checkout">
+                        <label for = "location"><h3 style="font-weight:700;">Pickup Location:</h3></label><br><br>
+                        <b>East Nashville:</b><br>
+                        <input id = "Turnip Truck" type = "radio" name = "location" value = "Turnip Truck" required />
+                        Turnip Truck<br>
+                        <b>Donelson:</b><br>
+                        <input id = "Donelson Farmer's Market" type = "radio" name = "location" value = "Donelson Farmer's Market">
+                        Donelson Farmer's Market<br>
+                        <b>West Nashville - The Nations:</b><br>
+                        <input id = "Fat Bottom Brewing" type = "radio" name = "location" value = "Fat Bottom Brewing">
+                        Fat Bottom Brewing<br><br>
+                        <div class = "checkout">
+                            <label for = "pickup-date"><b>Pickup Date:</b></label><br>
+                            <input type = "date" id = "pickup-date"
+                               value = "2021-06-28"
+                               min = "2021-06-28" max = "22-12-31" 
+                               name = "pickup-date" required />
+                            </div><small>Available for pickup after 2:00 PM</small>
+                    </div>
+                </div>
+            <div class="col right-checkout">
+                <div class = "checkout">
+                    <label for = "fname"><b>First Name:</b></label><br>
+                    <input id = "fname" required /><br><br>
+                </div>
+            
+                <div class = "checkout">
+                    <label for = "lname"><b>Last Name:</b></label><br>
+                    <input id = "lname" required /><br><br>
+                </div>
+            
+                <div class = "checkout">
+                    <label for = "phone-number"><b>Phone Number:</b></label><br>
+                    <input type = "tel" id = "phone-number" pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder = "000-000-0000" required /><br><br>
+                </div>
+            
+                <div class = "checkout">
+                    <label for = "cc-number"><b>Credit Card Number:</b></label><br>
+                    <input type = "tel" placeholder="xxxxxxxxxxxxx" id = "cc-number" required /><br>
+                    <small>Beta Site - please <b>DO NOT</b> give real card number</small><br><br>
+                </div>
+            
+                <div class = "checkout">
+                    <label for = "payment-method"><h3><b>Payment Method:</b></h3></label>
+                    <input id = "Visa" type = "radio" name = "payment-method" value = "Visa" required />
+                    Visa<br>
+                    <input id = "Mastercard" type = "radio" name = "payment-method" value = "Mastercard">
+                    Mastercard<br>
+                    <input id = "Discover" type = "radio" name = "payment-method" value = "Discover">
+                    Discover<br>
+                    <input id = "American Express" type = "radio" name = "payment-method" value = "American Express">
+                    American Express<br><br><br>
+                </div>
+            </div>
+        </div>
+        <div class="row checkout-bottom">
+            <div class = "checkout">
+                <button type = "submit">Confirm Checkout</button>
+            </div>
+            <form>
+        </div>
+    </div>
+
     
-    <div class = "checkout">
-    <label for = "pickup-date"><b>Pickup Date:</b></label><br>
-    <input type = "date" id = "pickup-date"
-       value = "2021-06-28"
-       min = "2021-06-28" max = "22-12-31" 
-       name = "pickup-date" required />
-    </div><small>Available for pickup after 2:00 PM</small><br><br>
+    <nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
+        <div class="container-fluid">
+          <a class="navbar-brand view-all" href="/shop"><text style="color:#046865; font-size:150%; font-weight:500; margin-left:-15;">Click here to continue shopping!</text></a>
+            </div>
+          </div>
+        </div>
+      </nav>
 
-    <div class = "checkout">
-        <label for = "fname"><b>First Name:</b></label><br>
-        <input id = "fname" required /><br><br>
-    </div>
 
-    <div class = "checkout">
-        <label for = "lname"><b>Last Name:</b></label><br>
-        <input id = "lname" required /><br><br>
-    </div>
-
-    <div class = "checkout">
-        <label for = "phone-number"><b>Phone Number:</b></label><br>
-        <input type = "tel" id = "phone-number" pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder = "000-000-0000" required /><br><br>
-    </div>
-
-    <div class = "checkout">
-        <label for = "cc-number"><b>Credit Card Number:</b></label><br>
-        <input type = "tel" placeholder="xxxxxxxxxxxxx" id = "cc-number" required /><br>
-        <small>Beta Site - please <b>DO NOT</b> give real card number</small><br>
-    </div>
-
-    <div class = "checkout">
-        <label for = "payment-method"><h3><b>Payment Method:</b></h3></label>
-        <input id = "Visa" type = "radio" name = "payment-method" value = "Visa" required />
-        Visa<br>
-        <input id = "Mastercard" type = "radio" name = "payment-method" value = "Mastercard">
-        Mastercard<br>
-        <input id = "Discover" type = "radio" name = "payment-method" value = "Discover">
-        Discover<br>
-        <input id = "American Express" type = "radio" name = "payment-method" value = "American Express">
-        American Express<br><br><br>
-    </div>
-
-    <div class = "checkout">
-        <button type = "submit">Confirm Checkout</button>
-    </div>
-    <form>
 
 
 {% endblock %}

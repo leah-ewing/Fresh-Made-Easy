@@ -625,7 +625,7 @@ html, body {
 .shopping-cart a:hover {
     color: #046865
 }
-.checkout {
+.checkout-cart-button {
     display: inline-block;
     border-radius: 4px;
     background-color: #21a0a0;
@@ -641,13 +641,13 @@ html, body {
     transition: all 0.5s;
     cursor: pointer;
 }
-.checkout span {
+.checkout-cart-button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
-.checkout span:after {
+.checkout-cart-button span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
@@ -655,12 +655,18 @@ html, body {
     right: -20px;
     transition: 0.5s;
 }
-.checkout:hover span {
+.checkout-cart-button:hover span {
     padding-right: 25px;
 }
-.checkout:hover span:after {
+.checkout-cart-button:hover span:after {
     opacity: 1;
     right: 0;
 }
-
+.checkout {
+    text-align:center;
+    font-family: 'M Plus Rounded 1c', sans-serif;
+}
+.checkout-head {
+    text-align:center;
+}
 

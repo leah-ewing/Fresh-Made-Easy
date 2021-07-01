@@ -11,7 +11,7 @@
     {% endfor %}
     <h3 style="font-size:35; color:#046865; line-height:3; margin-left:25; margin-top:-15">Total: ${{cart_total}}.00</h3>
     <a href="/checkout">
-      <button class="checkout" type = "submit" id = "submit-info">Checkout!</button>
+      <button class="checkout-cart-button" type = "submit" id = "submit-info">Checkout!</button>
   </a>
   <br>
   <form action="/delete-cart" method = "POST">
@@ -21,13 +21,13 @@
 <h3></text></h2><br>
 
 </h3>
-  <nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
-      <div class="container-fluid">
-        <a class="navbar-brand view-all" href="/shop"><text style="color:#046865; font-size:150%; font-weight:500; margin-left:-140;">Click here to continue shopping!</text></a>
-          </div>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
+  <div class="container-fluid">
+    <a class="navbar-brand view-all" href="/shop"><text style="color:#046865; font-size:150%; font-weight:500; margin-left:-140;">Click here to continue shopping!</text></a>
       </div>
-    </nav>
+    </div>
+  </div>
+</nav>
 
 
 

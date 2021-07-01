@@ -4,12 +4,25 @@
 
 {% block body %}
 
-<h1>{{fname}}'s Profile Page</h1>
+<div class="profile-page container-fluid">
+    <h1 style="color:#046865; margin-left:450; font-family: Barlow Condensed, sans-serif; font-size:55;"><br><br>
+        {{fname}} {{lname}}<br>
+        <text style="font-size:27; color:#21a0a0">{{username}}<br>
+        {{email}}</text></h2><br><br><br>
+        <a href="/user-purchases">
+        <button class="user-purchases-button" type = "submit" id = "submit-info">Your Purchase History</button>
+    </a>
+    </div>
 <h3>
-    <u>Name:</u> {{fname}} {{lname}}<br><br>
-    <u>AKA:</u> {{username}} <br><br>
-    <u>Email:</u> {{email}} <br><br>
-    <a href = '/user-purchases'>Purchase History</a>
+
 </h3>
+    <nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
+        <div class="container-fluid">
+          <a class="navbar-brand view-all" href="/"><text style="color:#046865; font-size:150%; font-weight:500;">Head Back Home!</text></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
 
 {% endblock %}

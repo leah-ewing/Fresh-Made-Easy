@@ -362,3 +362,67 @@ html, body {
     background-position: top right 25, bottom left;
     background-size: 25%, 28%;
 }
+.login input[type=email] {
+    border: 3px solid #046865;
+    border-radius: 4px;
+    height: 45;
+    width: 400;
+    color: #21a0a0;
+}
+.login input[type=password] {
+    border: 3px solid #046865;
+    border-radius: 4px;
+    height: 45;
+    width: 400;
+    color: #21a0a0;
+}
+.login-button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #21a0a0;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 23px;
+    padding: 5px;
+    width: 200px;
+    height: 45px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.login-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.login-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.login-button:hover span {
+    padding-right: 25px;
+}
+.login-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.login {
+    font-family: 'M Plus Rounded 1c', sans-serif;
+    color: #21a0a0;
+    font-size: 25;
+    margin-left: -750;
+    text-align: center;
+}
+.login-page {
+    background-image: url(https://cdn.pixabay.com/photo/2016/12/05/10/07/dish-1883501_1280.png);
+    background-repeat: no-repeat;
+    background-size: 33%;
+    background-position: center right 250px;
+}

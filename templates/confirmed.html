@@ -4,10 +4,26 @@
 
 {% block body %}
 
-<h1>Thank you, {{fname}}!</h1>
-    <h2>Your Order Has Been Confirmed.</h2>
-<br>
-<h4><a href = '/user-purchases'>Click here to review your purchases.</a></h4>
+
+
+
+<div class="confirmed-page container-fluid">
+    <br><br><br><br><br>
+    <h1 class="thank-you">Thank you, {{fname}}!</h1>
+    <h2 class="order-confirmed">Your Order Has Been Confirmed.</h2>
+    <br><br><br>
+    <h4><a href = '/user-purchases'>
+    <button class="review-purchases">Click here to review your purchases</button></a></h4>
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
+    <div class="container-fluid">
+      <a class="navbar-brand view-all" href="/"><text style="color:#046865; font-size:150%; font-weight:500; margin-left:50;">Head Back Home!</text></a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
 
 {% endblock %}

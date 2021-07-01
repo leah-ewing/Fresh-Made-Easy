@@ -747,15 +747,62 @@ html, body {
 .checkout-button:hover span:after {
     opacity: 1;
 }
-/* .checkout-page {
-    background-image: url(https://cdn.pixabay.com/photo/2017/07/09/05/22/vegetable-2486251_1280.png), url(https://cdn.pixabay.com/photo/2019/09/21/18/24/red-pepper-4494487__480.png);
-    background-repeat: no-repeat, no-repeat;
-    background-position: 45% 150%, bottom left;
-    background-size: 475px, 550px;
-} */
 .checkout-page {
     background-image: url(https://cdn.pixabay.com/photo/2019/10/29/11/30/eat-4586705_1280.png);
     background-repeat: no-repeat;
     background-position: top left;
     background-size: 600px;
+}
+.confirmed-page {
+    text-align: center;
+    min-height: 550;
+    background-image: url(https://cdn.pixabay.com/photo/2020/04/19/01/53/peppers-5061541_1280.png), url(https://cdn.pixabay.com/photo/2018/08/22/05/12/vegetables-3622862_1280.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top right, bottom left 2%;
+    background-size: 30%, 30%;
+}
+.thank-you {
+    font-family: Barlow Condensed, sans-serif;
+    color: #046865;
+    font-size: 100;
+}
+.order-confirmed {
+    font-family: 'M Plus Rounded 1c', sans-serif;
+    color: #21a0a0
+}
+.review-purchases {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #21a0a0;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    padding: 2px;
+    width: 350px;
+    height: 60px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.review-purchases span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.review-purchases span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.review-purchases:hover span {
+    padding-right: 25px;
+}
+.review-purchases:hover span:after {
+    opacity: 1;
 }

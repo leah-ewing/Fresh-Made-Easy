@@ -4,36 +4,70 @@
 
 {% block body %}
 
-<h1>
-<div id = "item-name">
-{{item_name}}
-</div></h1>
+<div class="item-info container-fluid">
+    <div class="row farm-info-page">
+        <div class="col left-row-farm-info"><br>
+            <h1 class="farm-info-head" style="color:#21a0a0; font-size:300%; text-align:center; font-family: Barlow Condensed, sans-serif; line-height: 1.25;"><div id = "farm-info-name">
+                {{item_name}}
+                <br>
+                <a style="color:#046865; text-decoration: none; font-size:50%; text-align:center; font-family: Barlow Condensed, sans-serif;" href="/farm-info/{{farm_name}}">
+                {{farm_name}}</a>
+                <br>
+                </div></h1>
+                    <h3 style="color:#21a0a0; font-family: M Plus Rounded 1c, sans-serif; font-weight:400;">
+                    <h3 class="farm-address" style="color:#046865; font-family: Barlow Condensed, sans-serif;">
+                        <img class = "item-info-image"
+                        src = {{item_img}}
+                        width = 300
+                        alt = "{{item_name}} image"></img>
+                    <span style="font-size: 100%; font-family: M Plus Rounded 1c, sans-serif; line-height: 150%; font-weight:300;">
+                        <br>
+                        {{item_description}}<br>
+                    </span>
+                    <span style="font-size:100%; font-family: Barlow Condensed, sans-serif; line-height: 150%">
+                        ${{item_cost}}.00
+                    </span>
+                    <br><br>
+                    <form action = "/add-item-to-cart/{{item_name}}" method = "POST">
+                        <div class = "add-to-cart">
+                            <input id = "add-to-cart-amount" type = "number" min = "0" name = "add-to-cart" required /><br>
+                        </div><br>
+<!-- 
+                        <a href="/sign-up">
+                            <button class="shop-button" style="vertical-align:middle"><span>Sign Up!</span></button>
+                          </a> -->
 
-<img class = "item-info-image"
-    src = {{item_img}}
-    width = 200
-    alt = "{{item_name}} image"></img>
 
-<h3>
-    <!-- <form action = "/add-item-to-cart"> -->
-    <u>Local Vendor:</u><br> <a href = "/farm-info/{{farm_name}}">{{farm_name}}</a><br><br>
-    <u>Description:</u><br> {{item_description}}<br><br>
-    <u>Price:</u> <div id = "item-cost">${{item_cost}}.00</div><br><br>
-    <form action = "/add-item-to-cart/{{item_name}}" method = "POST">
-    <div class = "add-to-cart">
-        <input id = "add-to-cart-amount" type = "number" min = "0" name = "add-to-cart" required /><br>
+                        <div class = "add-to-cart">
+                            <button class="add-to-cart-button" type = "submit" id = "add-to-cart-button">Add To Cart</button>
+                        </div></form><br><br>
+                        <br><br><br>
+                        <h3 class = "vendor-head" style="color:#21a0a0; font-family: Barlow Condensed, sans-serif; font-weight:400; text-align:center;">
+                            <a href = "/farm-info/{{farm_name}}"></a>
+                        <br><br>
+        </div>
+        <div class="col right-row-farm-info">
+            <br><br><br><br><br><br><br>
+            <h2 style="margin-left:150; font-family: Barlow Condensed, sans-serif; color:#21a0a0; line-height: 1.5; font-size:30;">See where this comes from!</h2>
+            <iframe
+            width="600"
+            height="450"
+            frameborder="1" 
+            style="border-style:solid; border-color:#c6ad94; border-width:5px;"
+            src="https://www.google.com/maps/embed/v1/place?zoom=8&center=36.1627%2C-86.7816&key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&q={{farm_name}}" allowfullscreen>
+          </iframe>
+            <br><br><br><br>
+        </div>
     </div>
-    <div class = "add-to-cart">
-        <button type = "submit" id = "add-to-cart-button">Add To Cart</button>
-    </div></form><br><br>
+</div>
 
-    <h2>See where this comes from!</h2>
-    <iframe
-    width="600"
-    height="450"
-    frameborder="0" style="border:0"
-    src="https://www.google.com/maps/embed/v1/place?zoom=8&center=36.1627%2C-86.7816&key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&q={{farm_name}}" allowfullscreen>
-  </iframe>
+<nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
+    <div class="container-fluid">
+      <a class="navbar-brand view-all" href="/shop"><text style="color:#046865; font-size:150%; font-weight:500;">Continue Shopping!</text></a>
+        </div>
+      </div>
+    </div>
+  </nav>  
 
 
 {% endblock %}

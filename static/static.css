@@ -307,5 +307,58 @@ html, body {
     background-repeat: no-repeat;
     background-position: bottom left 5%;
     background-size: 25%;
-    min-height: 500;
+    min-height: 600;
+}
+.item-info {
+    background-image: url(https://cdn.pixabay.com/photo/2017/07/10/08/27/fruit-2489367_1280.png);
+    background-repeat: no-repeat;
+    background-position: bottom left 5%;
+    background-size: 25%;
+    min-height: 600;
+}
+.add-to-cart input[type=number] {
+    border: 3px solid #21a0a0;
+    border-radius: 4px;
+}
+.add-to-cart-button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #21a0a0;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    padding: 20px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.add-to-cart-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.add-to-cart-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.add-to-cart-button:hover span {
+    padding-right: 25px;
+}
+.add-to-cart-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.item-info {
+    background-image: url(https://cdn.pixabay.com/photo/2017/08/05/07/30/mushroom-2582415__340.png), url(https://cdn.pixabay.com/photo/2017/07/10/08/26/fruit-2489366_1280.png);
+    background-repeat: no-repeat, no repeat;
+    background-position: top right 25, bottom left;
+    background-size: 25%, 28%;
 }

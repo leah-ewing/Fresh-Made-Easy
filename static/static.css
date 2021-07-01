@@ -724,7 +724,8 @@ html, body {
     height: 60px;
     transition: all 0.5s;
     cursor: pointer;
-    margin-bottom: 35;
+    margin-bottom: 45;
+    margin-left:825;
 }
 .checkout-button span {
     cursor: pointer;
@@ -745,4 +746,16 @@ html, body {
 }
 .checkout-button:hover span:after {
     opacity: 1;
+}
+/* .checkout-page {
+    background-image: url(https://cdn.pixabay.com/photo/2017/07/09/05/22/vegetable-2486251_1280.png), url(https://cdn.pixabay.com/photo/2019/09/21/18/24/red-pepper-4494487__480.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 45% 150%, bottom left;
+    background-size: 475px, 550px;
+} */
+.checkout-page {
+    background-image: url(https://cdn.pixabay.com/photo/2019/10/29/11/30/eat-4586705_1280.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 600px;
 }

@@ -4,12 +4,48 @@
 
 {% block body %}
 
-<h1>{{location_name}}</h1>
+<div class="pickup-info container-fluid">
+    <div class="row farm-info-page">
+        <div class="col left-row-farm-info"><br>
+            <h1 class="farm-info-head" style="color:#406865; font-size:300%; text-align:center; font-family: Barlow Condensed, sans-serif; line-height: 1.5;"><div id = "farm-info-name">
+                {{location_name}}
+                <br>
+                <text style="color:#21a0a0; font-size:50%; text-align:center; font-family: Barlow Condensed, sans-serif;">
+                {{location_address}}</text>
+                <br>
+                </div></h1>
+                    <h3 style="color:#21a0a0; font-family: M Plus Rounded 1c, sans-serif; font-weight:400;">
+                    <h3 class="farm-address" style="color:#046865; font-family: Barlow Condensed, sans-serif;">
+                    <span style="font-size: 100%; font-family: M Plus Rounded 1c, sans-serif; line-height: 100%; font-weight:300;">
+                        <br>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, 
+                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    </span>
+                        <br><br><br>
+                        <h3 class = "vendor-head" style="color:#21a0a0; font-family: Barlow Condensed, sans-serif; font-weight:400; text-align:center;">
+                            {{neighborhood_name}} Pickup Location
+                        <br><br>
+        </div>
+        <div class="col right-row-farm-info">
+            <br><br><br><br>
+            <iframe width="600" 
+                    height="450" 
+                    frameborder="1" 
+                    style="border-style:solid; border-color:#c6ad94; border-width:5px;"
+                    loading="lazy" 
+                    allowfullscreen 
+                    src="https://www.google.com/maps/embed/v1/place?zoom=10&center=36.1627%2C-86.7816&key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&q={{location_name}}"></iframe>
+            <br><br><br><br>
+        </div>
+    </div>
+</div>
 
-<iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?zoom=10&center=36.1627%2C-86.7816&key=AIzaSyDm6PIjXty0AVGw2ZzCDXARsF6Mlk5uhU4&q={{location_name}}"></iframe>
-
-<h3><u>Address:</u> {{location_address}}<br><br>
-    <u>Neighborhood:</u> {{neighborhood_name}}
-</h3>
+<nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
+    <div class="container-fluid">
+      <a class="navbar-brand view-all" href="/"><text style="color:#046865; font-size:150%; font-weight:500;">Head Back Home!</text></a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
 {% endblock %}

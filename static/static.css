@@ -300,4 +300,12 @@ html, body {
     background-repeat: no-repeat;
     background-position: bottom right 5%;
     background-size: 45%;
+    min-height: 1100;
+}
+.pickup-info {
+    background-image: url(https://cdn.pixabay.com/photo/2017/07/10/08/27/fruit-2489367_1280.png);
+    background-repeat: no-repeat;
+    background-position: bottom left 5%;
+    background-size: 25%;
+    min-height: 500;
 }

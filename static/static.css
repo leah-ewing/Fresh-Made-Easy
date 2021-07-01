@@ -669,3 +669,80 @@ html, body {
 .checkout-head {
     text-align:center;
 }
+.checkout-page input[name=fname] {
+    border: 3px solid #21a0a0;
+    border-radius: 4px;
+    height: 45;
+    width: 400;
+    color: #21a0a0;
+}
+.checkout-page input[name=lname] {
+    border: 3px solid #21a0a0;
+    border-radius: 4px;
+    height: 45;
+    width: 400;
+    color: #21a0a0;
+}
+.checkout-page input[name=phone] {
+    border: 3px solid #21a0a0;
+    border-radius: 4px;
+    height: 45;
+    width: 400;
+    color: #21a0a0;
+}
+.checkout-page input[name=card] {
+    border: 3px solid #21a0a0;
+    border-radius: 4px;
+    height: 45;
+    width: 400;
+    color: #21a0a0;
+}
+.checkout-page input[value=Visa] {
+    margin-left: 340;
+}
+.checkout-page input[value=Mastercard] {
+    margin-left: 340;
+}
+.checkout-page input[value='American Express'] {
+    margin-left: 340;
+}
+.checkout-page input[value=Discover] {
+    margin-left: 340;
+}
+.checkout-button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #21a0a0;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    padding: 2px;
+    width: 250px;
+    height: 60px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-bottom: 35;
+}
+.checkout-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.checkout-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.checkout-button:hover span {
+    padding-right: 25px;
+}
+.checkout-button:hover span:after {
+    opacity: 1;
+}

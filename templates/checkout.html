@@ -7,71 +7,72 @@
 <div class="checkout-page container-fluid">
     <div class="row checkout-head">
         <h1 style="color:#046865; font-family: Barlow Condensed, sans-serif;"><br>Checkout</h2><br>
-        <form method = "POST" action = "/">
+        <form method = "POST" action = "/confirmed">
     </div>
         <div class="row checkout-body">
             <div class="col left-checkout">
                 <form action = "/confirmed" id = "checkout" method = "POST">
                     <div class = "checkout">
-                        <label for = "location"><h3 style="font-weight:700;">Pickup Location:</h3></label><br><br>
-                        <b>East Nashville:</b><br>
+                        <label for = "location"><h3 style="font-weight:500; font-family:M Plus Rounded 1c, sans-serif; color:#046865;">Pickup Location:</h3></label><br><br>
+                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28;">East Nashville:</h4>
                         <input id = "Turnip Truck" type = "radio" name = "location" value = "Turnip Truck" required />
-                        Turnip Truck<br>
-                        <b>Donelson:</b><br>
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300;">Turnip Truck</text><br><br>
+                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28;">Donelson:</h4>
                         <input id = "Donelson Farmer's Market" type = "radio" name = "location" value = "Donelson Farmer's Market">
-                        Donelson Farmer's Market<br>
-                        <b>West Nashville - The Nations:</b><br>
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300;">Donelson Farmer's Market</text><br><br>
+                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28;">West Nashville - The Nations:</h4>
                         <input id = "Fat Bottom Brewing" type = "radio" name = "location" value = "Fat Bottom Brewing">
-                        Fat Bottom Brewing<br><br>
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300;">Fat Bottom Brewing</text><br><br><br>
                         <div class = "checkout">
-                            <label for = "pickup-date"><b>Pickup Date:</b></label><br>
+                            <label for = "pickup-date"><h3 style="font-weight:500; font-family:M Plus Rounded 1c, sans-serif; color:#046865;">Pickup Date:</h3></label><br>
                             <input type = "date" id = "pickup-date"
                                value = "2021-06-28"
                                min = "2021-06-28" max = "22-12-31" 
                                name = "pickup-date" required />
-                            </div><small>Available for pickup after 2:00 PM</small>
+                            </div><small style="font-family:Barlow Condensed, sans-serif; color:#046865;">Available for pickup after 2:00 PM</small>
                     </div>
                 </div>
             <div class="col right-checkout">
                 <div class = "checkout">
-                    <label for = "fname"><b>First Name:</b></label><br>
-                    <input id = "fname" required /><br><br>
+                    <label for = "fname"><h3 style="font-weight:500; font-family:M Plus Rounded 1c, sans-serif; color:#046865;">First Name:</h3></label><br>
+                    <input id = "fname" name = "fname" required /><br><br>
                 </div>
             
                 <div class = "checkout">
-                    <label for = "lname"><b>Last Name:</b></label><br>
-                    <input id = "lname" required /><br><br>
+                    <label for = "lname"><h3 style="font-weight:500; font-family:M Plus Rounded 1c, sans-serif; color:#046865;">Last Name:</h3></label><br>
+                    <input id = "lname" name = "lname" required /><br><br>
                 </div>
             
                 <div class = "checkout">
-                    <label for = "phone-number"><b>Phone Number:</b></label><br>
-                    <input type = "tel" id = "phone-number" pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder = "000-000-0000" required /><br><br>
+                    <label for = "phone-number"><h3 style="font-weight:500; font-family:M Plus Rounded 1c, sans-serif; color:#046865;">Phone Number:</h3></label><br>
+                    <input type = "tel" id = "phone-number" name = "phone" pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder = "000-000-0000" required /><br><br>
                 </div>
             
                 <div class = "checkout">
-                    <label for = "cc-number"><b>Credit Card Number:</b></label><br>
-                    <input type = "tel" placeholder="xxxxxxxxxxxxx" id = "cc-number" required /><br>
-                    <small>Beta Site - please <b>DO NOT</b> give real card number</small><br><br>
+                    <label for = "cc-number"><h3 style="font-weight:500; font-family:M Plus Rounded 1c, sans-serif; color:#046865;">Credit Card Number:</h3></label><br>
+                    <input type = "tel" placeholder="xxxxxxxxxxxxx" id = "cc-number" name = "card" required /><br>
+                    <small style="font-family:Barlow Condensed, sans-serif; color:#046865;">Beta Site - please <b>DO NOT</b> give real card number</small><br><br>
                 </div>
             
-                <div class = "checkout">
-                    <label for = "payment-method"><h3><b>Payment Method:</b></h3></label>
-                    <input id = "Visa" type = "radio" name = "payment-method" value = "Visa" required />
-                    Visa<br>
-                    <input id = "Mastercard" type = "radio" name = "payment-method" value = "Mastercard">
-                    Mastercard<br>
-                    <input id = "Discover" type = "radio" name = "payment-method" value = "Discover">
-                    Discover<br>
-                    <input id = "American Express" type = "radio" name = "payment-method" value = "American Express">
-                    American Express<br><br><br>
+                <div class = "checkout" style = "text-align:left;">
+                    <label for = "payment-method"><h3 style="font-weight:500; font-family:M Plus Rounded 1c, sans-serif; color:#046865; margin-left:275; line-height:1.75;">Payment Method:</h3></label><br>
+                    <span class = "radio-buttons" style = "color:#20a0a0; font-family:Barlow Condensed, sans-serif;">
+                    <h4><input id = "Visa" type = "radio" name = "payment-method" value = "Visa" required />
+                    Visa</h4>
+                    <h4><input id = "Mastercard" type = "radio" name = "payment-method" value = "Mastercard">
+                    Mastercard</h4>
+                    <h4><input id = "Discover" type = "radio" name = "payment-method" value = "Discover">
+                    Discover</h4>
+                    <h4><input id = "American Express" type = "radio" name = "payment-method" value = "American Express">
+                    American Express</h4></span><br>
                 </div>
             </div>
         </div>
         <div class="row checkout-bottom">
-            <div class = "checkout">
-                <button type = "submit">Confirm Checkout</button>
+            <div class = "checkout" name = "checkout-button">
+                <button class="checkout-button" type = "submit">Confirm Checkout</button>
             </div>
-            <form>
+        </form>
         </div>
     </div>
 

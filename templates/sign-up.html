@@ -3,7 +3,38 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block body %}
-<h2>Please enter your information:</h2>
+
+
+<div class="sign-up-page container-fluid">
+    <h1 style="color:#046865; margin-left:205; font-family: Barlow Condensed, sans-serif; font-size:40;"><br>Please Enter Your Information:</h2><br>
+    <form action = "/user-profile" method = "POST">
+        <div class = "sign-up" style="line-height:1.75;">
+            <label for = "username">Username</label><br>
+            <input id = "username" name="username" required /></textarea><br>
+            <label for = "email">Email</label><br>
+            <input id = "email" type = "email" name = "email" required /></textarea><br>
+            <label for = "fname">First Name</label><br>
+            <input id = "fname" name="fname" required /></textarea><br>
+            <label for = "lname">Last Name</label><br>
+            <input id = "lname" name = "lname" required /></textarea><br>
+            <label for = "password">Password</label><br>
+            <input id = "password" type = "password" name = "password" required /></textarea><br>
+        </div><br>
+        <div class = "sign-up">
+            <button class="sign-up-button" type = "submit">Sign Up!</button>
+        </div></form><br><br>
+    </div>
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
+        <div class="container-fluid">
+          <a class="navbar-brand view-all" href="/sign-up"><text style="color:#046865; font-size:150%; font-weight:500;">Don't have an account? Sign Up!</text></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+<!-- <h2>Please enter your information:</h2>
 <form method = "POST" action = "/user-profile">
     <div class = "sign-up">
         <label for = "username">Username:</label><br>
@@ -27,7 +58,7 @@
     </div>
     <div class = "sign-up">
         <button type = "submit">Sign Up</button>
-    </div></form>
+    </div></form> -->
 
  {% endblock %}
 

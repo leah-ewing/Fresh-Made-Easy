@@ -698,16 +698,16 @@ html, body {
     color: #21a0a0;
 }
 .checkout-page input[value=Visa] {
-    margin-left: 340;
+    margin-left: 310;
 }
 .checkout-page input[value=Mastercard] {
-    margin-left: 340;
+    margin-left: 310;
 }
 .checkout-page input[value='American Express'] {
-    margin-left: 340;
+    margin-left: 310;
 }
 .checkout-page input[value=Discover] {
-    margin-left: 340;
+    margin-left: 310;
 }
 .checkout-button {
     display: inline-block;
@@ -805,4 +805,31 @@ html, body {
 }
 .review-purchases:hover span:after {
     opacity: 1;
+}
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #046865;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
 }

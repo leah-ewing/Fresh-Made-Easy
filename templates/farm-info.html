@@ -8,22 +8,26 @@
 <div class="farm-info container-fluid">
     <div class="row farm-info-page">
         <div class="col left-row-farm-info">
-            <h1 class="farm-info-head" style="color:#21a0a0; font-size:300%; text-align:center; font-family: Barlow Condensed, sans-serif;"><div id = "farm-info-name">
+            <h1 class="farm-info-head" style="color:#406865; font-size:300%; text-align:center; font-family: Barlow Condensed, sans-serif; line-height: 1.5;"><div id = "farm-info-name">
                 <br>
-                {{farm_name}}
-                <br><br>
+                {{farm_name}}<br>
+                <text style="color:#21a0a0; font-size:50%; text-align:center; font-family: Barlow Condensed, sans-serif;">
+                    {{farm_address}}</text>
+                <br>
                 </div></h1>
-                <h3 style="color:#046865; font-family: M Plus Rounded 1c, sans-serif;">Address:<br> 
-                    <h3 class="farm-address" style="color:#21a0a0; font-family: Barlow Condensed, sans-serif;">{{farm_address}}</h3><br><br>
-                    <h3 style="color:#046865; font-family: M Plus Rounded 1c, sans-serif;">
-                    Description:<br> 
-                    <h3 class="farm-address" style="color:#21a0a0; font-family: Barlow Condensed, sans-serif;">
-                    {{farm_description}}<br><br>
+                    <h3 style="color:#21a0a0; font-family: M Plus Rounded 1c, sans-serif; font-weight:400;">
+                    <h3 class="farm-address" style="color:#046865; font-family: Barlow Condensed, sans-serif;">
+                    <span style="font-size: 100%; font-family: M Plus Rounded 1c, sans-serif; line-height: 100%; font-weight:300;">
+                        <br>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, 
+                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    </span>
+                        <br><br><br>
                         {% if current_user != None %}
-                        <h3 style="color:#046865; font-family: M Plus Rounded 1c, sans-serif;">
-                        Items:<br>
+                        <h3 class = "vendor-head" style="color:#046865; font-family: Barlow Condensed, sans-serif; font-weight:400; text-align:center;">
+                            Available From This Vendor:
                         {% for item_name in farm_items %}
-                        <h3 class="farm-address" style="color:#21a0a0; font-family: Barlow Condensed, sans-serif;">
+                        <h3 class="farm-address">
                     <ol><a href = "/item-info/{{item_name}}">{{item_name}}</a></ol>
                         {% endfor %}
                     <ol id = "farm-item-list"></ol>
@@ -51,6 +55,7 @@
     </div>
   </nav>
 
+<small style = "color:white;">{{farm_description}}</small>
 
 
 {% endblock %}

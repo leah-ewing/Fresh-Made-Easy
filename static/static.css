@@ -279,6 +279,25 @@ html, body {
     border-width: 5px;
 }
 .farm-address {
-    margin-left: 50;
+    text-align: center;
+    line-height: 60%;
 }
-  
+.farm-address a {
+    text-decoration: none;
+    color: #21a0a0;
+    font-family: 'M Plus Rounded 1c', sans-serif;
+    font-size: 23;
+}
+.farm-address a:hover {
+    color: #046865;
+}
+.vendor-head {
+    font-size: 30;
+    line-height: 2;
+}
+.farm-info {
+    background-image: url(https://cdn.pixabay.com/photo/2017/08/26/09/39/herb-2682593_1280.png);
+    background-repeat: no-repeat;
+    background-position: bottom right 5%;
+    background-size: 45%;
+}

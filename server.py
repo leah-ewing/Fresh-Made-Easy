@@ -57,7 +57,7 @@ def logout():
         session["current_user"] = None
         session.pop("email", None)
         flash("You have been signed out!")
-        return render_template("homepage.html", current_user = None)
+        # return render_template("homepage.html", current_user = None)
         return redirect("/")
     else:
         flash("Please login.")

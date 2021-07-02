@@ -850,6 +850,9 @@ input[type='radio']:checked:after {
     text-decoration: none;
     color: #21a0a0;
 }
+.user-purchases a:hover {
+    color: #046865;
+}
 .purchase-div {
     margin-top: 10;
 }

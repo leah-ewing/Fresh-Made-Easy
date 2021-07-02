@@ -9,7 +9,12 @@
 
 <div class = purchase-div style="text-align:center;">
 {% for purchase in purchases %}
-<h3><ol><a class = "user-purchase-links" id = "purchase-info" href = "/purchase-info/{{purchase.purchase_id}}">Purchase ID: {{purchase.purchase_id}}, Total: ${{purchase.purchase_total}}.00</a></ol></h3>
+<h3><ol><a class = "user-purchase-links" id = "purchase-info" href = "/purchase-info/{{purchase.purchase_id}}"><text style="font-weight:700; font-size:22;">Purchase ID:</text> 
+  <text style="color:#046865;">{{purchase.purchase_id}}</text><text style="color:white;">____</text>
+  <text style="font-weight:700; font-size:22;">Pickup On:</text>
+  <text style="color:#046865;">{{purchase.pickup_date}}</text><text style="color:white;">___</text>
+  <text style="font-weight:700; font-size:22">Total:</text>
+  <text style="color:#046865;">${{purchase.purchase_total}}.00</text></a></ol></h3>
 {% endfor %}
 </div>
 </div><br><br>

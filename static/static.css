@@ -67,7 +67,8 @@ nav p {
     margin-left: 200px;
 }
 .homepage {
-    background-image: url("https://cdn.pixabay.com/photo/2018/10/07/08/05/radishes-3729392_1280.png"), url("https://cdn.pixabay.com/photo/2016/03/05/19/22/baking-1238370_1280.jpg");
+    background-image: url("https://cdn.pixabay.com/photo/2018/10/07/08/05/radishes-3729392_1280.png"), 
+                      url("https://cdn.pixabay.com/photo/2016/03/05/19/22/baking-1238370_1280.jpg");
     background-repeat: no-repeat, no-repeat;
     background-size: 30%, 50%;
     background-position: 3% top, right bottom;
@@ -118,7 +119,8 @@ opacity: 1;
 right: 0;
 }
 .shop {
-    background-image: url(https://cdn.pixabay.com/photo/2018/10/07/14/54/raspberries-in-the-bag-3730318_1280.png), url(https://cdn.pixabay.com/photo/2017/05/31/22/56/the-hen-2361934_1280.png);
+    background-image: url(https://cdn.pixabay.com/photo/2018/10/07/14/54/raspberries-in-the-bag-3730318_1280.png), 
+                      url(https://cdn.pixabay.com/photo/2017/05/31/22/56/the-hen-2361934_1280.png);
     background-size: 30%, 25%;
     background-position: left top, right bottom;
     background-repeat: no-repeat, no-repeat;
@@ -164,7 +166,8 @@ right: 0;
     margin-left: 600;
 }
 .category-view {
-    background-image: url(https://cdn.pixabay.com/photo/2018/10/07/14/54/raspberries-in-the-bag-3730318_1280.png), url(https://cdn.pixabay.com/photo/2017/05/31/22/56/the-hen-2361934_1280.png);
+    background-image: url(https://cdn.pixabay.com/photo/2018/10/07/14/54/raspberries-in-the-bag-3730318_1280.png), 
+                      url(https://cdn.pixabay.com/photo/2017/05/31/22/56/the-hen-2361934_1280.png);
     background-size: 30%, 25%;
     background-position: left top, right bottom;
     background-repeat: no-repeat, no-repeat;
@@ -357,7 +360,8 @@ html, body {
     right: 0;
 }
 .item-info {
-    background-image: url(https://cdn.pixabay.com/photo/2017/08/05/07/30/mushroom-2582415__340.png), url(https://cdn.pixabay.com/photo/2017/07/10/08/26/fruit-2489366_1280.png);
+    background-image: url(https://cdn.pixabay.com/photo/2017/08/05/07/30/mushroom-2582415__340.png), 
+                      url(https://cdn.pixabay.com/photo/2017/07/10/08/26/fruit-2489366_1280.png);
     background-repeat: no-repeat, no repeat;
     background-position: top right 25, bottom left;
     background-size: 25%, 28%;
@@ -565,7 +569,8 @@ html, body {
 }
 .profile-page {
     min-height: 500;
-    background-image: url(https://cdn.pixabay.com/photo/2017/08/09/17/48/fruit-2615309_1280.png), url(https://cdn.pixabay.com/photo/2017/05/05/14/56/fruit-2287298_1280.png);
+    background-image: url(https://cdn.pixabay.com/photo/2017/08/09/17/48/fruit-2615309_1280.png), 
+                      url(https://cdn.pixabay.com/photo/2017/05/05/14/56/fruit-2287298_1280.png);
     background-repeat: no-repeat, no-repeat;
     background-size: 20%, 38%;
     background-position: 150px 65px, center right 200px;
@@ -610,7 +615,8 @@ html, body {
 }
 .shopping-cart {
     min-height: 500;
-    background-image: url(https://cdn.pixabay.com/photo/2017/07/11/19/29/bokchoy-2494763__480.png), url(https://cdn.pixabay.com/photo/2018/09/04/18/55/eat-3654444__340.png);
+    background-image: url(https://cdn.pixabay.com/photo/2017/07/11/19/29/bokchoy-2494763__480.png), 
+                      url(https://cdn.pixabay.com/photo/2018/09/04/18/55/eat-3654444__340.png);
     background-repeat: no-repeat, no-repeat;
     background-size: 32%, 38%;
     background-position: 0px 35px, 850px 50px;
@@ -756,7 +762,8 @@ html, body {
 .confirmed-page {
     text-align: center;
     min-height: 550;
-    background-image: url(https://cdn.pixabay.com/photo/2020/04/19/01/53/peppers-5061541_1280.png), url(https://cdn.pixabay.com/photo/2018/08/22/05/12/vegetables-3622862_1280.png);
+    background-image: url(https://cdn.pixabay.com/photo/2020/04/19/01/53/peppers-5061541_1280.png), 
+                      url(https://cdn.pixabay.com/photo/2018/08/22/05/12/vegetables-3622862_1280.png);
     background-repeat: no-repeat, no-repeat;
     background-position: top right, bottom left 2%;
     background-size: 30%, 30%;
@@ -901,10 +908,12 @@ input[type='radio']:checked:after {
     opacity: 1;
 }
 .view-items {
-    background-image: url(https://cdn.pixabay.com/photo/2018/03/16/21/52/leaves-3232623_1280.png), url(https://cdn.pixabay.com/photo/2020/04/07/06/05/cucumber-5012185_1280.png), url(https://cdn.pixabay.com/photo/2019/12/15/04/49/vegetables-4696364_1280.png);
+    background-image: url(https://cdn.pixabay.com/photo/2018/03/16/21/52/leaves-3232623_1280.png), 
+                      url(https://cdn.pixabay.com/photo/2020/04/07/06/05/cucumber-5012185_1280.png), 
+                      url(https://cdn.pixabay.com/photo/2019/12/15/04/49/vegetables-4696364_1280.png);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: top right 50, top -30 left 125, bottom 20 right 30;
-    background-size: 600px, 350px, 450px;
+    background-size: 400px, 350px, 425px;
     min-height: 2900;
 }
 .purchase-info {

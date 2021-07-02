@@ -7,7 +7,7 @@
   <h1 style="color:#046865; margin-left:550; font-family: Barlow Condensed, sans-serif; font-size:55;"><br>
       {{fname}}'s Cart:<br>
       <text style="font-size:30; color:#21a0a0; line-height:1.5;">{% for item in item_names %}
-        <ul><a id = "cart-item-info" href = "/item-info/{{item}}">{{item}}</a></ul>
+        <ul><a id = "cart-item-info" href = "/item-info/{{item}}" style = "margin-left: -20;">{{item}}</a></ul>
     {% endfor %}
     <h3 style="font-size:35; color:#046865; line-height:3; margin-left:25; margin-top:-15">Total: ${{cart_total}}.00</h3>
     <a href="/checkout">

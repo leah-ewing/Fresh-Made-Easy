@@ -4,23 +4,40 @@
 
 {% block body %}
 
-<h1>{{fname}}'s Purchase Information</h1>
-<h3><u>Purchase ID:</u><br> {{purchase_id}}<br><br>
-<u>Date and Time Placed:</u><br> {{date_time_of_purchase}}<br><br>
-<u>Pickup Location:</u><br>  {{pickup_location}}<br><br>
-<u>Pickup Date:</u><br> {{pickup_date}}<br><br>
-<u>Payment Method:</u><br> {{payment_method}}<br><br>
-<u>Order Total:</u><br> ${{purchase_total}}.00<br><br>
-<u>Items:</u><br>
 
-{% for item in items %}
-<ol><a href = "/item-info/{{item}}">{{item}}</a></ol>
-{% endfor %}
+<div class="purchase-info container-fluid">
+  <h1 style="color:#046865; margin-left:250; font-family: Barlow Condensed, sans-serif; font-size:45;"><br>
+    <div class = "row">
+    {{fname}}'s Purchase Info<br>
+      </div></h1>
+      <div class = "row">
+        <div class= "col">
+      <h2 style="font-size:27; color:#21a0a0; margin-left:75;">
+        <u>Purchase ID:</u> {{purchase_id}}<br>
+        <u>Pickup Date:</u> {{pickup_date}}<br>
+        <u>Payment Method:</u> {{payment_method}}<br>
+        <u>Order Total:</u> ${{purchase_total}}.00<br>
+      </h2>
+      </div>
+      <div class = "col">
+        <text style="margin-left:-250; font-size:27; color:#21a0a0">
+        <u>Items:</u><br>
+        {% for item in items %}
+        <ol><a  style = "margin-left:-250;" href = "/item-info/{{item}}">{{item}}</a></ol>
+        {% endfor %}
+      </text><br><br><br>
+    </div>
+    </div>
+  </div>
 
-<br><br>
-<form action = "/user-purchases">
-      <button type = "submit" id = "back-to-purchases">Back to Your Purchases</button>
-    </form>
+
+    <nav class="navbar navbar-expand-lg navbar-light home" style="background-color: #fab3a9;">
+      <div class="container-fluid">
+        <a class="navbar-brand view-all" href="/user-profile"><text style="color:#046865; font-size:150%; font-weight:500;">Go Back to Your Profile</text></a>
+          </div>
+        </div>
+      </div>
+    </nav>
 
 
 

@@ -903,6 +903,7 @@ input[type='radio']:checked:after {
 .view-items {
     background-image: url(https://cdn.pixabay.com/photo/2018/03/16/21/52/leaves-3232623_1280.png), url(https://cdn.pixabay.com/photo/2020/04/07/06/05/cucumber-5012185_1280.png), url(https://cdn.pixabay.com/photo/2019/12/15/04/49/vegetables-4696364_1280.png);
     background-repeat: no-repeat, no-repeat, no-repeat;
-    background-position: top right 50, top -30 left 125, bottom right;
-    background-size: 600px, 350px, 400px;
+    background-position: top right 50, top -30 left 125, bottom 20 right 30;
+    background-size: 600px, 350px, 450px;
+    min-height: 2900;
 }

@@ -16,22 +16,22 @@ $.get('/static/farms.json', (res) => {
 });
 
 // list of all items in 'shop.html' with names and images //
-$.get('/static/items.json', (res) => {
+$.get('/static/items.json', (res) => { 
     for (const item of res) {
         $('#item-file').append(`<ol>
-                                    <form action = "/item-info/${item.item_name}" id = "items">
-                                        <a id = "item-info" href = "/item-info/${item.item_name}">
-                                            <img class = "item-image"
-                                                src = ${item.item_img}
-                                                width = 200
-                                                alt = "${item.item_name} image"> 
-                                            </img>
-                                            <br> ${item.item_name}
-                                        </a>
-                                        <br>
-                                        <br>
-                                    </form>
-                                </ol>`);
+        <form action = "/item-info/${item.item_name}" id = "items">
+            <a class = "item-view-link" id = "item-info" href = "/item-info/${item.item_name}">
+                <img class = "item-image"
+                    src = ${item.item_img}
+                    width = 150
+                    alt = "${item.item_name} image">
+                    ${item.item_name}
+                </img>
+            </a>
+            <br>
+            <br>
+        </form>
+    </ol>`);
     }
 });
 

@@ -910,3 +910,25 @@ input[type='radio']:checked:after {
 .purchase-info {
     min-height: 500;
 }
+.items-purchased {
+    text-decoration: none;
+    color: #046865;
+    margin-left: -12;
+    font-size: 32;
+}
+.items-purchased:hover {
+    color: #21a0a0
+}
+.purchase-info {
+    background-image: url(https://cdn.pixabay.com/photo/2016/03/23/04/44/fruits-and-vegetables-1274079_1280.png);
+    background-repeat: no-repeat;
+    background-position: center right 120;
+    background-size: 600px;
+}
+.checkout-page input[type=date] {
+    border: 3px solid #21a0a0;
+    border-radius: 4px;
+    height: 45;
+    width: 240;
+    color: #21a0a0;
+}

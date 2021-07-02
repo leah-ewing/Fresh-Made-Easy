@@ -6,24 +6,30 @@
 
 
 <div class="purchase-info container-fluid">
-  <h1 style="color:#046865; margin-left:250; font-family: Barlow Condensed, sans-serif; font-size:45;"><br>
+  <br><h1 style="color:#046865; margin-left:250; font-family: Barlow Condensed, sans-serif; font-size:45; line-height:2;">
     <div class = "row">
     {{fname}}'s Purchase Info<br>
       </div></h1>
       <div class = "row">
         <div class= "col">
       <h2 style="font-size:27; color:#21a0a0; margin-left:75;">
-        <u>Purchase ID:</u> {{purchase_id}}<br>
-        <u>Pickup Date:</u> {{pickup_date}}<br>
-        <u>Payment Method:</u> {{payment_method}}<br>
-        <u>Order Total:</u> ${{purchase_total}}.00<br>
+        <span style="line-height:1.75;">
+        <text style="font-size:35; font-family:Barlow Condensed, sans-serif;">Purchase ID:</text>
+        <text style="font-family:Barlow Condensed, sans-serif; color:#046865; font-size:32;"> {{purchase_id}}</text><br>
+        <text style="font-size:35; font-family:Barlow Condensed, sans-serif; color:#21a0a0">Pickup Date: </text>
+        <text style="font-family:Barlow Condensed, sans-serif; color:#046865; font-size:32;">{{pickup_date}}</text><br>
+        <text style="font-size:35; font-family:Barlow Condensed, sans-serif; color:#21a0a0">Payment Method:</text>
+        <text style="font-family:Barlow Condensed, sans-serif; color:#046865; font-size:32;">{{payment_method}}</text><br>
+        <text style="font-size:35; font-family:Barlow Condensed, sans-serif; color:#21a0a0">Order Total:</text>
+        <text style="font-family:Barlow Condensed, sans-serif; color:#046865; font-size:32;">
+        ${{purchase_total}}.00<br></text>
+      </span>
       </h2>
       </div>
       <div class = "col">
-        <text style="margin-left:-250; font-size:27; color:#21a0a0">
-        <u>Items:</u><br>
+          <text style="margin-left:-250; font-size:35; font-family:Barlow Condensed, sans-serif; color:#21a0a0;">Items:<br>
         {% for item in items %}
-        <ol><a  style = "margin-left:-250;" href = "/item-info/{{item}}">{{item}}</a></ol>
+        <ol><a class = "items-purchased" style = "margin-left:-250; line-height:1.25;" href = "/item-info/{{item}}">{{item}}</a></ol>
         {% endfor %}
       </text><br><br><br>
     </div>

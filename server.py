@@ -379,7 +379,6 @@ def addToCart(current_item):
     user_id = crud.get_user_id_by_email(email)
     item = crud.get_item_by_name(current_item)
     item_amount = request.form.get("add-to-cart")
-    # cart_item_ids = crud.get_cart_id_by_user_id(user_id)
 
     if "current_user" in session:
         crud.add_item_to_cart(item_id, user_id, item_amount)

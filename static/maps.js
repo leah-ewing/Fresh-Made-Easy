@@ -151,6 +151,86 @@ function initFarmMap() {
           lng: -86.680153
         }
       },
+      {
+        name: "Phat Bites",
+        address: "2730 Lebanon Pike B, Nashville, TN 37214",
+        coords: {
+          lat: 36.1684,
+          lng: -86.66591
+        }
+      },
+      {
+        name: "Prime South Meats",
+        address: "1109 Straightway Ave, Nashville, TN 37206",
+        coords: {
+          lat: 36.19352,
+          lng: -86.74241
+        }
+      },
+      {
+        name: "Hendersonville Produce",
+        address: "760 E Main St, Hendersonville, TN 37075",
+        coords: {
+          lat: 36.32643,
+          lng: -86.56297
+        }
+      },
+      {
+        name: "Almustafa Market",
+        address: "943 Richards Rd, Antioch, TN 37013",
+        coords: {
+          lat: 36.0691,
+          lng: -86.68235
+        }
+      },
+      {
+        name: "Mari Supermercado",
+        address: "4000 Lebanon Pike, Hermitage, TN 37076",
+        coords: {
+          lat: 36.19592,
+          lng: -86.62153
+        }
+      },
+      {
+        name: "The Produce Place",
+        address: "4000 Murphy Rd, Nashville, TN 37209",
+        coords: {
+          lat: 36.14074,
+          lng: -86.83332
+        }
+      },
+      {
+        name: "Urban Roots Market",
+        address: "1307 2nd Ave N, Nashville, TN 37208",
+        coords: {
+          lat: 36.14162,
+          lng: -86.76201
+        }
+      },
+      {
+        name: "Savi Urban Market",
+        address: "415 Church St, Nashville, TN 37219",
+        coords: {
+          lat: 36.16344,
+          lng: -86.77957
+        }
+      },
+      {
+        name: "Sinema",
+        address: "2600 8th Ave S Suite 102, Nashville, TN 37204",
+        coords: {
+          lat: 36.12196,
+          lng: -86.77561
+        }
+      },
+      {
+        name: "Five Daughter's Bakery",
+        address: "1110 Caruthers Ave, Nashville, TN 37204",
+        coords: {
+          lat: 36.12574,
+          lng: -86.78842
+        }
+      }
     ];
   
     const markers = [];

@@ -99,7 +99,7 @@ function initFarmMap() {
   
     for (const marker of markers) {
       const markerInfo = (`
-        <h1>${marker.title}</h1>
+        <h4>${marker.title}</h4>
         <p>
           <code>${marker.address}</code>
         </p>

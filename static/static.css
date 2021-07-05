@@ -215,6 +215,7 @@ html, body {
     text-decoration: none;
     color: #21a0a0;
     font-family: 'M Plus Rounded 1c', sans-serif;
+    line-height: 1.5;
 }
 #pickup-location-file {
     text-align: center;
@@ -730,8 +731,8 @@ html, body {
     height: 60px;
     transition: all 0.5s;
     cursor: pointer;
-    margin-bottom: 45;
-    margin-left:825;
+    margin-top: -125;
+    margin-left:800;
 }
 .checkout-button span {
     cursor: pointer;
@@ -859,7 +860,7 @@ input[type='radio']:checked:after {
 .user-purchases {
     background-image: url(https://cdn.pixabay.com/photo/2020/05/12/09/53/tomatoes-5162145_1280.png);
     background-repeat: no-repeat;
-    background-position: center right 200;
+    background-position: center right 100;
     background-size: 750px;
     min-height: 650;
 }

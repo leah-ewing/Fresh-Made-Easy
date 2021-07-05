@@ -110,7 +110,7 @@ function initFarmMap() {
         maxWidth: 200
       });
   
-      marker.addListener('mouseover', () => {
+      marker.addListener('click', () => {
         infoWindow.open(farmMap, marker);
       });
     }
@@ -256,7 +256,7 @@ function initFarmMap() {
         maxWidth: 200
       });
   
-      marker.addListener('mouseover', () => {
+      marker.addListener('click', () => {
         infoWindow.open(locationMap, marker);
       });
     }

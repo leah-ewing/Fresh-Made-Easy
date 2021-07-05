@@ -12,13 +12,6 @@ app.jinja_env.undefined = StrictUndefined
 
 
 
-# @app.route('/')
-# def homepage():
-#     """Display the homepage."""
-
-#     return render_template('homepage.html')
-
-
 
 @app.route('/')
 def homepage():
@@ -329,10 +322,8 @@ def confirmed():
     purchase_total = crud.get_cart_total(user_id)
     fname = crud.get_user_fname(email)
     purchase_placed = datetime.now()
-    user_pickup_date = request.form.get("pickup-date")
-    pickup_date_time = datetime.strptime(user_pickup_date, "%Y-%d-%M")
-    pickup_date = pickup_date_time.strftime("%m/%d/%Y")
-    date_time_of_purchase = purchase_placed.strftime("%m/%d/%Y")
+    pickup_date = request.form.get("pickup-date")
+    date_time_of_purchase = purchase_placed.strftime("%Y-%m-%d")
     
     if "current_user" in session:
         crud.create_new_purchase(user_id, date_time_of_purchase, payment_method, pickup_date, pickup_location, purchase_total)

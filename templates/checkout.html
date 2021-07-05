@@ -13,23 +13,86 @@
             <div class="col left-checkout">
                 <form action = "/confirmed" id = "checkout" method = "POST">
                     <div class = "checkout">
-                        <label for = "location"><h3 style="font-weight:500; font-family:M Plus Rounded 1c, sans-serif; color:#046865; margin-left:550;">Pickup Location:</h3></label><br><br>
-                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28; margin-left:550;">East Nashville:</h4>
+                        <label for = "location"><h3 style="font-weight:500; font-family:M Plus Rounded 1c, sans-serif; color:#046865; margin-left:550;">
+                            Pickup Location:</h3></label><br><br>
+
+                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28; margin-left:550;">
+                            Downtown:</h4>
+                        
+                        <span style="margin-left:550;"><input id = "Savi Urban Market" type = "radio" name = "location" value = "Savi Urban Market">
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 15;">
+                            Savi Urban Market</text></span><br><br>
+
+                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28; margin-left:550;">
+                            East Nashville:</h4>
+
                         <span style="margin-left:550;"><input id = "Turnip Truck" type = "radio" name = "location" value = "Turnip Truck" required />
-                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 15;">Turnip Truck</text></span><br><br>
-                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28; margin-left:550;">Donelson:</h4>
-                        <span style="margin-left:550;"><input id = "Donelson Farmer's Market" type = "radio" name = "location" value = "Donelson Farmer's Market;">
-                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 10;">Donelson Farmer's Market</text><br><br></span>
-                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28; margin-left:550;">West Nashville - The Nations:</h4>
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 15;">
+                            Turnip Truck</text></span><br>
+
+                        <span style="margin-left:550;"><input id = "Prime South Meats" type = "radio" name = "location" value = "Prime South Meats" required />
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 15;">
+                            Prime South Meats</text></span><br><br>
+
+                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28; margin-left:550;">
+                            West Nashville:</h4>
+
                         <span style="margin-left:550;"><input id = "Fat Bottom Brewing" type = "radio" name = "location" value = "Fat Bottom Brewing">
-                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 15;">Fat Bottom Brewing</text></span><br><br><br>
-                        <div class = "checkout">
-                            <label for = "pickup-date"><h3 style="font-weight:500; font-family:M Plus Rounded 1c, sans-serif; color:#046865; margin-left:550; line-height:2.25">Pickup Date:</h3></label><br>
-                            <span style="margin-left:550;"><input type = "date" id = "pickup-date"
-                               value = "2021-06-28"
-                               min = "2021-06-28" max = "22-12-31" 
-                               name = "pickup-date" required />
-                            </div></span><small style="font-family:Barlow Condensed, sans-serif; color:#046865; margin-left:550;">Available for pickup after 2:00 PM</small>
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 15;">
+                            Fat Bottom Brewing</text></span><br>
+
+                        <span style="margin-left:550;"><input id = "The Produce Place" type = "radio" name = "location" value = "The Produce Place">
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 15;">
+                            The Produce Place</text></span><br><br>
+
+                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28; margin-left:550;">
+                            Germantown:</h4>
+                        
+                        <span style="margin-left:550;"><input id = "Urban Roots Market" type = "radio" name = "location" value = "Urban Roots Market">
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 15;">
+                            Urban Roots Market</text></span><br><br>
+
+                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28; margin-left:550;">
+                            8th South:</h4>
+                        
+                        <span style="margin-left:550;"><input id = "Sinema" type = "radio" name = "location" value = "Sinema">
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 15;">
+                            Sinema</text></span><br><br>
+
+                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28; margin-left:550;">
+                            12th South:</h4>
+                        
+                        <span style="margin-left:550;"><input id = "Five Daughter's Bakery" type = "radio" name = "location" value = "Five Daughter's Bakery">
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 15;">
+                            Five Daughter's Bakery</text></span><br><br>
+                        
+                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28; margin-left:550;">
+                            Donelson:</h4>
+
+                        <span style="margin-left:550;"><input id = "Donelson Farmer's Market" type = "radio" name = "location" value = "Donelson Farmer's Market;">
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 10;">
+                            Donelson Farmer's Market</text><br></span>
+                            
+                        <span style="margin-left:550;"><input id = "Phat Bites" type = "radio" name = "location" value = "Phat Bites;">
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 10;">
+                            Phat Bites</text><br><br></span>
+
+                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28; margin-left:550;">
+                            Hermitage:</h4>
+                        
+                        <span style="margin-left:550;"><input id = "Mari Supermercado" type = "radio" name = "location" value = "Mari Supermercado">
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 15;">
+                            Mari Supermercado</text></span><br><br>
+
+                        <h4 style="font-weight:500; font-family:Barlow Condensed, sans-serif; color:#20a0a0; font-size:28; margin-left:550;">
+                            Hendersonville:</h4>
+                        
+                        <span style="margin-left:550;"><input id = "Hendersonville Produce" type = "radio" name = "location" value = "Hendersonville Produce">
+                        <text style="font-family:Barlow Condensed, sans-serif; font-size:23; color:#046865; font-weight:300; margin-left: 15;">
+                            Hendersonville Produce</text></span><br><br>
+
+                        
+
                     </div>
                 </div>
             <div class="col right-checkout">
@@ -52,7 +115,7 @@
                     <label for = "cc-number"><h3 style="font-weight:500; font-family:M Plus Rounded 1c, sans-serif; color:#046865;">Credit Card Number:</h3></label><br>
                     <input type = "tel" placeholder="xxxxxxxxxxxxx" id = "cc-number" name = "card" required /><br>
                     <small style="font-family:Barlow Condensed, sans-serif; color:#046865;">Beta Site - please <b>DO NOT</b> give real card number</small><br><br>
-                </div>
+                </div><br>
             
                 <div class = "checkout" style = "text-align:left;">
                     <label for = "payment-method"><h3 style="font-weight:500; font-family:M Plus Rounded 1c, sans-serif; color:#046865; margin-left:275; line-height:1.75;">Payment Method:</h3></label><br>
@@ -65,7 +128,15 @@
                     <text style = "margin-left: 15;">Discover</text></h4>
                     <h4><input id = "American Express" type = "radio" name = "payment-method" value = "American Express">
                     <text style = "margin-left: 15;">American Express</text></h4></span><br>
-                </div>
+                </div><br>
+
+                <div class = "checkout">
+                    <label for = "pickup-date"><h3 style="font-weight:500; font-family:M Plus Rounded 1c, sans-serif; color:#046865; margin-left:0; line-height:2.25">Pickup Date:</h3></label><br>
+                    <input type = "date" id = "pickup-date"
+                       value = "2021-07-04"
+                       min = "2021-06-28" max = "22-12-31" 
+                       name = "pickup-date" required />
+                    </div><small style="font-family:Barlow Condensed, sans-serif; color:#046865; margin-left:310;">Available for pickup after 2:00 PM</small>
             </div>
         </div>
         <div class="row checkout-bottom">

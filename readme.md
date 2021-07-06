@@ -33,7 +33,7 @@ Leah has made her way to the tech industry in a bit of an untraditional way. She
 #### Homepage
 Entering the homepage, users can view the "About Us" page for the site, the "How it Works" page, or take a sneak peak at the local pickup-locations and vendors. Users can create a new account via the "Sign Up" link or they can choose to login with an existing account.
 
-# <img src="https://github.com/leah-ewing/Fresh-Made-Easy/blob/master/media/homepage.gif?raw=true" width="40%" alt="Homepage GIF"> 
+# <img src="https://github.com/leah-ewing/Fresh-Made-Easy/blob/master/media/homepage.gif?raw=true" width="90%" alt="Homepage GIF"> 
 
 
 

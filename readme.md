@@ -35,7 +35,11 @@ Entering the homepage, users can view the "About Us" page for the site, the "How
 # <img src="https://github.com/leah-ewing/Fresh-Made-Easy/blob/master/media/homepage.gif?raw=true" width="90%" alt="Homepage GIF"> 
 
 #### View Pickup Locations
-This page allows a user to view a list of all available pickup locations and see them on the Google Map. Clicking on a location brings up that locations information page and shows exact location on the map.
-#<img src="https://github.com/leah-ewing/Fresh-Made-Easy/blob/master/media/pickup-locations.gif?raw=true" width="90%" alt="Pickup Locations GIF"> 
+This page allows a user to view a list of all available pickup locations and see them on the Google Map. Clicking on a location brings up that location's information page and shows its exact location on the map.
+# <img src="https://github.com/leah-ewing/Fresh-Made-Easy/blob/master/media/pickup-locations.gif?raw=true" width="90%" alt="Pickup Locations GIF"> 
+
+#### View Local Vendors
+This is where a user can view all local vendors that have items available for purchase and locations can be seen on the Google Map. Clicking on a vendor shows the vendor's information page and shows its exact location on the map. If a user is logged in, this page will also show a list of all items available from that vendor.
+# 
 
 

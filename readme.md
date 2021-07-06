@@ -40,6 +40,14 @@ This page allows a user to view a list of all available pickup locations and see
 
 #### View Local Vendors
 This is where a user can view all local vendors that have items available for purchase and locations can be seen on the Google Map. Clicking on a vendor shows the vendor's information page and shows its exact location on the map. If a user is logged in, this page will also show a list of all items available from that vendor.
-# 
+# <img src="https://github.com/leah-ewing/Fresh-Made-Easy/blob/master/media/view-vendors.gif?raw=true" width="90%" alt="Local Vendors GIF">
+
+#### User Profile
+A user's profile page allows them to view their shopping cart and previous purchases
+# <img src="https://github.com/leah-ewing/Fresh-Made-Easy/blob/master/media/user-profile.gif?raw=true" width="90%" alt="User Profile GIF">
+
+#### Shop Page
+Users choose to shop by category, vendor, or browse through all items. Clicking on an item shows more information on it and give it's exact sourced location on the map.
+# <img src="" width="90%" alt="Shop GIF">
 
 

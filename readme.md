@@ -89,9 +89,7 @@ Install the dependencies:
 pip install -r requirements.txt
 ```
 
-Sign up to use the [Google Maps JavaScript API], [Google Maps Embed API]
-(https://developers.google.com/maps/documentation/javascript/overview)
-(https://developers.google.com/maps/documentation/embed/get-started)
+Sign up to use the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview), [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/get-started)
 
 Insert your API key into iframes in farm-info.html, item-info.html, pickup-location-info.html
 ```
@@ -106,7 +104,7 @@ Insert your API key into iframes in farm-info.html, item-info.html, pickup-locat
 </iframe>
 ```
 
-Insert your API key into scripts in all-farms.html, all-pickup-locations.html
+Insert your API key into scripts in all-farms.html, and all-pickup-locations.html
 ```
 <script
   async defer

@@ -32,8 +32,10 @@ Leah has made her way to the tech industry in a bit of an untraditional way. She
 
 #### Homepage
 Entering the homepage, users can view the "About Us" page for the site, the "How it Works" page, or take a sneak peak at the local pickup-locations and vendors. Users can create a new account via the "Sign Up" link or they can choose to login with an existing account.
-
 # <img src="https://github.com/leah-ewing/Fresh-Made-Easy/blob/master/media/homepage.gif?raw=true" width="90%" alt="Homepage GIF"> 
 
+#### View Pickup Locations
+This page allows a user to view a list of all available pickup locations and see them on the Google Map. Clicking on a location brings up that locations information page and shows exact location on the map.
+#
 
 

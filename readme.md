@@ -33,7 +33,7 @@ Leah has made her way to the tech industry in a bit of an untraditional way. She
 #### Homepage
 Entering the homepage, users can view the "About Us" page for the site, the "How it Works" page, or take a sneak peak at the local pickup-locations and vendors. Users can create a new account via the "Sign Up" link or they can choose to login with an existing account.
 
-# <iframe src="https://giphy.com/embed/eY4rjENLlzbxP7nfb0" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+# 
 
 
 

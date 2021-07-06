@@ -10,6 +10,7 @@ Leah has made her way to the tech industry in a bit of an untraditional way. She
 ## Contents
 * [Tech Stack](#tech-stack)
 * [Features](#features)
+* [Youtube Walkthough](#youtube-walkthrough)
 * [Future Plans](#future-plans)
 * [Installation](#installation)
 

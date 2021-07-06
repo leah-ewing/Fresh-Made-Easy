@@ -9,10 +9,9 @@ Leah has made her way to the tech industry in a bit of an untraditional way. She
 
 ## Contents
 * [Tech Stack](#tech-stack)
-* [Features] (#features)
-* [Future Plans] (#future-plans)
-* [Installation] (#installation)
-
+* [Features](#features)
+* [Future Plans](#future-plans)
+* [Installation](#installation)
 
 
 
@@ -91,7 +90,7 @@ pip install -r requirements.txt
 
 Sign up to use the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview), [Google Maps Embed API](https://developers.google.com/maps/documentation/embed/get-started)
 
-Insert your API key into iframes in farm-info.html, item-info.html, pickup-location-info.html
+Insert your API key into iframes in `farm-info.html`, `item-info.html`, `pickup-location-info.html`
 ```
 <iframe
   width="600"
@@ -104,7 +103,7 @@ Insert your API key into iframes in farm-info.html, item-info.html, pickup-locat
 </iframe>
 ```
 
-Insert your API key into scripts in all-farms.html, and all-pickup-locations.html
+Insert your API key into scripts in `all-farms.html`, and `all-pickup-locations.html`
 ```
 <script
   async defer

@@ -140,7 +140,7 @@ python3 seed_database.py
 
 Run the app:
 ```
-server.py
+python3 server.py
 ```
 
 

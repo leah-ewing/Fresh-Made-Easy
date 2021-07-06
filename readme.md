@@ -48,6 +48,9 @@ A user's profile page allows them to view their shopping cart and previous purch
 
 #### Shop Page
 Users choose to shop by category, vendor, or browse through all items. Clicking on an item shows more information on it and give it's exact sourced location on the map.
-# <img src="" width="90%" alt="Shop GIF">
+# <img src="https://github.com/leah-ewing/Fresh-Made-Easy/blob/master/media/shop.gif?raw=true" width="90%" alt="Shop GIF">
 
+#### Checkout Page
+When users are ready to place their order, the checkout page allows them to choose their preferred pickup location and date. After a user checks out they can review their purchases in their profile.
+# <img src="" width="90%" alt="Checkout GIF">
 

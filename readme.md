@@ -65,7 +65,7 @@ When users are ready to place their order, the checkout page allows them to choo
 
 ## <a name="youtube-walkthrough"></a>Youtube Walkthrough
 ```
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4UAE9usVyLg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://youtu.be/4UAE9usVyLg
 ```
 
 ## <a name="future-plans"></a>Future Plans

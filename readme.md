@@ -9,6 +9,11 @@ Leah has made her way to the tech industry in a bit of an untraditional way. She
 
 ## Contents
 * [Tech Stack](#tech-stack)
+* [Features] (#features)
+* [Future Plans] (#future-plans)
+* [Installation] (#installation)
+
+
 
 
 ## <a name="tech-stack"></a>Technologies
@@ -52,5 +57,65 @@ Users choose to shop by category, vendor, or browse through all items. Clicking 
 
 #### Checkout Page
 When users are ready to place their order, the checkout page allows them to choose their preferred pickup location and date. After a user checks out they can review their purchases in their profile.
-# <img src="" width="90%" alt="Checkout GIF">
+# <img src="https://github.com/leah-ewing/Fresh-Made-Easy/blob/master/media/checkout.gif?raw=true" width="90%" alt="Checkout GIF">
+
+## <a name="future-plans"></a>Future Plans
+
+Here is a sneak peak of some future features planned for Fresh Made Easy:
+* Implement admin login access to allow new pickup locations and vendors to update their own inventory and profile information
+* Add a rating system to items, vendors, and pickup locations
+* Option for a randomized boxes fitting a given price-point
+* Delivery
+
+## <a name="installation"></a>Installation
+
+To run Fresh Made Easy on your local machine:
+
+Install PostgresQL (Mac OSX)
+
+Clone or fork this repo:
+```
+https://github.com/leah-ewing/Fresh-Made-Easy.git
+```
+
+Create and activate a virtual environment inside your JobTracker directory:
+```
+virtual env
+source env/bin/activate
+```
+
+Install the dependencies:
+```
+pip install -r requirements.txt
+```
+
+Sign up to use the [Google Maps JavaScript API], [Google Maps Embed API]
+(https://developers.google.com/maps/documentation/javascript/overview)
+(https://developers.google.com/maps/documentation/embed/get-started)
+
+Insert your API key into iframes in maps.js, all-farms.html, all-pickup-locations.html, farm-info.html, item-info.html, pickup-location-info.html, and pickup-locations.html
+```
+<iframe
+  width="600"
+  height="450"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  src="https://www.google.com/maps/embed/v1/place?key=API_KEY
+    &q=Sinema">
+</iframe>
+```
+
+Set up the database:
+```
+createdb fresh
+python3 seed_database.py
+```
+
+Run the app:
+```
+server.py
+```
+
+You can now navigate to 'localhost:5000/' to access Fresh Made Easy!
 

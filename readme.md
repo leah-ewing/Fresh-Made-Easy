@@ -93,7 +93,7 @@ Sign up to use the [Google Maps JavaScript API], [Google Maps Embed API]
 (https://developers.google.com/maps/documentation/javascript/overview)
 (https://developers.google.com/maps/documentation/embed/get-started)
 
-Insert your API key into iframes in maps.js, all-farms.html, all-pickup-locations.html, farm-info.html, item-info.html, pickup-location-info.html, and pickup-locations.html
+Insert your API key into iframes in farm-info.html, item-info.html, pickup-location-info.html
 ```
 <iframe
   width="600"
@@ -104,6 +104,14 @@ Insert your API key into iframes in maps.js, all-farms.html, all-pickup-location
   src="https://www.google.com/maps/embed/v1/place?key=API_KEY
     &q=Sinema">
 </iframe>
+```
+
+Insert your API key into scripts in all-farms.html, all-pickup-locations.html
+```
+<script
+  async defer
+  src = "https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initFarmMap">
+</script>
 ```
 
 Set up the database:

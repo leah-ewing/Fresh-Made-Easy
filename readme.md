@@ -92,7 +92,7 @@ https://github.com/leah-ewing/Fresh-Made-Easy.git
 ```
 
 
-Create and activate a virtual environment inside your JobTracker directory:
+Create and activate a virtual environment inside Project Directory:
 ```
 virtual env
 source env/bin/activate

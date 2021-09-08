@@ -24,14 +24,12 @@ Leah has made her way to the tech industry in a bit of an untraditional way. She
 * Python
 * JavaScript
 * JQuery
-* Jquery
 * SQLAlchemy
 * PostgresQL
 * Bootstrap
 * HTML
 * CSS
 * Bootstrap
-* React
 * Flask
 * Google Maps API
 

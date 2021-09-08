@@ -72,7 +72,7 @@ https://youtu.be/4UAE9usVyLg
 Here is a sneak peak of some future features planned for Fresh Made Easy:
 * Implement admin login access to allow new pickup locations and vendors to update their own inventory and profile information
 * Add a rating system to items, vendors, and pickup locations
-* Option for a randomized boxes fitting a given price-point
+* Option for randomized boxes fitting a given price-point
 * Delivery
 
 

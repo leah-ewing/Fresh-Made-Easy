@@ -29,7 +29,6 @@ Leah has made her way to the tech industry in a bit of an untraditional way. She
 * Bootstrap
 * HTML
 * CSS
-* Bootstrap
 * Flask
 * Google Maps API
 

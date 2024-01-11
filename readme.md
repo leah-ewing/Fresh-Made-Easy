@@ -1,3 +1,5 @@
+Final Project for Hackbright Academy
+
 # Fresh Made Easy
 
 Fresh Made easy allows customers to customize food boxes for pickup from locations close to their homes with food from local farms and vendors around the Nashville area. The Google Maps API allows users to view pickup locations are around them, and see where locally an item has been sourced from. User's can choose to shop by category or by vendor, and upon checkout can choose their preferred pickup location and date that works best for them.
